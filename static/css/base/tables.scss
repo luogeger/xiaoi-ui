@@ -1,0 +1,56 @@
+@charset "UTF-8";
+// .table 默认有hover, head/body有边框, 四周圆角, 有底边框
+@mixin table(){
+    width: 100%;
+    thead {
+      border-bottom: 2px solid $border-col;
+      tr>th{
+        padding: 10px 5px;
+      }
+    }
+    tbody {
+      text-align: center;
+      font-size: $font-size-small;
+      line-height: $line-height-small;
+      tr{
+        border-bottom: 1px solid $border-col;
+        td{
+          padding: 5px;
+        }
+        &:hover{
+          background-color: $hover-bg;
+        }
+      }
+      tr:last-child{
+        border-bottom: none;
+      }
+    }
+}
+
+.table{
+  border: 1px solid $border-col;
+  border-radius: $border-radius-base;
+  @include table();
+}
+
+
+//.table{
+//  border: 1px solid $border-col;
+//  border-radius: $border-radius-base;
+  //overflow: hidden;
+//  >table{
+//    @include table();
+//  }
+//}
+
+
+
+
+
+//  隔行变色 table-striped
+
+//  全部有边框 table-border
+.table-border{
+
+}
+

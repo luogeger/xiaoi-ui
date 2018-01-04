@@ -1,0 +1,61 @@
+.input-group,
+.input-group-label{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+.input-group-label{
+  padding: 0 10px;
+  line-height: $height-sm - 2;
+}
+.input-group-label + .input-group>.input-group-form{
+  border-radius: $border-radius-base;
+}
+
+.input-group{
+  @include clearfix();
+  height: $height-sm;
+
+  .input-group-form{
+    height: 100%;
+    width: 152px;
+    font-size: 14px;
+    float: left;
+    border-radius: $border-radius-base;
+  }
+
+  .input-group-btn{
+    float: left;
+    .btn{
+      border-color: $theme-normal;
+    }
+  }
+
+  .input-group-form:not(:first-child):not(:last-child){
+    border-radius: 0;
+  }
+
+  .input-group-form:first-child,
+  .input-group-btn:first-child>.btn{
+    @include border-right-radius(0px);
+  }
+
+  .input-group-form:last-child,
+  .input-group-btn:last-child>.btn{
+    @include border-left-radius(0px);
+  }
+}// input-group
+
+
+.input-group-lg{
+  height: $height-lg;
+}
+
+.input-group-md{
+  height: $height-md;
+}
+
+.input-group-xs{
+  height: $height-xs;
+}

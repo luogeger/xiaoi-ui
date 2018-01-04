@@ -1,0 +1,38 @@
+@charset "UTF-8";
+//  尺寸 == v-padding, h-padding, font-size, line-height, border-radius
+@mixin button-size($padding-ver, $padding-hor, $font-size, $line-height, $border-radius){
+  padding: $padding-ver $padding-hor;
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
+}
+
+//  类型 == 字体颜色、背景颜色、边框颜色
+@mixin button-variant($font-col, $bg-col, $border-col){
+  color: $font-col;
+  background-color: $bg-col;
+  border-color: $border-col;
+}
+
+
+//  效果 == 字体颜色、背景颜色、边框颜色、点击之后的背景颜色
+@mixin button-effect($font-col, $hover-bg-col, $border-col, $click-bg-col){
+  &:hover{
+    color: $font-col;
+    background-color: $hover-bg-col;
+    border-color: $border-col;
+    span{
+      color: $font-col;
+    }
+  }
+
+  &:focus{
+    color: $font-col;
+    background-color: $click-bg-col;
+    border-color: $border-col;
+    i,span{
+      color: $font-col;
+    }
+  }
+
+}

@@ -1,0 +1,76 @@
+@charset "UTF-8";
+button,
+.btn{
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  @include transition();
+  @include button-size($padding-ver-sm, $padding-hor-sm, $font-size-base, $line-height-base, $border-radius-base);
+  @include button-variant($btn-default-font-col, $btn-text-bg-col, $btn-text-border-col);
+  @include button-effect($theme-normal, $btn-text-bg-col, $btn-text-border-col, $btn-text-border-col);
+
+}
+
+//  icon的间距
+.btn{
+  i{
+    margin-right: 5px;
+  }
+
+  span{
+    margin-left: 5px;
+    color: $border-col;
+    @include transition();
+  }
+}
+
+//  尺寸
+.btn-lg{
+  @include button-size($padding-ver-lg, $padding-hor-lg, $font-size-large, $line-height-base, $border-radius-large);
+}
+
+.btn-md{
+  @include button-size($padding-ver-md, $padding-hor-md, $font-size-large, $line-height-base, $border-radius-base);
+}
+
+.btn-xs{
+  @include button-size($padding-ver-xs, $padding-hor-xs, $font-size-small, $line-height-base, $border-radius-small);
+}
+
+//  类型
+.btn-default{
+  @include button-variant($btn-default-font-col, $btn-default-bg-col, $btn-default-border-col);
+  @include button-effect($theme-normal, $white, $btn-theme-border-col, $white);
+}
+
+.btn-theme{
+  @include button-variant($btn-theme-font-col, $btn-theme-bg-col, $btn-theme-border-col);
+  @include button-effect($btn-theme-font-col, $theme-hover, $btn-theme-border-col, $theme-click);
+}
+
+.btn-border{
+  @include button-variant($btn-border-font-col, $btn-border-bg-col, $btn-border-border-col);
+  @include button-effect($theme-normal, $btn-border-bg-col, $btn-theme-border-col, $btn-border-bg-col);
+}
+
+.btn-text{
+  @include button-variant($btn-text-font-col, $btn-text-bg-col, $btn-text-border-col);
+  @include button-effect($theme-click, $btn-text-bg-col, $btn-text-border-col, $btn-text-bg-col);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
