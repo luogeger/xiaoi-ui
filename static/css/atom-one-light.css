@@ -17,10 +17,6 @@ hue-6:   #986801
 hue-6-2: #c18401
 
 */
-pre{
-    margin-top: -19px;
-    margin-bottom: -40px;
-}
 pre code{
     color: #464646 !important;
     font-family: "Microsoft YaHei";
@@ -131,8 +127,9 @@ pre code span{
     color: #F22DB2;
 }
 
-.hljs-class{
-    color: #14a6ef;
+.hljs-class,
+.hljs-params{
+    color: #1D98F9;
 }
 
 .hljs-string,

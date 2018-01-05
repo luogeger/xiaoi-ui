@@ -27,7 +27,7 @@ function loadMainPage(ele, url, data, callback) {
                 distance: "2px",
                 start: "top",
                 opacity: 0.4,
-                alwaysVisible: 1,
+                alwaysVisible: !1,// 一直显示
                 disableFadeOut: !1,
                 railVisible: !1,
                 railColor: "#333",

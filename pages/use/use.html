@@ -15,8 +15,8 @@
         <div class="info-sidle">
             <ul id="sidleNav">
                 <li class="down"><a href="javascript:;">下载 <span>DownLoad</span></a></li>
-                <li class="icon"><a href="javascript:;">图标 <span>Icon</span></a></li>
                 <li class="typo"><a href="javascript:;">文字排版 <span>Typography</span></a></li>
+                <li class="icon"><a href="javascript:;">图标 <span>Icon</span></a></li>
                 <li class="button"><a href="javascript:;">按钮 <span>Button</span></a></li>
                 <li class="modal"><a href="javascript:;">模态窗口 <span>Modal</span></a></li>
                 <li class="sidle"><a href="javascript:;">侧滑 <span>Sidle</span></a></li>
@@ -30,6 +30,7 @@
                 <li class="alert"><a href="javascript:;">警告框 <span>Alert</span></a></li>
                 <li class="badge"><a href="javascript:;">标签徽章 <span>Badge</span></a></li>
                 <li class="link"><a href="javascript:;">链接 <span>Link</span></a></li>
+
                 <li class="slider"><a href="javascript:;">图片轮播 <span>Slider</span></a></li>
                 <li class="gallery"><a href="javascript:;">图片画廊 <span>Gallery</span></a></li>
                 <li class="image"><a href="javascript:;">图片 <span>Image</span></a></li>
@@ -185,6 +186,29 @@
                 </div>
             </div><!-- /#typo -->
 
+            <div id="icon">
+                <h2 class="title">图标 <span>Icon</span></h2>
+                <p class="explain">包括100多个来自iconfont的字体图标。为了表示感谢, 希望你在使用时尽量为icons添加一个友情链接。</p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div id="iconPic">
+                            <ul>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;!-- 只需要给i标签加上对应的class就可以， --&gt;
+            &lt;i class="icon-circle" &gt;&lt;/i&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div><!-- /#icon -->
+
             <div id="button">
                 <h2 class="title">按钮 <span>Button</span></h2>
                 <p class="explain">为&lt;button&gt;元素添加按钮类（button class）即可使用 Xiaoi UI 提供的样式</p>
@@ -274,6 +298,1146 @@
                     </div>
                 </div>
             </div><!-- /#button -->
+
+            <div id="modal">
+                <h2 class="title">模态窗口</h2>
+                <p class="explain">有2情形，一种显示界面已有的dom元素，另一种是提示的形式</p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <button class="btn btn-md btn-theme" id="modelDomBtn">已有的dom元素</button>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="jQuery">
+            $('#modelDomBtn').click(function (){
+                    ui.model('.model-dom');  // .model-dom 是页面已存在的dom元素
+            });
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <button class="btn btn-md btn-theme" id="modelArrayBtn">提示信息</button>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="jQuery">
+            // 传入数组，分别为提示的信息，和确认之后执行的函数
+            $('#modelArrayBtn').click( function (){
+                    ui.model( [ '弹出提示信息', function  (){
+                            alert( '点击确认执行的函数' );
+                    } ] );
+            });
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div><!-- /#modal -->
+
+            <div id="sidle">
+                <h2 class="title">侧滑</h2>
+                <p class="explain">弹出窗口以侧边栏的形式出现，内容是页面以存在的dom元素</p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <button class="btn btn-md btn-theme" id="sidleBtn">侧边栏模态框</button>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="jQuery">
+            $('#sidleBtn').click(function (){
+                    ui.sidle('.sidle-dom') // .sidle-dom 是页面已存在的dom元素
+            })
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div><!-- /#sidle -->
+
+            <div id="form">
+                <h2 class="title">表单 <span>Form</span></h2>
+                <p class="explain"></p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <div class="input-group-md">
+                                <label>账号</label>
+                                <input type="text">
+                            </div>
+                            <div class="input-group-md">
+                                <label>密码</label>
+                                <input type="password">
+                            </div>
+                            <div class="input-group-md readonly">
+                                <input type="text" placeholder="禁止输入">
+                            </div>
+                            <div class="input-group-md tip-verify">
+                                <label>账号</label>
+                                <input id="test" type="text" placeholder="最多输入6个字符">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;div class="input-group-md"&gt;
+                    &lt;label&gt;账号&lt;/label&gt;
+                    &lt;input type="text"&gt;
+            &lt;/div&gt;
+
+            &lt;div class="input-group-md"&gt;
+                    &lt;label&gt;密码&lt;/label&gt;
+                    &lt;input type="password"&gt;
+            &lt;/div&gt;
+
+            &lt;!-- 禁用: 添加 readonly --&gt;
+            &lt;div class="input-group-md readonly"&gt;
+                    &lt;input type="text" placeholder="禁止输入"&gt;
+            &lt;/div&gt;
+
+            &lt;!-- 验证: 添加 tip-verify --&gt;
+            &lt;div class="input-group-md tip-verify"&gt;
+                    &lt;label&gt;账号&lt;/label&gt;
+                    &lt;input id="test" type="text" placeholder="最多输入6个字符"&gt;
+            &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <div class="check-box-group">
+                                <input type="checkbox" value="0"><span>篮球</span>
+                                <input type="checkbox" value="1" checked="checked"><span>足球</span>
+                                <input type="checkbox" value="2" checked="checked"><span>羽毛球</span>
+                            </div>
+                            <br>
+                            <div class="radio-group">
+                                <input type="radio" name="asd" checked="checked"><span>三个月</span>
+                                <input type="radio" name="asd" checked="checked"><span>半年</span>
+                                <input type="radio" name="asd"><span>一年</span>
+                                <input type="radio" name="asd" checked="checked"><span>一年</span>
+                                <input type="radio" name="asd"><span>一年</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;div class="check-box-group"&gt;
+                    &lt;input type="checkbox" value="0"&gt;&lt;span&gt;篮球&lt;/span&gt;
+                    &lt;input type="checkbox" value="1" checked="checked"&gt;&lt;span&gt;足球&lt;/span&gt;
+                    &lt;input type="checkbox" value="2" checked="checked"&gt;&lt;span&gt;羽毛球&lt;/span&gt;
+            &lt;/div&gt;
+
+            &lt;div class="radio-group"&gt;
+                    &lt;input type="radio" name="time"&gt;&lt;span&gt;3个月&lt;/span&gt;
+                    &lt;input type="radio" name="time"&gt;&lt;span&gt;6个年&lt;/span&gt;
+                    &lt;input type="radio" name="time"&gt;&lt;span&gt;9个月&lt;/span&gt;
+                    &lt;input type="radio" name="time" checked="checked"&gt;&lt;span&gt;12个月&lt;/span&gt;
+                    &lt;input type="radio" name="time"&gt;&lt;span&gt;18个月&lt;/span&gt;
+            &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <div class="dropdown drop-md">
+                                <a href="javascript:;">-- 请选择 --</a>
+                                <ul>
+                                    <li>春眠不觉晓</li>
+                                    <li>处处闻啼鸟</li>
+                                    <li>夜来风雨声</li>
+                                    <li>花落知多少</li>
+                                </ul>
+                            </div>
+
+                            <textarea>文本框</textarea>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;div class="dropdown drop-md"&gt;
+                    &lt;a href="javascript:;"&gt;-- 请选择 --&lt;/a&gt;
+                    &lt;ul&gt;
+                            &lt;li&gt;春眠不觉晓&lt;/li&gt;
+                            &lt;li&gt;处处闻啼鸟&lt;/li&gt;
+                            &lt;li&gt;夜来风雨声&lt;/li&gt;
+                            &lt;li&gt;花落知多少&lt;/li&gt;
+                    &lt;/ul&gt;
+            &lt;/div&gt;
+
+            &lt;textarea&gt;文本框&lt;/textarea&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                </div><!-- /.box -->
+            </div><!-- /#form -->
+
+            <div id="tabControl">
+                <h2 class="title">选项卡</h2>
+                <p class="explain"></p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <div class="tab-underline">
+                                <div class="tab-item contra-underline">首页</div>
+                                <div class="tab-item">通讯录</div>
+                                <div class="tab-item">各种报表</div>
+                                <div class="tab-item">好多好多报表</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;div class="tab-underline"&gt;
+                    &lt;div class="tab-item contra-underline"&gt;首页&lt;/div&gt;
+                    &lt;div class="tab-item"&gt;通讯录&lt;/div&gt;
+                    &lt;div class="tab-item"&gt;各种报表&lt;/div&gt;
+                    &lt;div class="tab-item"&gt;好多好多报表&lt;/div&gt;
+            &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <div class="tab-button">
+                                <div class="tab-item contra-button">
+                                    <i class="icon-edit"></i>首页
+                                </div>
+                                <div class="tab-item">
+                                    文字超过一定宽度就是用....代替
+                                </div>
+                                <div class="tab-item">
+                                    各种报表
+                                </div>
+                                <div class="tab-item">
+                                    好多好多报表
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;div class="tab-button"&gt;
+                    &lt;div class="tab-item contra-button"&gt;&lt;i class="icon-edit"&gt;&lt;/i&gt;首页&lt;/div&gt;
+                    &lt;div class="tab-item"&gt;文字超过一定宽度就是用....代替&lt;/div&gt;
+                    &lt;div class="tab-item"&gt;各种报表&lt;/div&gt;
+                    &lt;div class="tab-item"&gt;好多好多报表&lt;/div&gt;
+            &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <div class="tab-border">
+                                <div class="tab-item">首页</div>
+                                <div class="tab-item contra-border">通讯录</div>
+                                <div class="tab-item">各种报表</div>
+                                <div class="tab-item">好多好多报表</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;div class="tab-border"&gt;
+                    &lt;div class="tab-item "&gt;首页&lt;/div&gt;
+                    &lt;div class="tab-item contra-border"&gt;通讯录&lt;/div&gt;
+                    &lt;div class="tab-item"&gt;各种报表&lt;/div&gt;
+                    &lt;div class="tab-item"&gt;好多好多报表&lt;/div&gt;
+            &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <div class="tab-btn-border">
+                                <div class="tab-item ">首页</div>
+                                <div class="tab-item contra-btn-border"> 通讯录123<i class="icon-edit"></i></div>
+                                <div class="tab-item"><i class="icon-edit"></i>各种报表</div>
+                                <div class="tab-item">好多好多报表</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;div class="tab-btn-border"&gt;
+                    &lt;div class="tab-item "&gt;首页&lt;/div&gt;
+                    &lt;div class="tab-item contra-btn-border"&gt;通讯录&lt;i class="icon-edit"&gt;&lt;/i&gt;&lt;/div&gt;
+                    &lt;div class="tab-item"&gt;&lt;i class="icon-edit"&gt;&lt;/i&gt;各种报表&lt;/div&gt;
+                    &lt;div class="tab-item"&gt;好多好多报表&lt;/div&gt;
+            &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div><!-- /#tabControl -->
+
+            <div id="paging">
+                <h2 class="title">分页</h2>
+                <p class="explain"></p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <div class="pages-line">
+                                <div class="line-previous page-disabled"> 上一页 </div>
+                                <ul>
+                                    <li>1</li>
+                                    <li class="line-contra">2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li class="line-point">···</li>
+                                    <li>39</li>
+                                </ul>
+                                <div class="line-next"> 下一页 </div>
+                                <div class="line-import">
+                                    <input type="text">
+                                    <label class="line-border"></label>
+                                </div>
+                                <div class="line-go">Go</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;div class="pages-line"&gt;
+                    &lt;div class="line-previous page-disabled"&gt; 上一页 &lt;/div&gt;
+                    &lt;!-- page-disabled 元素就会有灰色背景颜色以及鼠标样式 --&gt;
+                        &lt;ul&gt;
+                                &lt;li&gt;1&lt;/li&gt;
+                                &lt;li class="line-contra"&gt;2&lt;/li&gt;
+                                &lt;li&gt;3&lt;/li&gt;
+                                &lt;li&gt;4&lt;/li&gt;
+                                &lt;li&gt;5&lt;/li&gt;
+                                &lt;li&gt;6&lt;/li&gt;
+                                &lt;li&gt;7&lt;/li&gt;
+                                &lt;li class="line-point"&gt;···&lt;/li&gt;
+                                &lt;li&gt;39&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;div class="line-next"&gt; 下一页 &lt;/div&gt;
+                    &lt;div class="line-import"&gt;
+                            &lt;input type="text"&gt;
+                            &lt;!-- 这里的label标签是给边框 --&gt;
+                            &lt;label class="line-border"&gt;&lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;div class="line-go"&gt;Go&lt;/div&gt;
+            &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <div class="pages-filled">
+                                <div class="previous page-disabled"><i class="icon-arrow-left"></i></div>
+                                <ul>
+                                    <li class="page-disabled">1</li>
+                                    <li>2</li>
+                                    <li class="filled-contra">3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li class="point">···</li>
+                                    <li>28</li>
+                                </ul>
+                                <div class="next"><i class="icon-arrow-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;div class="pages-filled"&gt;
+                    &lt;div class="previous page-disabled"&gt;&lt;i class="icon-arrow-left"&gt;&lt;/i&gt;&lt;/div&gt;
+                    &lt;ul&gt;
+                            &lt;li class="page-disabled"&gt;1&lt;/li&gt;
+                            &lt;li&gt;2&lt;/li&gt;
+                            &lt;li class="filled-contra"&gt;3&lt;/li&gt;
+                            &lt;li&gt;4&lt;/li&gt;
+                            &lt;li&gt;5&lt;/li&gt;
+                            &lt;li&gt;6&lt;/li&gt;
+                            &lt;li&gt;7&lt;/li&gt;
+                            &lt;li class="point"&gt;···&lt;/li&gt;
+                            &lt;li&gt;28&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;div class="next"&gt;&lt;i class="icon-arrow-right"&gt;&lt;/i&gt;&lt;/div&gt;
+            &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div><!-- /#paging -->
+
+            <div id="progressBar">
+                <h2 class="title">进度条</h2>
+                <p class="explain"></p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <div class="progress-bar">
+                                <div class="bar">
+                                    <span class="percent"> 50% </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;div class="progress-bar"&gt;
+                    &lt;div class="bar"&gt;
+                            &lt;span class="percent"&gt; 50% &lt;/span&gt;
+                    &lt;/div&gt;
+            &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <div class="progress-upload">
+                                <div class="bar">
+                                    <span class="percent"> 37% </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;div class="progress-upload"&gt;
+                    &lt;div class="bar"&gt;
+                            &lt;span class="percent"&gt; 37% &lt;/span&gt;
+                    &lt;/div&gt;
+            &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <div class="progress-step">
+                                <div class="step-group bgc-theme">
+                                    <div class="step">1</div>
+                                </div>
+
+                                <div class="step-group bgc-theme ">
+                                    <div class="interval"></div>
+                                    <div class="step">2</div>
+                                </div>
+
+                                <div class="step-group ">
+                                    <div class="interval"></div>
+                                    <div class="step">3</div>
+                                </div>
+
+                                <div class="step-group">
+                                    <div class="interval"></div>
+                                    <div class="step">4</div>
+                                </div>
+
+                                <div class="step-group">
+                                    <div class="interval"></div>
+                                    <div class="step">5</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;div class="progress-step"&gt;
+                    &lt;div class="step-group bgc-theme"&gt;
+                            &lt;div class="step"&gt;1&lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="step-group bgc-theme "&gt;
+                            &lt;div class="interval"&gt;&lt;/div&gt;
+                            &lt;div class="step"&gt;2&lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="step-group "&gt;
+                            &lt;div class="interval"&gt;&lt;/div&gt;
+                            &lt;div class="step"&gt;3&lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="step-group"&gt;
+                            &lt;div class="interval"&gt;&lt;/div&gt;
+                            &lt;div class="step"&gt;4&lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="step-group"&gt;
+                            &lt;div class="interval"&gt;&lt;/div&gt;
+                            &lt;div class="step"&gt;5&lt;/div&gt;
+                    &lt;/div&gt;
+            &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+
+                </div>
+            </div><!-- /#progressBar -->
+
+            <div id="tableInfo">
+                <h2 class="title">表格 <span>Table</span></h2>
+                <p class="explain">
+                    为&lt;table&gt;标签添加不同的类，呈现不同的样式，
+                </p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <table class="table">
+                                <thead>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>User Name</th>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;table class="table"&gt; ... &lt;/table&gt;
+            &lt;!-- 添加 .table 就有hover的效果 --&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <table class="table table-bottom">
+                                <thead>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>User Name</th>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;table class="table table-bottom"&gt; ... &lt;/table&gt;
+            &lt;!-- 只有底边框 --&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <table class="table table-border">
+                                <thead>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>User Name</th>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;table class="table table-border"&gt; ... &lt;/table&gt;
+            &lt;!-- 四周都有边框 --&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <table class="table table-border table-striped">
+                                <thead>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>User Name</th>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;table class="table table-border table-striped"&gt; ... &lt;/table&gt;
+            &lt;!-- 隔行变色 --&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div><!-- /.box -->
+            </div><!-- /#tableInfo -->
+
+            <div id="treeView">
+                <h2 class="title">树形菜单</h2>
+                <p class="explain"></p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <div class="tree-view">
+                                <ul class="first">
+                                    <li>
+                                        <span>艾欧尼亚123123123</span>
+                                        <ul class="second">
+                                            <li>
+                                                <span>上单</span>
+                                            </li>
+                                            <li>
+                                                <span>打野</span>
+                                                <ul class="third">
+                                                    <li>
+                                                        <span>德邦总管</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>狂战士</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>泰达米尔</span>
+                                                        <ul class="fourth">
+                                                            <li>
+                                                                <span>fourth</span>
+                                                            </li>
+                                                            <li>
+                                                                <span>fourth</span>
+                                                            </li>
+                                                            <li>
+                                                                <span>fourth</span>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <span>辅助</span>
+                                                <ul class="third">
+                                                    <li>
+                                                        <span>风暴之怒</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>魂锁典狱长</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>众星之子</span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span>卡拉曼达</span>
+                                    </li>
+                                    <li>
+                                        <span>征服之海</span>
+                                        <ul class="second">
+                                            <li>
+                                                <span>上单</span>
+                                            </li>
+                                            <li>
+                                                <span>打野</span>
+                                            </li>
+                                            <li>
+                                                <span>辅助</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span>皮城警备</span>
+                                    </li>
+                                    <li>
+                                        <span>裁决之地</span>
+                                    </li>
+                                    <li>
+                                        <span>雷瑟守备</span>
+                                        <ul class="second">
+                                            <li>
+                                                <span>上单</span>
+                                                <ul class="third">
+                                                    <li>
+                                                        <span>德玛西亚皇子</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>齐天大圣</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>迅捷斥候</span>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <span>打野</span>
+                                            </li>
+                                            <li>
+                                                <span>辅助</span>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <span>诺克萨斯</span>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;!-- ul的class名依次为 first, second, third, fourth, fifth --&gt;
+            &lt;div class="tree-view"&gt;
+                    &lt;ul class="first"&gt;
+                            &lt;li&gt;
+                                    &lt;span&gt;艾欧尼亚123123123&lt;/span&gt;
+                                    &lt;ul class="second"&gt; ...... &lt;/ul&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                    &lt;span&gt;卡拉曼达&lt;/span&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                    &lt;span&gt;征服之海&lt;/span&gt;
+                                    &lt;ul class="second"&gt; ...... &lt;/ul&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                    &lt;span&gt;皮城警备&lt;/span&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                    &lt;span&gt;裁决之地&lt;/span&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                    &lt;span&gt;雷瑟守备&lt;/span&gt;
+                                    &lt;ul class="second"&gt; ...... &lt;/ul&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;&lt;span&gt;诺克萨斯&lt;/span&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+            &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <div class="tree-view-slim">
+                                <ul class="first">
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span>艾欧尼亚</span>
+                                        </a>
+                                        <ul class="second">
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <!--<i class="icon-arrow-right"></i>-->
+                                                    <span>中单</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <!--<i class="icon-arrow-right"></i>-->
+                                                    <span>打野</span>
+                                                </a>
+                                                <ul class="third">
+                                                    <li>
+                                                        <a href="javascript:;">
+                                                            <!--<i class="icon-circle"></i>-->
+                                                            <span>德邦总管</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:;">
+                                                            <!--<i class="icon-circle"></i>-->
+                                                            <span>狂战士</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:;">
+                                                            <!--<i class="icon-circle"></i>-->
+                                                            <span>无极剑圣</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:;">
+                                                            <!--<i class="icon-circle"></i>-->
+                                                            <span>雷霆咆哮</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <!--<i class="icon-arrow-right"></i>-->
+                                                    <span>辅助</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span>卡拉曼达</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span>征服之海</span>
+                                        </a>
+                                        <ul class="second">
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <span>中单</span>
+                                                </a>
+                                                <ul class="third">
+                                                    <li>
+                                                        <a href="javascript:;">
+                                                            <span>潮汐海灵</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:;">
+                                                            <span>光辉女郎</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <span>打野</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <span>辅助</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <span>ADC</span>
+                                                </a>
+                                                <ul class="third">
+                                                    <li>
+                                                        <a href="javascript:;">
+                                                            <span>寒冰射手</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:;">
+                                                            <span>暗夜猎手</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span>皮城警备</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;">
+                                            <span>诺克萨斯</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;!-- ul的class名依次为 first, second, third, fourth, fifth;
+            另外这里的 span 标签需要嵌套在 a 标签里 --&gt;
+            &lt;div class="tree-view-slim"&gt;
+                    &lt;ul class="first"&gt;
+                            &lt;li&gt;
+                                    &lt;a href="javascript:;"&gt;&lt;span&gt;艾欧尼亚&lt;/span&gt;&lt;/a&gt;
+                                    &lt;ul class="second"&gt; ...... &lt;/ul&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                    &lt;a href="javascript:;"&gt;&lt;span&gt;卡拉曼达&lt;/span&gt;&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                    &lt;a href="javascript:;"&gt;&lt;span&gt;征服之海&lt;/span&gt;&lt;/a&gt;
+                                    &lt;ul class="second"&gt; ...... &lt;/ul&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                    &lt;a href="javascript:;"&gt;&lt;span&gt;皮城警备&lt;/span&gt;&lt;/a&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;
+                                    &lt;a href="javascript:;"&gt;&lt;span&gt;诺克萨斯&lt;/span&gt;&lt;/a&gt;
+                            &lt;/li&gt;
+                    &lt;/ul&gt;
+            &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div><!-- /#treeView -->
+
+            <div id="date">
+                <h2 class="title">日期组件</h2>
+                <p class="explain"></p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <div class="datePicker">
+                                <input type="text" placeholder="选择输入时间">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;div class="datePicker"&gt;
+                    &lt;input type="text" placeholder="选择输入时间"&gt;
+            &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div><!-- /#date -->
+
+            <div id="alert">
+                <h2 class="title">警告框</h2>
+                <p class="explain"></p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <div class="alert-success">
+                                <span>Well done! You successfully read this important alert message</span>
+                            </div>
+                            <br>
+                            <div class="alert-error">
+                                <span>Oh snap! Change a few things up and try submitting again.</span>
+                            </div>
+                            <br>
+                            <div class="alert-warn">
+                                <span>Warning! Better check yourself, you're not looking too good</span>
+                            </div>
+                            <br>
+                            <div class="alert-info">
+                                <span>Heads up! This alert needs your attention, but it's not super important</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;div class="alert-success"&gt;
+                    &lt;span&gt;Well done! You successfully read this important alert message&lt;/span&gt;
+            &lt;/div&gt;
+
+            &lt;div class="alert-error"&gt;
+                    &lt;span&gt;Oh snap! Change a few things up and try submitting again.&lt;/span&gt;
+            &lt;/div&gt;
+
+            &lt;div class="alert-warn"&gt;
+                    &lt;span&gt;Warning! Better check yourself, you're not looking too good&lt;/span&gt;
+            &lt;/div&gt;
+
+            &lt;div class="alert-info"&gt;
+                    &lt;span&gt;Heads up! This alert needs your attention, but it's not super important&lt;/span&gt;
+            &lt;/div&gt;
+                                        </code>
+                        </pre>
+                    </div>
+                </div>
+            </div><!-- /#alert -->
+
+            <div id="badge">
+                <h2 class="title">标签徽章</h2>
+                <p class="explain"></p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main clearfix">
+                            <div class="pull-left" style="margin-right: 300px;">
+                                <p style="padding: 5px;">标签</p>
+                                <div class="i-label-info">1</div>
+                                <div class="i-label-success">1</div>
+                                <div class="i-label-warn">1</div>
+                                <div class="i-label-error">1</div>
+                                <div class="i-label-default">1</div>
+                            </div>
+                            <div class="pull-left">
+                                <p style="padding: 5px;">徽章</p>
+                                <div class="i-badge-info">3</div>
+                                <div class="i-badge-success">3</div>
+                                <div class="i-badge-warn">3</div>
+                                <div class="i-badge-error">3</div>
+                                <div class="i-badge-default">3</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;div class="i-label-info"&gt;1&lt;/div&gt;
+            &lt;div class="i-label-success"&gt;1&lt;/div&gt;
+            &lt;div class="i-label-warn"&gt;1&lt;/div&gt;
+            &lt;div class="i-label-error"&gt;1&lt;/div&gt;
+            &lt;div class="i-label-default"&gt;1&lt;/div&gt;
+
+            &lt;div class="i-badge-info"&gt;3&lt;/div&gt;
+            &lt;div class="i-badge-success"&gt;3&lt;/div&gt;
+            &lt;div class="i-badge-warn"&gt;3&lt;/div&gt;
+            &lt;div class="i-badge-error"&gt;3&lt;/div&gt;
+            &lt;div class="i-badge-default"&gt;3&lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div><!-- /#badge -->
+
+            <div id="link">
+                <h2 class="title">链接</h2>
+                <p class="explain"></p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+
+                        </div>
+                    </div>
+                    <div class="box-code">
+
+                    </div>
+                </div>
+            </div><!-- /#link -->
         </div><!-- /.info-content -->
     </div><!-- /.info -->
 
@@ -288,14 +1452,14 @@
             hljs.highlightBlock(block);
         });
     });
+    addPrefix();// icon 前缀
 
-    // info-sidle 获取高度、定位
+    // -- info-sidle 获取高度、定位
     var winHeight = $(window).height() -140 +'px';
     $('.info-sidle').css('height', winHeight).slimScroll({
         width: '240px',
         height: winHeight,
     })
-
     $(document).scroll(function () {
         var topHeight = $(this).scrollTop();
         // 定位
@@ -320,4 +1484,27 @@
 
 
     })
+
+    // -- 左边 点击的样式
+
+
+    // -- 滚动对应左边的样式
+    setTimeout(function () {
+        var $lis = $('.info-sidle ul li');// 所有 li 标签
+
+        $lis.each(function (index, item) {
+            $(item).click(function () {
+                var id = $(this).attr('class');
+                var top = $('#' + id)[0].offsetTop;
+
+                $lis.each(function (i, v){ $(v).removeClass('li-border') })// 排他
+                $(this).addClass('li-border');
+                $(document).scrollTop(top)
+            })
+
+        })
+
+    }, 100)// setTimeout
+
+
 </script>

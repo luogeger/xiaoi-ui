@@ -17,7 +17,7 @@ html, body {
   line-height: 1.4;
   color: #495060; }
 
-html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img, input, button {
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img, input, button, pre, code {
   margin: 0;
   padding: 0; }
 
