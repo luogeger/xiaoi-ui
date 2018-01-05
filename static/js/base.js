@@ -3,8 +3,8 @@ console.log('xiaoi');
 
 //  页面加载
 function loadMainPage(ele, url, data, callback) {
-    $("#"+ ele +"").load(url, data, function (){
-        $("#"+ ele +"").css({"min-height": $(window).height()-60 +"px"});
+    $(ele).load(url, data, function (){
+        $(ele).css({"min-height": $(window).height()-60 +"px"});
         if(callback !== undefined) {
             callback()
         }
@@ -208,6 +208,13 @@ function loadMainPage(ele, url, data, callback) {
     });
     jQuery.fn.extend({slimscroll: jQuery.fn.slimScroll})
 })(jQuery);
+
+
+//  document 事件
+//  ==================================================
+$(document).click(function () {
+    $('#changeSkin').children('.panel').slideUp(30);
+});
 
 
 //  xiaoi
@@ -566,7 +573,7 @@ function tableCheckbox () {
         $('.content-item').css('min-height', height);
     }
     $(window).resize(function () {
-        contentItemHeight()
+        //contentItemHeight()
     });
     return  window.xiaoi.toggleCollapse = toggleCollapse;
 }();

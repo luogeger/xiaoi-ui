@@ -1,0 +1,34 @@
+@media (max-width: 768px) {
+  .text p {
+    font-size: 18px; } }
+@media (min-width: 768px) {
+  .text p {
+    font-size: 24px; } }
+@media (min-width: 992px) {
+  .text p {
+    font-size: 30px; } }
+@media (min-width: 1200px) {
+  .text p {
+    font-size: 36px; } }
+.content-item {
+  background-color: #fff !important; }
+  .content-item .text {
+    text-align: center;
+    padding: 100px 0 50px 0; }
+    .content-item .text p {
+      margin: 0 auto;
+      width: 80%; }
+    .content-item .text .down-load {
+      margin: 40px auto;
+      width: 260px;
+      font-size: 20px;
+      line-height: 1.6; }
+    .content-item .text .version {
+      color: #CCCCCC;
+      font-size: 12px; }
+  .content-item .image {
+    text-align: center; }
+    .content-item .image img {
+      height: 400px; }
+
+/*# sourceMappingURL=home.css.map */
