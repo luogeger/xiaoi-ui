@@ -1,4 +1,26 @@
-h1 {
-  color: #ff0000; }
+.content-item {
+  padding: 0 !important;
+  position: relative; }
+  .content-item .introduce {
+    padding: 30px 40px 0 40px;
+    background-color: #EAEAEA; }
+    .content-item .introduce .title {
+      font-size: 30px; }
+    .content-item .introduce .explain {
+      padding: 20px 0;
+      width: 60%;
+      line-height: 1.8; }
+  .content-item .info {
+    padding: 20px 40px; }
+    .content-item .info img {
+      width: 100%; }
+  .content-item .footer {
+    background-color: #EAEAEA;
+    color: #222222;
+    text-align: center;
+    line-height: 40px;
+    position: absolute;
+    bottom: 0;
+    width: 100%; }
 
 /*# sourceMappingURL=show.css.map */
