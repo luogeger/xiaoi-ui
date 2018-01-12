@@ -6,37 +6,30 @@ button,
   vertical-align: middle;
   cursor: pointer;
   border: 1px solid transparent;
+  i, .fa{
+    margin-right: 5px;
+  }
   @include transition();
+
   @include button-size($padding-ver-sm, $padding-hor-sm, $font-size-base, $line-height-base, $border-radius-base);
   @include button-variant($btn-default-font-col, $btn-text-bg-col, $btn-text-border-col);
   @include button-effect($theme-normal, $btn-text-bg-col, $btn-text-border-col, $btn-text-border-col);
-
 }
 
-//  icon的间距
-.btn{
-  i{
-    margin-right: 5px;
-  }
-
-  span{
-    margin-left: 5px;
-    color: $border-col;
-    @include transition();
-  }
-}
 
 //  尺寸
 .btn-lg{
-  @include button-size($padding-ver-lg, $padding-hor-lg, $font-size-large, $line-height-base, $border-radius-large);
+  @include button-size($padding-ver-lg, $padding-hor-lg, $font-size-large, $line-height-base, $border-radius-large, 16px);
 }
 
 .btn-md{
   @include button-size($padding-ver-md, $padding-hor-md, $font-size-large, $line-height-base, $border-radius-base);
 }
-
+.btn-sm{
+  // 默认的
+}
 .btn-xs{
-  @include button-size($padding-ver-xs, $padding-hor-xs, $font-size-small, $line-height-base, $border-radius-small);
+  @include button-size($padding-ver-xs, $padding-hor-xs, $font-size-small, $line-height-base, $border-radius-small, 12px);
 }
 
 //  类型
@@ -57,7 +50,7 @@ button,
 
 .btn-text{
   @include button-variant($btn-text-font-col, $btn-text-bg-col, $btn-text-border-col);
-  @include button-effect($theme-click, $btn-text-bg-col, $btn-text-border-col, $btn-text-bg-col);
+  @include button-effect($theme-hover, $btn-text-bg-col, $btn-text-border-col, $btn-text-bg-col);
 }
 
 

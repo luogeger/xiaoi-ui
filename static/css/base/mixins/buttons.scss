@@ -1,10 +1,14 @@
 @charset "UTF-8";
-//  尺寸 == v-padding, h-padding, font-size, line-height, border-radius
-@mixin button-size($padding-ver, $padding-hor, $font-size, $line-height, $border-radius){
+//  尺寸 == v-padding, h-padding, font-size, line-height, border-radius, 图标尺寸, 行高
+@mixin button-size($padding-ver, $padding-hor, $font-size, $line-height, $border-radius, $icon-size: 14px){
   padding: $padding-ver $padding-hor;
   font-size: $font-size;
   line-height: $line-height;
   border-radius: $border-radius;
+  i, .fa{
+    font-size: $icon-size !important;
+    line-height: 0;// 这样设置以后， content-box的高度从15.2恢复到13.6
+  }
 }
 
 //  类型 == 字体颜色、背景颜色、边框颜色
@@ -21,7 +25,7 @@
     color: $font-col;
     background-color: $hover-bg-col;
     border-color: $border-col;
-    span{
+    .fa{
       color: $font-col;
     }
   }
@@ -30,7 +34,7 @@
     color: $font-col;
     background-color: $click-bg-col;
     border-color: $border-col;
-    i,span{
+    i, .fa{
       color: $font-col;
     }
   }

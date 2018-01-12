@@ -124,6 +124,23 @@
           .content-item .info .info-content #typo .demo-main ul li .t-val {
             padding-right: 50px;
             padding-left: 10px; }
+      .content-item .info .info-content #icon .box .box-demo #iconPic {
+        height: 550px;
+        background-color: #FCFCFC;
+        overflow-y: scroll; }
+        .content-item .info .info-content #icon .box .box-demo #iconPic ul li {
+          border-radius: 4px;
+          float: left;
+          width: 12.5%;
+          text-align: center; }
+          .content-item .info .info-content #icon .box .box-demo #iconPic ul li i {
+            font-size: 36px;
+            color: #CCCCCC;
+            display: inline-block;
+            vertical-align: middle;
+            padding: 20px 0; }
+          .content-item .info .info-content #icon .box .box-demo #iconPic ul li span h6 {
+            height: 32px; }
       .content-item .info .info-content #button .demo-main ul li {
         float: left;
         width: 16.6%; }

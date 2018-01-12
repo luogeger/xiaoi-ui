@@ -193,7 +193,7 @@
                     <div class="box-demo">
                         <p class="instance">实例 :</p>
                         <div id="iconPic">
-                            <ul>
+                            <ul class="clearfix">
 
                             </ul>
                         </div>
@@ -222,6 +222,7 @@
                                     <button class="btn btn-md btn-theme">按钮</button>
                                     <button class="btn btn-sm btn-theme">按钮</button>
                                     <button class="btn btn-xs btn-theme">按钮</button>
+
                                 </li>
                                 <li>
                                     <button class="btn btn-lg btn-theme"><i class="icon-upload-cloud"></i>按钮</button>
@@ -230,16 +231,10 @@
                                     <button class="btn btn-xs btn-theme"><i class="icon-upload-cloud"></i>按钮</button>
                                 </li>
                                 <li>
-                                    <button class="btn btn-lg">按钮</button>
-                                    <button class="btn btn-md">按钮</button>
-                                    <button class="btn btn-sm">按钮</button>
-                                    <button class="btn btn-xs">按钮</button>
-                                </li>
-                                <li>
                                     <button class="btn btn-lg btn-border">按钮</button>
                                     <button class="btn btn-md btn-border">按钮</button>
-                                    <button class="btn btn-xs btn-border">按钮</button>
                                     <button class="btn btn-sm btn-border">按钮</button>
+                                    <button class="btn btn-xs btn-border">按钮</button>
                                 </li>
                                 <li>
                                     <button class="btn btn-lg btn-border"><i class="icon-upload-cloud"></i>按钮</button>
@@ -252,6 +247,12 @@
                                     <button class="btn btn-md btn-text"><i class="icon-upload-cloud"></i>按钮</button>
                                     <button class="btn btn-sm btn-text"><i class="icon-upload-cloud"></i>按钮</button>
                                     <button class="btn btn-xs btn-text"><i class="icon-upload-cloud"></i>按钮</button>
+                                </li>
+                                <li>
+                                    <button class="btn btn-lg">按钮</button>
+                                    <button class="btn btn-md">按钮</button>
+                                    <button class="btn btn-sm">按钮</button>
+                                    <button class="btn btn-xs">按钮</button>
                                 </li>
                             </ul>
                         </div>
@@ -1783,6 +1784,154 @@
         })
     })// document
 
+    // -- 滚动条
+//    $("#iconPic").slimScroll({
+//        height: "550px",
+//        width: "100%",
+//        size: '10px'
+//    });
 
+    // -- 所有icon图标
+    var iconData = [
+        ['icon-download-b', ''],
+        ['icon-upload-b', ''],
+        ['icon-check', ''],
+        ['icon-fold-open-fill', ''],
+        ['icon-fold-close-fill', ''],
+        ['icon-spread', ''],
+        ['icon-check-square', ''],
+        ['icon-min-square', ''],
+
+        ['icon-circle', ''],
+        ['icon-plus-square', ''],
+        ['icon-contract', ''],
+        ['icon-close-square', ''],
+        ['icon-point', ''],
+        ['icon-check-a', ''],
+        ['icon-check-empty', ''],
+        ['icon-circle-empty', ''],
+
+        ['icon-cale-a', ''],
+        ['icon-download-file', ''],
+        ['icon-mic', ''],
+        ['icon-mic-quiet', ''],
+        ['icon-fold-open-line', ''],
+        ['icon-fold-open-line', ''],
+        ['icon-remind', ''],
+        ['icon-voice', ''],
+
+        ['icon-data-search', ''],
+        ['icon-help', ''],
+        ['icon-data-wait', ''],
+        ['icon-explain', ''],
+        ['icon-data-nopass', ''],
+        ['icon-data-pass', ''],
+        ['icon-link', ''],
+        ['icon-chart', ''],
+
+        ['icon-gold', ''],
+        ['icon-paste', ''],
+        ['icon-align-left', ''],
+        ['icon-align-middle', ''],
+        ['icon-align-right', ''],
+        ['icon-data', ''],
+        ['icon-keynote', ''],
+        ['icon-open-up', ''],
+
+        ['icon-pack-up', ''],
+        ['icon-admin', ''],
+        ['icon-download-cloud', ''],
+        ['icon-upload-cloud', ''],
+        ['icon-customer', ''],
+        ['icon-money-rmb', ''],
+        ['icon-ranking', ''],
+        ['icon-time', ''],
+
+        ['icon-history', ''],
+        ['icon-edu', ''],
+        ['icon-file', ''],
+        ['icon-fold-close-line', ''],
+        ['icon-bag-work', ''],
+        ['icon-arrow-dbLeft', ''],
+        ['icon-arrow-dbRight', ''],
+        ['icon-share', ''],
+
+        ['icon-shopping-cart', ''],
+        ['icon-exit', ''],
+        ['icon-check-fill', ''],
+        ['icon-check-line', ''],
+        ['icon-min', ''],
+        ['icon-plus', ''],
+        ['icon-tel', ''],
+        ['icon-key', ''],
+
+        ['icon-power', ''],
+        ['icon-close', ''],
+        ['icon-unlock', ''],
+        ['icon-edit', ''],
+        ['icon-location-line', ''],
+        ['icon-location-fill', ''],
+        ['icon-home-line', ''],
+        ['icon-home-fill', ''],
+
+        ['icon-collect-fill', ''],
+        ['icon-eva-good', ''],
+        ['icon-eva-bad', ''],
+        ['icon-comment', ''],
+        ['icon-send', ''],
+        ['icon-phone', ''],
+        ['icon-setting', ''],
+        ['icon-delete', ''],
+
+        ['icon-book', ''],
+        ['icon-heart', ''],
+        ['icon-camera', ''],
+        ['icon-locking', ''],
+        ['icon-collect', ''],
+        ['icon-show', ''],
+        ['icon-user', ''],
+        ['icon-copy', ''],
+
+        ['icon-earth', ''],
+        ['icon-pen', ''],
+        ['icon-message', ''],
+        ['icon-map', ''],
+        ['icon-laud', ''],
+        ['icon-search', ''],
+        ['icon-people', ''],
+        ['icon-album', ''],
+
+        ['icon-refresh', ''],
+        ['icon-list', ''],
+        ['icon-people-group', ''],
+        ['icon-arrow-left', ''],
+        ['icon-arrow-down', ''],
+        ['icon-arrow-right', ''],
+        ['icon-arrow-up', ''],
+        ['icon-workpermit', ''],
+
+        ['icon-position', ''],
+        ['icon-voice-quiet', ''],
+        ['icon-right', ''],
+        ['icon-card', ''],
+        ['icon-close-line', ''],
+        ['icon-close-fill', ''],
+        ['icon-top', ''],
+        ['icon-tag', ''],
+
+        ['icon-annex', ''],
+        ['icon-truck', ''],
+        ['icon-nav', ''],
+        ['icon-upload-file', ''],
+
+    ];
+    var iconArr = [];
+    iconData.forEach(function (item, index){
+        var str ='';
+        str = '<li><i class="'+ item[0] +'"></i><span><p>'+ item[1] +'</p><h6>'+ item[0] +'</h6></span></li>'
+        iconArr.push(str)
+    })
+    $('#iconPic ul').html('').html(iconArr.join(''))
+    addPrefix();// -- icon 添加前缀
 
 </script>

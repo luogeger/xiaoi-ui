@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*  height  */
 $height-xs:               24px;
-$height-sm:               30px;
+$height-sm:               30px;// default
 $height-md:               34px;
 $height-lg:               40px;
 
@@ -57,7 +57,7 @@ $font-family-base:        "Helvetica Neue For Number", -apple-system, BlinkMacSy
 /* 字体-尺寸 */
 $font-size-base:          14px;
 $font-size-large:         ceil(($font-size-base * 1.25)); // ~18px
-$font-size-small:         ceil(($font-size-base * 0.85)); // ~12px$
+$font-size-small:         ceil(($font-size-base * 0.85)); // ~12px
 $font-size-icon:          16px;// 恢复icon
 
 $font-size-h1:            floor(($font-size-base * 2.6)); // ~36px
@@ -84,7 +84,7 @@ $padding-ver-sm:          7px;
 $padding-hor-sm:          10px;
 
 $padding-ver-xs:          5px;
-$padding-hor-xs:          12px;
+$padding-hor-xs:          8px;
 
 //  行高 line-height
 $line-height-base:        1;//1.428571429 -- 20/14

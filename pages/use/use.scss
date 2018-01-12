@@ -216,6 +216,38 @@
         }
       }
 
+      #icon{
+        .box{
+          .box-demo{
+            #iconPic{
+              height: 550px;
+              background-color: #FCFCFC;
+              overflow-y: scroll;
+              ul{
+                li{
+                  border-radius: 4px;
+                  float: left;
+                  width: 12.5%;
+                  text-align: center;
+                  i{
+                    font-size: 36px;
+                    color: #CCCCCC;
+                    display: inline-block;
+                    vertical-align: middle;
+                    padding: 20px 0;
+                  }
+                  span{
+                    h6{
+                      height: 32px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
       #button{
         .demo-main{
           ul{
