@@ -40,7 +40,7 @@ button,
 
 .btn-theme{
   @include button-variant($btn-theme-font-col, $btn-theme-bg-col, $btn-theme-border-col);
-  @include button-effect($btn-theme-font-col, $theme-hover, $btn-theme-border-col, $theme-click);
+  @include button-effect($btn-theme-font-col, $theme-hover, $btn-theme-border-col, $theme-hover);
 }
 
 .btn-border{

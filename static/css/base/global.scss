@@ -4,7 +4,9 @@
     i{
       cursor: pointer;
       transition: .2s;
-      &:hover{
+    }
+    &:hover{
+      i{
         color: $theme-hover !important;
         transform: scale(1.3);
       }
