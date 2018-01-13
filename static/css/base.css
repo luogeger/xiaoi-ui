@@ -349,6 +349,9 @@ textarea:focus {
   border-color: #44ABFD;
   box-shadow: rgba(29, 152, 248, 0.1) 0px 0px 0px 2px; }
 
+.readonly input {
+  border: 1px dashed #DDDEE1;
+  cursor: no-drop; }
 .readonly input:hover,
 .readonly textarea:hover {
   border-color: #DDDEE1 !important; }

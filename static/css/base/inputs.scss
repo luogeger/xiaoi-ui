@@ -19,15 +19,19 @@ textarea{
 }
 
 .readonly{
+  input{
+    border: 1px dashed $border-col;
+    cursor: no-drop;
+  }
   input:hover,
   textarea:hover{
-    border-color: #DDDEE1 !important;
+    border-color: $border-col !important;
   }
 
   input,
   textarea{
     &:focus{
-      border-color: #DDDEE1 !important;
+      border-color: $border-col !important;
       box-shadow: none !important;
     }
   }
