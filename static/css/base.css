@@ -462,7 +462,6 @@ input.disabled {
   .dropdown-wrap .dropdown {
     position: relative;
     height: 30px;
-    min-width: 152px;
     color: #595959;
     padding-left: 10px;
     border: 1px solid #DDDEE1;
@@ -475,27 +474,40 @@ input.disabled {
       .dropdown-wrap .dropdown:hover i {
         color: #44ABFD; }
     .dropdown-wrap .dropdown .dropdown-default {
+      min-width: 122px;
+      max-width: 200px;
       display: inline-block;
-      float: left; }
+      float: left;
+      text-align: left;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      /* 文字超出用...*/
+      white-space: nowrap;
+      /* 文字不换行*/ }
     .dropdown-wrap .dropdown i {
       padding: 0px 10px;
       transition: all 0.2s ease-in-out; }
     .dropdown-wrap .dropdown > ul {
-      min-width: 152px;
+      display: none;
+      min-width: 122px;
+      max-width: 200px;
       position: absolute;
       top: 32px;
       left: 0px;
       border-radius: 4px;
       background-color: #ffffff;
       z-index: 1;
-      overflow: hidden;
-      display: none;
+      cursor: pointer;
       box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1); }
       .dropdown-wrap .dropdown > ul li {
         padding: 0 10px;
         line-height: 30px;
-        cursor: pointer;
         text-align: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /* 文字超出用...*/
+        white-space: nowrap;
+        /* 文字不换行*/
         transition: all 0.1s ease-in-out; }
         .dropdown-wrap .dropdown > ul li:hover {
           background-color: #f3f3f3; }
