@@ -1,6 +1,4 @@
 console.log('xiaoi');
-
-
 //  页面加载
 function loadMainPage(ele, url, data, callback) {
     $(ele).load(url, data, function (){
@@ -212,13 +210,6 @@ function loadMainPage(ele, url, data, callback) {
 })(jQuery);
 
 
-//  document 事件
-//  ==================================================
-$(document).click(function () {
-    $('#changeSkin').children('.panel').slideUp(30);
-});
-
-
 //  xiaoi
 //  ==================================================
 +(function () {
@@ -414,40 +405,43 @@ $(document).click(function () {
 })();//  xiaoi
 
 
+//  单选框
+//  ==================================================
++function () {
+    $('body').on('click', '.i-radio-item', function () {
+        var _this = $(this)
+        var otherRadio = _this.siblings('.i-radio-item')
+        var classStr = 'i-radio-checked';
+
+        if (_this.hasClass(classStr)) {
+            return;
+        }
+        otherRadio.each(function (index, item) {
+            $(item).removeClass(classStr)
+        })
+        _this.addClass(classStr)
+
+
+    })
+}();
+
+
+
 //  多选框
 //  ==================================================
 +function () {
-    // $('tbody').on('click', '.i-checkbox-border', function (e) {
-    //     $(this).children('.i-checkbox-icon').toggleClass('scale-lg');
-    // })
-}();
-// 复选框 以及 全选
-function tableCheckbox () {
-    $('tbody').on('click', '.i-checkbox-border', function (e) {
-        e.stopPropagation()
-        $(this).children('.i-checkbox-icon').toggleClass('scale-lg');
-    })
-
-    $('tbody').on('click', 'tr', function (e) {
-        e.stopPropagation()
-        $(this).find('.i-checkbox-icon').toggleClass('scale-lg')
-    })
-
-    $('table').on('click', '.allCheck', function () {
-        var allCheck = $(this).children('.i-checkbox-icon').hasClass('scale-lg');
-        if(allCheck){
-            $(this).children('.i-checkbox-icon').removeClass('scale-lg')
-            $('tbody .i-checkbox-icon').each(function (i, v) {
-                $(v).removeClass('scale-lg');
-            })
-        }else{
-            $(this).children('.i-checkbox-icon').addClass('scale-lg')
-            $('tbody .i-checkbox-icon').each(function (i, v) {
-                $(v).addClass('scale-lg');
-            })
+    $('body').on('click', '.i-checkbox-item', function (e) {
+        var _this = $(this)
+        var classStr = 'i-checkbox-checked';
+        if (_this.hasClass(classStr)) {
+            _this.removeClass(classStr)
+            return;
         }
+        _this.addClass(classStr)
     })
-};
+}();
+
+
 
 
 //  下拉框

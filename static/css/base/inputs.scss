@@ -18,21 +18,15 @@ textarea{
   }
 }
 
-.readonly{
-  input{
-    border: 1px dashed $border-col;
-    cursor: no-drop;
-  }
-  input:hover,
-  textarea:hover{
+
+input.disabled{
+  border: 1px dashed $border-col;
+  cursor: no-drop;
+  &:hover{
     border-color: $border-col !important;
   }
-
-  input,
-  textarea{
-    &:focus{
-      border-color: $border-col !important;
-      box-shadow: none !important;
-    }
+  &:focus{
+    border-color: $border-col !important;
+    box-shadow: none !important;
   }
 }

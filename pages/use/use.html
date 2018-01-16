@@ -43,7 +43,12 @@
                 <li class="button"><a href="javascript:;">按钮 <span>Button</span></a></li>
                 <li class="modal"><a href="javascript:;">模态窗口 <span>Modal</span></a></li>
                 <li class="sidle"><a href="javascript:;">侧滑 <span>Sidle</span></a></li>
-                <li class="form"><a href="javascript:;">表单 <span>Form</span></a></li>
+
+                <li class="radio"><a href="javascript:;">单选框 <span>Radio</span></a></li>
+                <li class="checkbox"><a href="javascript:;">多选框 <span>Checkbox</span></a></li>
+                <li class="input"><a href="javascript:;">输入框 <span>Input</span></a></li>
+                <li class="dropdown"><a href="javascript:;">下拉框 <span>Dropdown</span></a></li>
+
                 <li class="tabControl"><a href="javascript:;">选项卡 <span>Tabs</span></a></li>
                 <li class="paging"><a href="javascript:;">分页 <span>Pagination</span></a></li>
                 <li class="progressBar"><a href="javascript:;">进度条 <span>NProgress</span></a></li>
@@ -386,8 +391,182 @@
                 </div>
             </div><!-- /#sidle -->
 
-            <div id="form">
-                <h2 class="title">表单 <span>Form</span></h2>
+            <div id="radio">
+                <h2 class="title">单选框 <span>Radio</span></h2>
+                <p class="explain"></p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <div class="i-radio-group">
+                                <div class="i-radio-item i-radio-checked">
+                                    <span class="i-radio-wrap">
+                                        <span class="i-radio-inner fa fa-circle-thin"></span>
+                                        <span class="i-radio-check fa fa-circle"></span>
+                                    </span>
+                                    <span class="i-radio-label">A</span>
+                                </div>
+
+                                <div class="i-radio-item">
+                                    <span class="i-radio-wrap">
+                                        <span class="i-radio-inner fa fa-circle-thin"></span>
+                                        <span class="i-radio-check fa fa-circle"></span>
+                                    </span>
+                                    <span class="i-radio-label">B</span>
+                                </div>
+
+                                <div class="i-radio-item">
+                                    <span class="i-radio-wrap">
+                                        <span class="i-radio-inner fa fa-circle-thin"></span>
+                                        <span class="i-radio-check fa fa-circle"></span>
+                                    </span>
+                                    <span class="i-radio-label">C</span>
+                                </div>
+
+                                <div class="i-radio-item">
+                                    <span class="i-radio-wrap">
+                                        <span class="i-radio-inner fa fa-circle-thin"></span>
+                                        <span class="i-radio-check fa fa-circle"></span>
+                                    </span>
+                                    <span class="i-radio-label">D</span>
+                                </div>
+
+                                <div class="i-radio-item">
+                                    <span class="i-radio-wrap">
+                                        <span class="i-radio-inner fa fa-circle-thin"></span>
+                                        <span class="i-radio-check fa fa-circle"></span>
+                                    </span>
+                                    <span class="i-radio-label">E</span>
+                                </div>
+
+                            </div><!-- /.i-radio-group -->
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;!-- i-radio-checked 表示被选中 --&gt;
+            &lt;div class="i-radio-group"&gt;
+                    &lt;div class="i-radio-item i-radio-checked"&gt;
+                            &lt;span class="i-radio-wrap"&gt;
+                                    &lt;span class="i-radio-inner fa fa-circle-thin"&gt;&lt;/span&gt;
+                                    &lt;span class="i-radio-check fa fa-circle"&gt;&lt;/span&gt;
+                            &lt;/span&gt;
+                            &lt;span class="i-radio-label"&gt;A&lt;/span&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="i-radio-item"&gt;
+                            &lt;span class="i-radio-wrap"&gt;
+                                    &lt;span class="i-radio-inner fa fa-circle-thin"&gt;&lt;/span&gt;
+                                    &lt;span class="i-radio-check fa fa-circle"&gt;&lt;/span&gt;
+                            &lt;/span&gt;
+                            &lt;span class="i-radio-label"&gt;B&lt;/span&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="i-radio-item"&gt;
+                            &lt;span class="i-radio-wrap"&gt;
+                                    &lt;span class="i-radio-inner fa fa-circle-thin"&gt;&lt;/span&gt;
+                                    &lt;span class="i-radio-check fa fa-circle"&gt;&lt;/span&gt;
+                            &lt;/span&gt;
+                            &lt;span class="i-radio-label"&gt;C&lt;/span&gt;
+                    &lt;/div&gt;
+            &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div><!-- /.box -->
+            </div><!-- /#radio -->
+
+            <div id="checkbox">
+                <h2 class="title">多选框 <span>Checkbox</span></h2>
+                <p class="explain"></p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <div class="i-checkbox-group">
+                                <div class="i-checkbox-item i-checkbox-checked">
+                                    <span class="i-checkbox-wrap">
+                                        <span class="i-checkbox-inner fa fa-square-o"></span>
+                                        <span class="i-checkbox-check fa fa-check-square"></span>
+                                    </span>
+                                    <span class="i-checkbox-label">篮球</span>
+                                </div>
+
+
+                                <div class="i-checkbox-item">
+                                    <span class="i-checkbox-wrap">
+                                        <span class="i-checkbox-inner fa fa-square-o"></span>
+                                        <span class="i-checkbox-check fa fa-check-square"></span>
+                                    </span>
+                                    <span class="i-checkbox-label">足球</span>
+                                </div>
+
+
+                                <div class="i-checkbox-item">
+                                    <span class="i-checkbox-wrap">
+                                        <span class="i-checkbox-inner fa fa-square-o"></span>
+                                        <span class="i-checkbox-check fa fa-check-square"></span>
+                                    </span>
+                                    <span class="i-checkbox-label">羽毛球</span>
+                                </div>
+
+                                <div class="i-checkbox-item">
+                                    <span class="i-checkbox-wrap">
+                                        <span class="i-checkbox-inner fa fa-square-o"></span>
+                                        <span class="i-checkbox-check fa fa-check-square"></span>
+                                    </span>
+                                    <span class="i-checkbox-label">乒乓球</span>
+                                </div>
+
+                            </div><!-- /.i-checkbox-group -->
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;!-- i-checkbox-checked 表示被选中 --&gt;
+            &lt;div class="i-checkbox-item i-checkbox-checked"&gt;
+                    &lt;span class="i-checkbox-wrap"&gt;
+                            &lt;span class="i-checkbox-inner fa fa-square-o"&gt;&lt;/span&gt;
+                            &lt;span class="i-checkbox-check fa fa-check-square"&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="i-checkbox-label"&gt;篮球&lt;/span&gt;
+            &lt;/div&gt;
+
+
+            &lt;div class="i-checkbox-item"&gt;
+                    &lt;span class="i-checkbox-wrap"&gt;
+                            &lt;span class="i-checkbox-inner fa fa-square-o"&gt;&lt;/span&gt;
+                            &lt;span class="i-checkbox-check fa fa-check-square"&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="i-checkbox-label"&gt;足球&lt;/span&gt;
+            &lt;/div&gt;
+
+
+            &lt;div class="i-checkbox-item"&gt;
+                    &lt;span class="i-checkbox-wrap"&gt;
+                            &lt;span class="i-checkbox-inner fa fa-square-o"&gt;&lt;/span&gt;
+                            &lt;span class="i-checkbox-check fa fa-check-square"&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="i-checkbox-label"&gt;羽毛球&lt;/span&gt;
+            &lt;/div&gt;
+
+            &lt;div class="i-checkbox-item"&gt;
+                    &lt;span class="i-checkbox-wrap"&gt;
+                            &lt;span class="i-checkbox-inner fa fa-square-o"&gt;&lt;/span&gt;
+                            &lt;span class="i-checkbox-check fa fa-check-square"&gt;&lt;/span&gt;
+                    &lt;/span&gt;
+                    &lt;span class="i-checkbox-label"&gt;乒乓球&lt;/span&gt;
+            &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div><!-- /.box -->
+            </div><!-- /#checkbox -->
+
+            <div id="input">
+                <h2 class="title">输入框 <span>Input</span></h2>
                 <p class="explain"></p>
                 <div class="box">
                     <div class="box-demo">
@@ -401,81 +580,43 @@
                                 <span class="input-group-label">密码</span>
                                 <input type="password" class="input-group-form">
                             </div>
-                            <div class="input-group readonly">
+                            <div class="input-group">
                                 <span class="input-group-label">账号</span>
-                                <input type="text" class="input-group-form" placeholder="禁止输入">
+                                <input type="text" class="input-group-form disabled" placeholder="禁止输入" disabled>
                             </div>
-                            <div class="input-group tip-verify">
-                                <span class="input-group-label">账号</span>
-                                <input id="test" type="text" class="input-group-form" placeholder="最多输入6个字符">
-                            </div>
+                            <!--<div class="input-group tip-verify">-->
+                            <!--<span class="input-group-label">账号</span>-->
+                            <!--<input id="test" type="text" class="input-group-form" placeholder="最多输入6个字符">-->
+                            <!--</div>-->
                         </div>
                     </div>
                     <div class="box-code">
                         <pre>
                             <code class="xml">
-            &lt;div class="input-group-md"&gt;
+            &lt;div class="input-group"&gt;
                     &lt;label&gt;账号&lt;/label&gt;
                     &lt;input type="text"&gt;
             &lt;/div&gt;
 
-            &lt;div class="input-group-md"&gt;
+            &lt;div class="input-group"&gt;
                     &lt;label&gt;密码&lt;/label&gt;
                     &lt;input type="password"&gt;
             &lt;/div&gt;
 
-            &lt;!-- 禁用: 添加 readonly --&gt;
-            &lt;div class="input-group-md readonly"&gt;
-                    &lt;input type="text" placeholder="禁止输入"&gt;
-            &lt;/div&gt;
-
-            &lt;!-- 验证: 添加 tip-verify --&gt;
-            &lt;div class="input-group-md tip-verify"&gt;
-                    &lt;label&gt;账号&lt;/label&gt;
-                    &lt;input id="test" type="text" placeholder="最多输入6个字符"&gt;
+            &lt;!-- 禁用: 添加 disabled类，以及属性 --&gt;
+            &lt;div class="input-group"&gt;
+                    &lt;input type="text" class="input-group-form disabled" placeholder="禁止输入" disabled&gt;
             &lt;/div&gt;
                             </code>
                         </pre>
                     </div>
+                </div><!-- /.box -->
+            </div><!-- /#input -->
 
-                    <div class="box-demo">
-                        <p class="instance">实例 :</p>
-                        <div class="demo-main">
-                            <div class="check-box-group">
-                                <input type="checkbox" value="0"><span>篮球</span>
-                                <input type="checkbox" value="1" checked="checked"><span>足球</span>
-                                <input type="checkbox" value="2" checked="checked"><span>羽毛球</span>
-                            </div>
-                            <br>
-                            <div class="radio-group">
-                                <input type="radio" name="asd" checked="checked"><span>三个月</span>
-                                <input type="radio" name="asd" checked="checked"><span>半年</span>
-                                <input type="radio" name="asd"><span>一年</span>
-                                <input type="radio" name="asd" checked="checked"><span>一年</span>
-                                <input type="radio" name="asd"><span>一年</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box-code">
-                        <pre>
-                            <code class="xml">
-            &lt;div class="check-box-group"&gt;
-                    &lt;input type="checkbox" value="0"&gt;&lt;span&gt;篮球&lt;/span&gt;
-                    &lt;input type="checkbox" value="1" checked="checked"&gt;&lt;span&gt;足球&lt;/span&gt;
-                    &lt;input type="checkbox" value="2" checked="checked"&gt;&lt;span&gt;羽毛球&lt;/span&gt;
-            &lt;/div&gt;
-
-            &lt;div class="radio-group"&gt;
-                    &lt;input type="radio" name="time"&gt;&lt;span&gt;3个月&lt;/span&gt;
-                    &lt;input type="radio" name="time"&gt;&lt;span&gt;6个年&lt;/span&gt;
-                    &lt;input type="radio" name="time"&gt;&lt;span&gt;9个月&lt;/span&gt;
-                    &lt;input type="radio" name="time" checked="checked"&gt;&lt;span&gt;12个月&lt;/span&gt;
-                    &lt;input type="radio" name="time"&gt;&lt;span&gt;18个月&lt;/span&gt;
-            &lt;/div&gt;
-                            </code>
-                        </pre>
-                    </div>
-
+            <div id="dropdown">
+                <h2 class="title">下拉框 <span>Dropdown</span></h2>
+                <p class="explain"></p>
+                <div class="box">
                     <div class="box-demo">
                         <p class="instance">实例 :</p>
                         <div class="demo-main">
@@ -489,7 +630,6 @@
                                 </ul>
                             </div>
 
-                            <textarea>文本框</textarea>
                         </div>
                     </div>
                     <div class="box-code">
@@ -504,14 +644,11 @@
                             &lt;li&gt;花落知多少&lt;/li&gt;
                     &lt;/ul&gt;
             &lt;/div&gt;
-
-            &lt;textarea&gt;文本框&lt;/textarea&gt;
                             </code>
                         </pre>
                     </div>
-
                 </div><!-- /.box -->
-            </div><!-- /#form -->
+            </div><!-- /#dropdown -->
 
             <div id="tabControl">
                 <h2 class="title">选项卡</h2>
@@ -1771,11 +1908,15 @@
     setTimeout(function () {
         $lis.each(function (index, item) {
             $(item).click(function () {
-                var id = $(this).attr('class');
-                var top = $('#' + id)[0].offsetTop;
+                var _this = $(this)
+                if (_this.hasClass('li-border')) {
+                    return
+                }
 
+                var id = _this.attr('class');
+                var top = $('#' + id)[0].offsetTop;
                 $lis.each(function (i, v){ $(v).removeClass('li-border') })// 排他
-                $(this).addClass('li-border');
+                _this.addClass('li-border')
                 $(document).scrollTop(top)
             })
 
