@@ -1,33 +1,27 @@
 @charset "UTF-8";
-
-.i-page-line{
-  display: inline-block;
-  vertical-align: middle;
+.i-page-line, .i-page-fill{
   font-size: 12px !important;
   @include clearfix();
+}
 
-  div, ul, ul>li{
+.i-page-line{
+
+  div, ul, li, input{
     float: left;
+    height: $height-sm;
   }
 
-  div, ul>li{
-    float: left;
-    line-height: $line-height-base;
+  div, li, input{
     padding: $padding-ver-sm $padding-hor-sm;
-  }
-
-  div, ul>li{
     border: 1px solid $border-col;
     border-radius: $border-radius-base;
     margin-right: 5px;
   }
 
-  div:not(.i-line-import),
-  ul>li:not(.i-line-omit){
+  div, li, input{
     cursor: pointer;
     border: 1px solid $border-col;
     border-radius: $border-radius-base;
-    margin-right: 5px;
     @include transition();
     &:hover{
       border-color: $theme-normal;
@@ -35,24 +29,23 @@
     }
   }
 
-  i-line-omit{// 省略...
-
+  li{
+    min-width: $height-sm;
   }
 
-  .i-line-import{
-    position: relative;
-    border: none;
-    padding: 0;
+
+
+
+  .i-line-input{
     width: 35px;
-    height: $height-sm;
-    >input{
-      position: absolute;
-      width: 100%;
-      height: 100%;
+    cursor: auto;
+    color: $text-col !important;
+    &:focus{
+      border-color: $theme-hover;
     }
   }
 
-  .i-line-go{
+  .i-line-goto{
     margin-right: 0;
   }
 
@@ -69,10 +62,10 @@
   }
 
   .i-line-disabled{
-    color: $text-col !important;
+    color: $six9 !important;
     border-color: $border-col !important;
     background-color: $hover-bg !important;
-    cursor: not-allowed;
+    cursor: no-drop;
   }
 
   .i-line-first{
@@ -86,6 +79,38 @@
 }// i-page-line
 
 
+.i-page-fill{
+  div, ul, li{
+    float: left;
+  }
 
+  div, li{
+    background-color: $theme-normal;
+    height: $height-sm;
+    line-height: $height-sm;
+    padding: 0 $padding-hor-sm;
+    min-width: 30px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+  li:not(:last-child){
+    border-right: 1px solid $theme-click;
+  }
+
+  .i-fill-first{
+    margin-right: 3px;
+    @include border-left-radius(4px);
+  }
+
+  .i-fill-last{
+    margin-left: 3px;
+    @include border-right-radius(4px);
+  }
+
+  .i-fill-current{
+    background-color: $theme-click !important;
+  }
+}// .i-page-fill
 
 

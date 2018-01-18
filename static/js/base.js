@@ -502,7 +502,6 @@ function loadMainPage(ele, url, data, callback) {
 //  tab
 //  ==================================================
 +function(){
-    //tabEffect($('body .i-tabs-line'), 'line-active');
     function tabEffect (dom, cls){
         var index;
         dom.each(function (index, item){
@@ -558,6 +557,13 @@ function loadMainPage(ele, url, data, callback) {
     })
 }();
 
+
+
+//  分页
+//  ==================================================
++function () {
+
+}();
 
 //  导航 - navigate
 //  ==================================================

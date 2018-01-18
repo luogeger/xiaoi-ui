@@ -51,9 +51,9 @@
 
                 <li class="tabControl"><a href="javascript:;">选项卡 <span>Tabs</span></a></li>
                 <li class="crumb"><a href="javascript:;">面包屑导航 <span>BreadCrumb</span></a></li>
+                <li class="tableInfo"><a href="javascript:;">表格 <span>Table</span></a></li>
                 <li class="paging"><a href="javascript:;">分页 <span>Pagination</span></a></li>
                 <li class="progressBar"><a href="javascript:;">进度条 <span>NProgress</span></a></li>
-                <li class="tableInfo"><a href="javascript:;">表格 <span>Table</span></a></li>
                 <li class="treeView"><a href="javascript:;">树形菜单 <span>TreeView</span></a></li>
                 <li class="date"><a href="javascript:;">日期组件 <span>DatePicker</span></a></li>
                 <li class="alert"><a href="javascript:;">警告框 <span>Alert</span></a></li>
@@ -851,17 +851,160 @@
                     <div class="box-code">
                         <pre>
                             <code class="xml">
-            &lt;div class="tab-crumb"&gt;
-                    &lt;div class="tab-item contra-crumb"&gt;&lt;i class="icon-edit"&gt;&lt;/i&gt;首页&lt;/div&gt;
-                    &lt;div class="tab-item contra-crumb"&gt;通讯录&lt;/div&gt;
-                    &lt;div class="tab-item"&gt;文字超过一定宽度就是用....代替&lt;/div&gt;
-                    &lt;div class="tab-item"&gt;好多好多报表&lt;/div&gt;
-            &lt;/div&gt;
+
                             </code>
                         </pre>
                     </div>
                 </div>
             </div><!-- /#crumb -->
+
+            <div id="tableInfo">
+                <h2 class="title">表格 <span>Table</span></h2>
+                <p class="explain">
+                    为&lt;table&gt;标签添加不同的类，呈现不同的样式，
+                </p>
+                <div class="box">
+
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <table class="i-table">
+                                <thead>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>User Name</th>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;!-- 添加 .i-table 默认有hover, 只有底边框 --&gt;
+            &lt;table class="i-table"&gt; ... &lt;/table&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <table class="i-table i-table-border">
+                                <thead>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>User Name</th>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;!-- 四周都有边框 --&gt;
+            &lt;table class="i-table i-table-border"&gt; ... &lt;/table&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <table class="i-table i-table-border i-table-striped">
+                                <thead>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>User Name</th>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>one</td>
+                                    <td>two</td>
+                                    <td>three</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;!-- i-table-striped 隔行变色的效果 --&gt;
+            &lt;table class="i-table i-table-border i-table-striped"&gt; ... &lt;/table&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                </div><!-- /.box -->
+            </div><!-- /#tableInfo -->
 
             <div id="paging">
                 <h2 class="title">分页</h2>
@@ -870,53 +1013,29 @@
                     <div class="box-demo">
                         <p class="instance">实例 :</p>
                         <div class="demo-main">
-                            <div class="pages-line">
-                                <div class="line-previous page-disabled"> 上一页 </div>
-                                <ul>
-                                    <li>1</li>
-                                    <li class="line-contra">2</li>
-                                    <li>3</li>
-                                    <li>4</li>
-                                    <li>5</li>
-                                    <li>6</li>
-                                    <li>7</li>
-                                    <li class="line-point">···</li>
-                                    <li>39</li>
+                            <div class="i-page-line">
+                                <div class="i-line-first i-line-disabled">首页</div>
+                                <div class="i-line-prev i-line-disabled">上一页</div>
+                                <ul class="i-line-page">
+                                    <li class="i-line-num i-line-current">1</li>
+                                    <li class="i-line-num">2</li>
+                                    <li class="i-line-num">3</li>
+                                    <li class="i-line-num">4</li>
+                                    <li class="i-line-num">5</li>
+                                    <li class="i-line-num">6</li>
+                                    <li class="i-line-num">7</li>
                                 </ul>
-                                <div class="line-next"> 下一页 </div>
-                                <div class="line-import">
-                                    <input type="text">
-                                    <label class="line-border"></label>
-                                </div>
-                                <div class="line-go">Go</div>
+                                <div class="i-line-next">下一页</div>
+                                <div class="i-line-last">尾页</div>
+                                <input type="text" class="i-line-input" value="9">
+                                <div class="i-line-goto">Go</div>
                             </div>
                         </div>
                     </div>
                     <div class="box-code">
                         <pre>
                             <code class="xml">
-            &lt;div class="pages-line"&gt;
-                    &lt;div class="line-previous page-disabled"&gt; 上一页 &lt;/div&gt;
-                    &lt;!-- page-disabled 元素就会有灰色背景颜色以及鼠标样式 --&gt;
-                        &lt;ul&gt;
-                                &lt;li&gt;1&lt;/li&gt;
-                                &lt;li class="line-contra"&gt;2&lt;/li&gt;
-                                &lt;li&gt;3&lt;/li&gt;
-                                &lt;li&gt;4&lt;/li&gt;
-                                &lt;li&gt;5&lt;/li&gt;
-                                &lt;li&gt;6&lt;/li&gt;
-                                &lt;li&gt;7&lt;/li&gt;
-                                &lt;li class="line-point"&gt;···&lt;/li&gt;
-                                &lt;li&gt;39&lt;/li&gt;
-                        &lt;/ul&gt;
-                    &lt;div class="line-next"&gt; 下一页 &lt;/div&gt;
-                    &lt;div class="line-import"&gt;
-                            &lt;input type="text"&gt;
-                            &lt;!-- 这里的label标签是给边框 --&gt;
-                            &lt;label class="line-border"&gt;&lt;/label&gt;
-                    &lt;/div&gt;
-                    &lt;div class="line-go"&gt;Go&lt;/div&gt;
-            &lt;/div&gt;
+
                             </code>
                         </pre>
                     </div>
@@ -924,41 +1043,27 @@
                     <div class="box-demo">
                         <p class="instance">实例 :</p>
                         <div class="demo-main">
-                            <div class="pages-filled">
-                                <div class="previous page-disabled"><i class="icon-arrow-left"></i></div>
-                                <ul>
-                                    <li class="page-disabled">1</li>
-                                    <li>2</li>
-                                    <li class="filled-contra">3</li>
-                                    <li>4</li>
-                                    <li>5</li>
-                                    <li>6</li>
-                                    <li>7</li>
-                                    <li class="point">···</li>
-                                    <li>28</li>
+                            <div class="i-page-fill">
+                                <div class="i-fill-first fa fa-chevron-left"></div>
+                                <ul class="i-fill-page">
+                                    <li class="i-fill-num i-fill-current">1</li>
+                                    <li class="i-fill-num">2</li>
+                                    <li class="i-fill-num">3</li>
+                                    <li class="i-fill-num">4</li>
+                                    <li class="i-fill-num">5</li>
+                                    <li class="i-fill-num">6</li>
+                                    <li class="i-fill-num">7</li>
+                                    <li class="i-fill-num">8</li>
+                                    <li class="i-fill-num">9</li>
                                 </ul>
-                                <div class="next"><i class="icon-arrow-right"></i></div>
+                                <div class="i-fill-last fa fa-chevron-right"></div>
                             </div>
                         </div>
                     </div>
                     <div class="box-code">
                         <pre>
                             <code class="xml">
-            &lt;div class="pages-filled"&gt;
-                    &lt;div class="previous page-disabled"&gt;&lt;i class="icon-arrow-left"&gt;&lt;/i&gt;&lt;/div&gt;
-                    &lt;ul&gt;
-                            &lt;li class="page-disabled"&gt;1&lt;/li&gt;
-                            &lt;li&gt;2&lt;/li&gt;
-                            &lt;li class="filled-contra"&gt;3&lt;/li&gt;
-                            &lt;li&gt;4&lt;/li&gt;
-                            &lt;li&gt;5&lt;/li&gt;
-                            &lt;li&gt;6&lt;/li&gt;
-                            &lt;li&gt;7&lt;/li&gt;
-                            &lt;li class="point"&gt;···&lt;/li&gt;
-                            &lt;li&gt;28&lt;/li&gt;
-                    &lt;/ul&gt;
-                    &lt;div class="next"&gt;&lt;i class="icon-arrow-right"&gt;&lt;/i&gt;&lt;/div&gt;
-            &lt;/div&gt;
+
                             </code>
                         </pre>
                     </div>
@@ -1078,194 +1183,6 @@
 
                 </div>
             </div><!-- /#progressBar -->
-
-            <div id="tableInfo">
-                <h2 class="title">表格 <span>Table</span></h2>
-                <p class="explain">
-                    为&lt;table&gt;标签添加不同的类，呈现不同的样式，
-                </p>
-                <div class="box">
-                    <div class="box-demo">
-                        <p class="instance">实例 :</p>
-                        <div class="demo-main">
-                            <table class="table">
-                                <thead>
-                                <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>User Name</th>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>one</td>
-                                    <td>two</td>
-                                    <td>three</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>one</td>
-                                    <td>two</td>
-                                    <td>three</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>one</td>
-                                    <td>two</td>
-                                    <td>three</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="box-code">
-                        <pre>
-                            <code class="xml">
-            &lt;table class="table"&gt; ... &lt;/table&gt;
-            &lt;!-- 添加 .table 就有hover的效果 --&gt;
-                            </code>
-                        </pre>
-                    </div>
-
-                    <div class="box-demo">
-                        <p class="instance">实例 :</p>
-                        <div class="demo-main">
-                            <table class="table table-bottom">
-                                <thead>
-                                <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>User Name</th>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>one</td>
-                                    <td>two</td>
-                                    <td>three</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>one</td>
-                                    <td>two</td>
-                                    <td>three</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>one</td>
-                                    <td>two</td>
-                                    <td>three</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="box-code">
-                        <pre>
-                            <code class="xml">
-            &lt;table class="table table-bottom"&gt; ... &lt;/table&gt;
-            &lt;!-- 只有底边框 --&gt;
-                            </code>
-                        </pre>
-                    </div>
-
-                    <div class="box-demo">
-                        <p class="instance">实例 :</p>
-                        <div class="demo-main">
-                            <table class="table table-border">
-                                <thead>
-                                <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>User Name</th>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>one</td>
-                                    <td>two</td>
-                                    <td>three</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>one</td>
-                                    <td>two</td>
-                                    <td>three</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>one</td>
-                                    <td>two</td>
-                                    <td>three</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="box-code">
-                        <pre>
-                            <code class="xml">
-            &lt;table class="table table-border"&gt; ... &lt;/table&gt;
-            &lt;!-- 四周都有边框 --&gt;
-                            </code>
-                        </pre>
-                    </div>
-
-                    <div class="box-demo">
-                        <p class="instance">实例 :</p>
-                        <div class="demo-main">
-                            <table class="table table-border table-striped">
-                                <thead>
-                                <th>#</th>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>User Name</th>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>one</td>
-                                    <td>two</td>
-                                    <td>three</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>one</td>
-                                    <td>two</td>
-                                    <td>three</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>one</td>
-                                    <td>two</td>
-                                    <td>three</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>one</td>
-                                    <td>two</td>
-                                    <td>three</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>one</td>
-                                    <td>two</td>
-                                    <td>three</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="box-code">
-                        <pre>
-                            <code class="xml">
-            &lt;table class="table table-border table-striped"&gt; ... &lt;/table&gt;
-            &lt;!-- 隔行变色 --&gt;
-                            </code>
-                        </pre>
-                    </div>
-                </div><!-- /.box -->
-            </div><!-- /#tableInfo -->
 
             <div id="treeView">
                 <h2 class="title">树形菜单</h2>

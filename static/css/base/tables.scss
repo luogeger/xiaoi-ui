@@ -1,5 +1,5 @@
 @charset "UTF-8";
-// .table 默认有hover, head/body有边框, 四周圆角, 有底边框
+
 @mixin table(){
     width: 100%;
     thead {
@@ -18,39 +18,45 @@
           padding: 5px;
         }
         &:hover{
-          background-color: $hover-bg;
+          //background-color: $hover-bg;
+          background-color: #f5f5f5 !important;
         }
-      }
-      tr:last-child{
-        border-bottom: none;
       }
     }
 }
 
-.table{
-  border: 1px solid $border-col;
-  border-radius: $border-radius-base;
+//  variant（类型）
+//  ==================================================
+// 默认有hover, 只有底边框
+.i-table{
   @include table();
 }
 
 
-//.table{
-//  border: 1px solid $border-col;
-//  border-radius: $border-radius-base;
-  //overflow: hidden;
-//  >table{
-//    @include table();
-//  }
-//}
-
-
-
-
-
-//  隔行变色 table-striped
-
-//  全部有边框 table-border
-.table-border{
-
+//  四周有边框 table-border
+.i-table-border{
+  border: 1px solid $border-col;
+  tbody{
+    tr:last-child{
+      border: none;
+    }
+  }
 }
 
+//  全部有边框
+
+
+//  effect （效果）
+//  ==================================================
+//  隔行变色 table-striped
+.i-table-striped{
+  tbody tr:nth-child(odd){
+    //background-color: $content-bg;
+    background-color: #f9f9f9;
+  }
+}
+
+
+
+//  size （大小）
+//  ==================================================
