@@ -502,7 +502,7 @@ function loadMainPage(ele, url, data, callback) {
 //  tab
 //  ==================================================
 +function(){
-    tabEffect($('body .i-tabs-line'), 'line-active');
+    //tabEffect($('body .i-tabs-line'), 'line-active');
     function tabEffect (dom, cls){
         var index;
         dom.each(function (index, item){
@@ -529,6 +529,33 @@ function loadMainPage(ele, url, data, callback) {
         })
     };
 
+    $('body').on('click', '.i-tabs-tab', function() {
+        // 根据父元素
+        var _index;
+        var self = this;
+        var _this = $(this);
+        var _class = _this.parent().attr('class')
+        var classActive = _class.substring(7, _class.length) +'-active';
+        var tabs = _this.parent().children('.i-tabs-tab');
+        var items = _this.parent().siblings('.i-tabs-content').children('.i-tabs-item');
+
+        // 索引同步、切换tab
+        tabs.each(function (index, item) {
+            $(item).removeClass(classActive)
+            if (item == self) {
+                _index = index;
+            }
+        })
+        _this.addClass(classActive)
+
+        // 切换 content
+        items.each(function (index, item) {
+            $(item).removeClass('show')
+            if (index == _index) {
+                $(item).addClass('show')
+            }
+        })
+    })
 }();
 
 

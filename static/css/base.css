@@ -550,10 +550,13 @@ input.disabled {
   max-width: 140px;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap; }
+  white-space: nowrap;
+  transition: .2s color; }
+  .i-tabs-group .i-tabs-tab:hover {
+    color: #44ABFD; }
   .i-tabs-group .i-tabs-tab i {
     font-size: 14px;
-    margin-right: 10px; }
+    margin-right: 5px; }
 .i-tabs-group .i-tabs-line:before, .i-tabs-group .i-tabs-line:after {
   content: " ";
   display: table; }
@@ -563,12 +566,53 @@ input.disabled {
   float: left;
   border-bottom: 2px solid #DDDEE1;
   line-height: 28px; }
-  .i-tabs-group .i-tabs-line .i-tabs-tab:hover {
-    color: #44ABFD; }
+.i-tabs-group .i-tabs-btn .i-tabs-tab {
+  line-height: 30px; }
+.i-tabs-group .i-tabs-thin:before, .i-tabs-group .i-tabs-thin:after {
+  content: " ";
+  display: table; }
+.i-tabs-group .i-tabs-thin:after {
+  clear: both; }
+.i-tabs-group .i-tabs-thin .i-tabs-tab {
+  float: left;
+  line-height: 28px;
+  border-bottom: 1px solid #1D98F9;
+  border-radius: 4px 4px 0 0; }
+.i-tabs-group .i-tabs-full {
+  border-bottom: 1px solid #DDDEE1;
+  display: inline-block; }
+  .i-tabs-group .i-tabs-full:before, .i-tabs-group .i-tabs-full:after {
+    content: " ";
+    display: table; }
+  .i-tabs-group .i-tabs-full:after {
+    clear: both; }
+  .i-tabs-group .i-tabs-full .i-tabs-tab {
+    float: left;
+    margin-left: 5px;
+    line-height: 28px;
+    border: 1px solid #DDDEE1;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    background-color: #f3f3f3; }
+  .i-tabs-group .i-tabs-full .i-tabs-tab:last-child {
+    margin-right: 5px; }
 .i-tabs-group .line-active {
-  transition: .2s;
   color: #0283E8 !important;
   border-color: #0283E8 !important; }
+.i-tabs-group .btn-active {
+  background-color: #0283E8 !important;
+  border-radius: 4px;
+  color: #fff !important; }
+.i-tabs-group .thin-active {
+  color: #0283E8 !important;
+  padding: 0 9px;
+  line-height: 27px !important;
+  border: 1px solid #0283E8;
+  border-bottom: none !important; }
+.i-tabs-group .full-active {
+  color: #fff !important;
+  border-color: #0283E8 !important;
+  background-color: #44ABFD !important; }
 .i-tabs-group .i-tabs-content .i-tabs-item {
   width: 100%;
   padding: 10px;

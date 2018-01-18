@@ -4,6 +4,7 @@
   //padding: 5px;
   //border: 1px solid $border-col;
   //border-radius: 4px;
+
   .i-tabs-tab{
     padding: 0 $padding-hor-sm;
     height: $height-sm;
@@ -14,15 +15,17 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    transition: .2s color;
+    &:hover{
+      color: $theme-hover;
+    }
     i{
       font-size: 14px;
-      margin-right: 10px;
+      margin-right: 5px;
     }
   }// .i-tabs-tab
 
-
-
-  // tabs- *
+  // tabs
   .i-tabs-line,
   .i-tabs-btn,
   .i-tabs-thin,
@@ -36,58 +39,82 @@
       float: left;
       border-bottom: 2px solid $border-col;
       line-height: $height-sm - 2;
-      &:hover{
-        color: $theme-hover;
-      }
     }
   }
 
   .i-tabs-btn{
-
+    .i-tabs-tab{
+      line-height: $height-sm;
+    }
   }
 
   .i-tabs-thin{
+    @include clearfix();
+    .i-tabs-tab{
+      float: left;
+      line-height: $height-sm - 2;
+      border-bottom: 1px solid $theme-normal;
+      border-radius: 4px 4px 0 0;
+    }
 
   }
 
   .i-tabs-full{
-
+    border-bottom: 1px solid $border-col;
+    display: inline-block;
+    @include clearfix();
+    .i-tabs-tab{
+      float: left;
+      margin-left: 5px;
+      line-height: $height-sm - 2;
+      border: 1px solid $border-col;
+      border-bottom: none;
+      border-radius: 4px 4px 0 0;
+      background-color: $hover-bg;
+    }
+    .i-tabs-tab:last-child{
+      margin-right: 5px;
+    }
   }
-
-
-
 
 
   // active
   .line-active{
-    transition: .2s;
     color: $theme-click !important;
     border-color: $theme-click !important;
   }
 
   .btn-active{
-
+    background-color: $theme-click !important;
+    border-radius: 4px;
+    color: #fff !important;
   }
 
   .thin-active{
-
+    color: $theme-click  !important;
+    padding: 0 $padding-hor-sm - 1;
+    line-height: $height-sm - 3 !important;
+    border: 1px solid $theme-click;
+    border-bottom: none !important;
   }
 
   .full-active{
-
+    color: #fff !important;
+    border-color: $theme-click !important;
+    background-color: $theme-hover !important;
   }
 
-
+  // content
   .i-tabs-content{
     .i-tabs-item{
       width: 100%;
       padding: 10px;
-      //background-color: #fff;
       display: none;
     }
 
 
   }// .i-tabs-content
+
 }// .group
 
 
