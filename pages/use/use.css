@@ -149,6 +149,10 @@
           margin: 30px 0; }
         .content-item .info .info-content #button .demo-main ul li button:first-child {
           margin-top: 0; }
+      .content-item .info .info-content #tabControl .i-tabs-group {
+        padding: 15px;
+        border: 1px solid #DDDEE1;
+        border-radius: 4px; }
   .content-item .footer {
     background-color: #EAEAEA;
     color: #222222;

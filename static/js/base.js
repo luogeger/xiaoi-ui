@@ -443,7 +443,6 @@ function loadMainPage(ele, url, data, callback) {
 
 
 
-
 //  下拉框
 //  ==================================================
 +function () {
@@ -496,6 +495,40 @@ function loadMainPage(ele, url, data, callback) {
     $(document).click(function (){
         paiTa ()
     })
+}();
+
+
+
+//  tab
+//  ==================================================
++function(){
+    tabEffect($('body .i-tabs-line'), 'line-active');
+    function tabEffect (dom, cls){
+        var index;
+        dom.each(function (index, item){
+            $(item).children().each(function (_index, _item){
+                $(_item).click(function (){
+                    index = _index;
+                    var _this = $(this)
+                    _this.siblings('.i-tabs-tab').each(function (i, v){ $(v).removeClass(cls); });// 排他
+                    _this.addClass(cls);
+
+                    // 同步切换内容
+                    contentShow (_this, index)
+                    function contentShow (_this, _index) {
+                        var items = _this.parent().siblings('.i-tabs-content').children('.i-tabs-item');
+                        items.each(function (index, item) {
+                            $(item).removeClass('show')
+                            if (index == _index) {
+                                $(item).addClass('show')
+                            }
+                        })
+                    }
+                })
+            })
+        })
+    };
+
 }();
 
 

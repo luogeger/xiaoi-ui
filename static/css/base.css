@@ -541,6 +541,161 @@ input.disabled {
     .table tbody tr:last-child {
       border-bottom: none; }
 
+.i-tabs-group .i-tabs-tab {
+  padding: 0 10px;
+  height: 30px;
+  color: #495060;
+  cursor: pointer;
+  display: inline-block;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+  .i-tabs-group .i-tabs-tab i {
+    font-size: 14px;
+    margin-right: 10px; }
+.i-tabs-group .i-tabs-line:before, .i-tabs-group .i-tabs-line:after {
+  content: " ";
+  display: table; }
+.i-tabs-group .i-tabs-line:after {
+  clear: both; }
+.i-tabs-group .i-tabs-line .i-tabs-tab {
+  float: left;
+  border-bottom: 2px solid #DDDEE1;
+  line-height: 28px; }
+  .i-tabs-group .i-tabs-line .i-tabs-tab:hover {
+    color: #44ABFD; }
+.i-tabs-group .line-active {
+  transition: .2s;
+  color: #0283E8 !important;
+  border-color: #0283E8 !important; }
+.i-tabs-group .i-tabs-content .i-tabs-item {
+  width: 100%;
+  padding: 10px;
+  display: none; }
+
+/* tab*/
+.tab-item {
+  padding: 0 10px;
+  line-height: 30px;
+  color: #222222;
+  cursor: pointer;
+  display: inline-block;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+  .tab-item i {
+    font-size: 14px; }
+
+.tab-crumb,
+.tab-underline,
+.tab-button,
+.tab-border,
+.tab-btn-border {
+  font-size: 0; }
+
+.tab-crumb .tab-item i {
+  margin-right: 5px; }
+.tab-crumb > i {
+  color: #999999;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 30px;
+  position: relative;
+  top: 1px; }
+
+.tab-underline .tab-item {
+  border: none;
+  border-bottom: 2px solid #E2E4E5; }
+  .tab-underline .tab-item:hover {
+    color: #1D98F9;
+    border-bottom-color: #1D98F9; }
+
+.tab-button .tab-item {
+  padding: 0 14px;
+  border-radius: 4px; }
+  .tab-button .tab-item:hover {
+    color: #ffffff;
+    background-color: #1D98F9; }
+    .tab-button .tab-item:hover i {
+      color: #ffffff; }
+.tab-button i,
+.tab-button .tab-item:not(:last-child) {
+  margin-right: 5px; }
+
+.tab-border {
+  display: inline-block; }
+  .tab-border .tab-item {
+    padding: 0 20px;
+    height: 30px;
+    line-height: 30px;
+    color: #999999;
+    background-color: #ffffff;
+    border-bottom: 1px solid #1D98F9;
+    border-radius: 4px 4px 0 0; }
+    .tab-border .tab-item i {
+      color: #CCCCCC;
+      position: relative;
+      left: -7px;
+      top: 1px; }
+    .tab-border .tab-item:hover {
+      color: #222222; }
+      .tab-border .tab-item:hover i {
+        color: #222222; }
+
+.tab-btn-border {
+  border-bottom: 1px solid #E2E4E5;
+  padding: 0 10px;
+  display: inline-block;
+  margin-left: -10px; }
+  .tab-btn-border .tab-item {
+    padding: 0 20px;
+    border: 1px solid #E2E4E5;
+    border-bottom: none;
+    border-radius: 4px 4px 0px 0px;
+    background-color: #F6F8F9; }
+    .tab-btn-border .tab-item:hover {
+      background-color: #1D98F9;
+      color: #ffffff;
+      border-color: #44ABFD; }
+      .tab-btn-border .tab-item:hover i {
+        color: #ffffff; }
+  .tab-btn-border .tab-item:not(:first-child) {
+    margin-left: 5px; }
+
+/* 点击 tab, 需要添加的类 */
+.contra-crumb {
+  color: #1D98F9; }
+  .contra-crumb i {
+    color: #1D98F9; }
+
+.contra-underline {
+  color: #1D98F9 !important;
+  border-bottom-color: #1D98F9 !important; }
+
+.contra-button {
+  background-color: #1D98F9;
+  color: #ffffff; }
+  .contra-button i {
+    color: #ffffff; }
+
+.contra-border {
+  color: #222222 !important;
+  padding: 0 19px !important;
+  line-height: 28px !important;
+  border: 1px solid #1D98F9;
+  border-bottom: none !important; }
+  .contra-border i {
+    color: #222222 !important; }
+
+.contra-btn-border {
+  background-color: #1D98F9 !important;
+  color: #ffffff;
+  border-color: #44ABFD !important; }
+  .contra-btn-border i {
+    color: #ffffff; }
+
 .i-page-line {
   display: inline-block;
   vertical-align: middle;

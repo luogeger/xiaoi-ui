@@ -1,0 +1,273 @@
+@charset "utf-8";
+
+.i-tabs-group{
+  //padding: 5px;
+  //border: 1px solid $border-col;
+  //border-radius: 4px;
+  .i-tabs-tab{
+    padding: 0 $padding-hor-sm;
+    height: $height-sm;
+    color: $text-default;
+    cursor: pointer;
+    display: inline-block;
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    i{
+      font-size: 14px;
+      margin-right: 10px;
+    }
+  }// .i-tabs-tab
+
+
+
+  // tabs- *
+  .i-tabs-line,
+  .i-tabs-btn,
+  .i-tabs-thin,
+  .i-tabs-full{
+    //display: inline-block;
+  }
+
+  .i-tabs-line{
+    @include clearfix();
+    .i-tabs-tab{
+      float: left;
+      border-bottom: 2px solid $border-col;
+      line-height: $height-sm - 2;
+      &:hover{
+        color: $theme-hover;
+      }
+    }
+  }
+
+  .i-tabs-btn{
+
+  }
+
+  .i-tabs-thin{
+
+  }
+
+  .i-tabs-full{
+
+  }
+
+
+
+
+
+  // active
+  .line-active{
+    transition: .2s;
+    color: $theme-click !important;
+    border-color: $theme-click !important;
+  }
+
+  .btn-active{
+
+  }
+
+  .thin-active{
+
+  }
+
+  .full-active{
+
+  }
+
+
+  .i-tabs-content{
+    .i-tabs-item{
+      width: 100%;
+      padding: 10px;
+      //background-color: #fff;
+      display: none;
+    }
+
+
+  }// .i-tabs-content
+}// .group
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* tab*/
+.tab-item{
+  padding: 0 $paddingH-10;
+  line-height: $height-sm;
+  color: $text-normal;
+  cursor: pointer;
+  display: inline-block;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  i{
+    font-size: 14px;
+  }
+}
+
+.tab-crumb,
+.tab-underline,
+.tab-button,
+.tab-border,
+.tab-btn-border{
+  font-size: 0;
+}
+
+.tab-crumb{
+  .tab-item{
+    i{
+      margin-right: 5px;
+    }
+  }
+  >i{
+    color: $six9;
+    display: inline-block;
+    vertical-align: top;
+    line-height: $height-sm;
+    position: relative;
+    top: 1px;
+  }
+}
+
+.tab-underline{
+  .tab-item{
+    border: none;
+    border-bottom: 2px solid $hybrid;
+    &:hover{
+      color: $theme-normal;
+      border-bottom-color: $theme-normal;
+    }
+  }
+
+}
+
+.tab-button{
+  .tab-item{
+    padding: 0 14px;
+    border-radius: 4px;
+    &:hover{
+      color: $sixF;
+      background-color: $theme-normal;
+      i{
+        color: $sixF;
+      }
+    }
+  }
+
+  i,
+  .tab-item:not(:last-child){
+    margin-right: 5px;
+  }
+}
+
+.tab-border{
+  display: inline-block;
+  .tab-item{
+    padding: 0 $paddingH-20;
+    height: $height-sm;
+    line-height: $height-sm;
+    color: $six9;
+    background-color: $sixF;
+    border-bottom: 1px solid $theme-normal;
+    border-radius: 4px 4px 0 0;
+    i{
+      color: $sixC;
+      position: relative;
+      left: -7px;
+      top: 1px;
+    }
+
+    &:hover{
+      color: $text-normal;
+      i{
+        color: $text-normal;
+      }
+    }
+  }
+}
+
+.tab-btn-border{
+  $padding: 10px;
+  border-bottom: 1px solid $hybrid;
+  padding: 0 $padding;
+  display: inline-block;
+  margin-left: -$padding;
+  .tab-item{
+    padding: 0 $paddingH-20;
+    border: 1px solid $hybrid;
+    border-bottom: none;
+    border-radius: 4px 4px 0px 0px;
+    background-color: $content-bg;
+    &:hover{
+      background-color: $theme-normal;
+      color: $sixF;
+      border-color: $theme-hover;
+      i{
+        color: $sixF;
+      }
+    }
+  }
+  .tab-item:not(:first-child){
+    margin-left: 5px;
+  }
+}
+
+
+/* 点击 tab, 需要添加的类 */
+.contra-crumb{
+  color: $theme-normal;
+  i{
+    color: $theme-normal;
+  }
+}
+
+.contra-underline{
+  color: $theme-normal !important;
+  border-bottom-color: $theme-normal !important;
+}
+
+.contra-button{
+  background-color: $theme-normal;
+  color: $sixF;
+  i{
+    color: $sixF;
+  }
+}
+
+.contra-border{
+  color: $text-normal !important;
+  padding: 0 $paddingH-20 - 1 !important;
+  line-height: $height-sm - 2 !important;
+  border: 1px solid $theme-normal;
+  border-bottom: none !important;
+
+  i{
+    color: $text-normal !important;
+  }
+}
+
+.contra-btn-border{
+  background-color: $theme-normal !important;
+  color: $sixF;
+  border-color: $theme-hover !important;
+  i{
+    color: $sixF;
+  }
+}
