@@ -152,7 +152,7 @@ button.toast-close-button {
 }
 .toast-success {
  // background-color: #51a351;
-  background-color: #0ac9af;
+  background-color: #52C41A;
 }
 .toast-error {
   //background-color: #bd362f;
@@ -160,7 +160,7 @@ button.toast-close-button {
 }
 .toast-info {
   //background-color: #2f96b4;
-  background-color: #00c0ef;
+  background-color: #1890FF;
 }
 .toast-warning {
   background-color: #f89406;
@@ -201,4 +201,52 @@ button.toast-close-button {
     padding: 15px 15px 15px 50px;
     width: 25em;
   }
+}
+
+
+
+// alert
+.i-alert-success,
+.i-alert-error,
+.i-alert-warning,
+.i-alert-info{
+  border: 1px solid $hybrid;
+  border-radius: 4px;
+  padding: 10px;
+  width: 80%;
+}
+
+.i-alert-info{
+  span{
+    color: #14a6ef;
+  }
+  border-color: #caebfb;
+  background-color: #e1f4fd;
+  //background-color: rgba(24, 144, 155, .5);
+}
+
+.i-alert-success{
+  span{
+    color: #5eb95e;
+
+  }
+  border-color: #c9e7c9;
+  background-color: #e7f5e7;
+  //background-color: rgba(82, 196, 26, .5);
+}
+
+.i-alert-error{
+  span{
+    color: #dd514c;
+  }
+  border-color: #f5cecd;
+  background-color: #fae5e4;
+}
+
+.i-alert-warning{
+  span{
+    color: #f37b1d;
+  }
+  border-color: #fbd0ae;
+  background-color: #feebdd;
 }

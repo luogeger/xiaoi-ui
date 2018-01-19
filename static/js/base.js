@@ -565,6 +565,32 @@ function loadMainPage(ele, url, data, callback) {
 
 }();
 
+
+
+//  进度条
+//  ==================================================
++function () {
+    console.log('progress')
+    var step = 0.1;
+    var timer = setInterval(function () {
+        var width;
+        step += 0.1;
+        width = step +'%';
+        $('#pro-bar').css('width', width)
+        $('#pro-text-num').text(step.toFixed(1))
+        if (step >= 2) {
+            clearInterval(timer)
+            $('#pro-bar').css('width', '100%')
+            $('#pro-text-num').text(100)
+        }
+        if (step >= 93) {
+            clearInterval(timer)
+        }
+    }, 200);
+}();
+
+
+
 //  导航 - navigate
 //  ==================================================
 +function () {

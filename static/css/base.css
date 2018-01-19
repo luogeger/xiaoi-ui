@@ -176,7 +176,7 @@ samp {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: "Helvetica Neue For Number", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.2;
   color: #000; }
 
@@ -251,8 +251,8 @@ button,
     line-height: 0; }
 
 .btn-md {
-  padding: 7px 12px;
-  font-size: 18px;
+  padding: 8px 12px;
+  font-size: 16px;
   line-height: 1;
   border-radius: 4px; }
   .btn-md i, .btn-md .fa {
@@ -957,6 +957,49 @@ input.disabled {
     animation-fill-mode: both;
     display: inline-block; }
 
+.i-progress {
+  padding-right: 50px;
+  position: relative; }
+  .i-progress .i-pro-text {
+    width: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center; }
+  .i-progress .i-pro-wrap {
+    width: 100%;
+    height: 12px;
+    background-color: #E1F4FD;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative; }
+  .i-progress #iProBar {
+    height: 100%;
+    border-radius: 20px;
+    background-color: #1890ff;
+    position: relative;
+    overflow: hidden;
+    transition: 1s; }
+  .i-progress #iProBar:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 20px;
+    background-size: 50px 50px;
+    background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+    animation: autoMove  2s  infinite linear; }
+@keyframes autoMove {
+  0% {
+    background-position: 0 0; }
+  100% {
+    background-position: 50px 50px; } }
 #nav-head,
 #nav-sidle,
 #nav-content {
@@ -1259,13 +1302,13 @@ button.toast-close-button {
   background-color: #030303; }
 
 .toast-success {
-  background-color: #0ac9af; }
+  background-color: #52C41A; }
 
 .toast-error {
   background-color: #dd4b39; }
 
 .toast-info {
-  background-color: #00c0ef; }
+  background-color: #1890FF; }
 
 .toast-warning {
   background-color: #f89406; }
@@ -1301,6 +1344,39 @@ button.toast-close-button {
   #toast-container > div {
     padding: 15px 15px 15px 50px;
     width: 25em; } }
+.i-alert-success,
+.i-alert-error,
+.i-alert-warning,
+.i-alert-info {
+  border: 1px solid #E2E4E5;
+  border-radius: 4px;
+  padding: 10px;
+  width: 80%; }
+
+.i-alert-info {
+  border-color: #caebfb;
+  background-color: #e1f4fd; }
+  .i-alert-info span {
+    color: #14a6ef; }
+
+.i-alert-success {
+  border-color: #c9e7c9;
+  background-color: #e7f5e7; }
+  .i-alert-success span {
+    color: #5eb95e; }
+
+.i-alert-error {
+  border-color: #f5cecd;
+  background-color: #fae5e4; }
+  .i-alert-error span {
+    color: #dd514c; }
+
+.i-alert-warning {
+  border-color: #fbd0ae;
+  background-color: #feebdd; }
+  .i-alert-warning span {
+    color: #f37b1d; }
+
 #iconPic ul li i {
   cursor: pointer;
   transition: .2s; }

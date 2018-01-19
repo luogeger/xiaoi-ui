@@ -1,0 +1,73 @@
+.i-progress{
+  $height: 12px;
+  padding-right: 50px;
+  position: relative;
+
+  .i-pro-text{
+    width: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: $height;
+    line-height: $height;
+    text-align: center;
+  }
+
+  .i-pro-wrap{
+    width: 100%;
+    height: $height;
+    background-color: #E1F4FD;
+    border-radius: $height;
+    overflow: hidden;
+    position: relative;
+  }
+
+  #iProBar{
+    height: 100%;
+    border-radius: 20px;
+    //background-color: rgb(29, 152, 249);
+    background-color: rgb(24, 144, 255);
+    position: relative;
+    overflow: hidden;
+    transition: 1s;
+
+  }
+
+  #iProBar:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 20px;
+    background-size: 50px 50px;
+    background-image: linear-gradient(
+                    -45deg,
+                    rgba(255, 255, 255, .2) 25%,
+                    transparent 25%,
+                    transparent 50%,
+                    rgba(255, 255, 255, .2) 50%,
+                    rgba(255, 255, 255, .2) 75%,
+                    transparent 75%,
+                    transparent
+    );
+    animation: autoMove  2s  infinite linear;
+  }
+
+  @keyframes autoMove{
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 50px 50px;
+    }
+  }
+}// .progress
+
+
+
+
+

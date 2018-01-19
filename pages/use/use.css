@@ -153,6 +153,20 @@
         padding: 15px;
         border: 1px solid #DDDEE1;
         border-radius: 4px; }
+      .content-item .info .info-content #toastr div {
+        color: #ffffff !important; }
+      .content-item .info .info-content #toastr div:nth-child(1) {
+        background-color: #1890FF;
+        border-color: #1890FF; }
+      .content-item .info .info-content #toastr div:nth-child(2) {
+        background-color: #52C41A;
+        border-color: #52C41A; }
+      .content-item .info .info-content #toastr div:nth-child(3) {
+        background-color: #f89406;
+        border-color: #f89406; }
+      .content-item .info .info-content #toastr div:nth-child(4) {
+        background-color: #dd4b39;
+        border-color: #dd4b39; }
   .content-item .footer {
     background-color: #EAEAEA;
     color: #222222;

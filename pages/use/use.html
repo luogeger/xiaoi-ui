@@ -53,12 +53,11 @@
                 <li class="crumb"><a href="javascript:;">面包屑导航 <span>BreadCrumb</span></a></li>
                 <li class="tableInfo"><a href="javascript:;">表格 <span>Table</span></a></li>
                 <li class="paging"><a href="javascript:;">分页 <span>Pagination</span></a></li>
-                <li class="progressBar"><a href="javascript:;">进度条 <span>NProgress</span></a></li>
+                <li class="alert"><a href="javascript:;">警告框 <span>Alert</span></a></li>
+                <li class="steps"><a href="javascript:;">步骤条 <span>Steps</span></a></li>
+                <li class="progressBar"><a href="javascript:;">进度条 <span>Progress</span></a></li>
                 <li class="treeView"><a href="javascript:;">树形菜单 <span>TreeView</span></a></li>
                 <li class="date"><a href="javascript:;">日期组件 <span>DatePicker</span></a></li>
-                <li class="alert"><a href="javascript:;">警告框 <span>Alert</span></a></li>
-                <li class="badge"><a href="javascript:;">标签徽章 <span>Badge</span></a></li>
-                <li class="link"><a href="javascript:;">链接 <span>Link</span></a></li>
 
                 <li class="slider"><a href="javascript:;">图片轮播 <span>Slider</span></a></li>
                 <li class="gallery"><a href="javascript:;">图片画廊 <span>Gallery</span></a></li>
@@ -66,6 +65,8 @@
                 <li class="navigate"><a href="javascript:;">导航 <span>Navigate</span></a></li>
                 <li class="scroll"><a href="javascript:;">滚动条 <span>ScrollBar</span></a></li>
                 <li class="chart"><a href="javascript:;">图表 <span>Chart</span></a></li>
+                <li class="badge"><a href="javascript:;">标签徽章 <span>Badge</span></a></li>
+                <li class="link"><a href="javascript:;">链接 <span>Link</span></a></li>
             </ul>
         </div><!-- /.info-sidle -->
 
@@ -1070,31 +1071,94 @@
                 </div>
             </div><!-- /#paging -->
 
-            <div id="progressBar">
-                <h2 class="title">进度条</h2>
+            <div id="alert">
+                <h2 class="title">警告框 <span>Alert</span></h2>
                 <p class="explain"></p>
                 <div class="box">
+
                     <div class="box-demo">
                         <p class="instance">实例 :</p>
                         <div class="demo-main">
-                            <div class="progress-bar">
-                                <div class="bar">
-                                    <span class="percent"> 50% </span>
-                                </div>
+                            <div id="toastr">
+                                <div class="btn btn-md btn-border" onclick="toastr.info('这是一条信息')">信息</div>
+                                <div class="btn btn-md btn-border" onclick="toastr.success('表白成功')">成功</div>
+                                <div class="btn btn-md btn-border" onclick="toastr.warning('警告你啊，下次注意点！')">警告</div>
+                                <div class="btn btn-md btn-border" onclick="toastr.error('你都干了些啥，弄错了')">错误</div>
                             </div>
                         </div>
                     </div>
                     <div class="box-code">
                         <pre>
                             <code class="xml">
-            &lt;div class="progress-bar"&gt;
-                    &lt;div class="bar"&gt;
-                            &lt;span class="percent"&gt; 50% &lt;/span&gt;
-                    &lt;/div&gt;
+            &lt;div class="btn btn-md btn-border" onclick="toastr.info('这是一条信息')"&gt;信息&lt;/div&gt;
+            &lt;div class="btn btn-md btn-border" onclick="toastr.success('表白成功')"&gt;成功&lt;/div&gt;
+            &lt;div class="btn btn-md btn-border" onclick="toastr.warning('警告你啊，下次注意点！')"&gt;警告&lt;/div&gt;
+            &lt;div class="btn btn-md btn-border" onclick="toastr.error('你都干了些啥，弄错了')"&gt;错误&lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <div class="i-alert-info">
+                                <span>Heads up! This alert needs your attention, but it's not super important</span>
+                            </div>
+                            <br>
+                            <div class="i-alert-success">
+                                <span>Well done! You successfully read this important alert message</span>
+                            </div>
+                            <br>
+                            <div class="i-alert-warning">
+                                <span>Warning! Better check yourself, you're not looking too good</span>
+                            </div>
+                            <br>
+                            <div class="i-alert-error">
+                                <span>Oh snap! Change a few things up and try submitting again.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;div class="i-alert-info"&gt;
+                    &lt;span&gt;Heads up! This alert needs your attention, but it's not super important&lt;/span&gt;
+            &lt;/div&gt;
+
+            &lt;div class="i-alert-success"&gt;
+                    &lt;span&gt;Well done! You successfully read this important alert message&lt;/span&gt;
+            &lt;/div&gt;
+
+            &lt;div class="i-alert-warning"&gt;
+                    &lt;span&gt;Warning! Better check yourself, you're not looking too good&lt;/span&gt;
+            &lt;/div&gt;
+
+            &lt;div class="i-alert-error"&gt;
+                    &lt;span&gt;Oh snap! Change a few things up and try submitting again.&lt;/span&gt;
             &lt;/div&gt;
                             </code>
                         </pre>
                     </div>
+                </div>
+            </div><!-- /#alert -->
+
+            <div id="steps">
+                <h2 class="title">步骤条</h2>
+                <p class="explain"></p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+                            </code>
+                        </pre>
+                    </div>
+
+
 
                     <div class="box-demo">
                         <p class="instance">实例 :</p>
@@ -1179,7 +1243,33 @@
                             </code>
                         </pre>
                     </div>
+                </div>
+            </div><!-- /#steps -->
 
+            <div id="progressBar">
+                <h2 class="title">进度条</h2>
+                <p class="explain"></p>
+                <div class="box">
+
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <div class="i-progress">
+                                <div class="i-pro-wrap"><div id="iProBar" style="width: 10.1%;"></div></div>
+                                <div class="i-pro-text"><span id="iProNum">10.1</span> %</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;div class="i-progress"&gt;
+                    &lt;div class="i-pro-wrap"&gt;&lt;div id="iProBar" style="width: 10.1%;"&gt;&lt;/div&gt;&lt;/div&gt;
+                    &lt;div class="i-pro-text"&gt;&lt;span id="iProNum"&gt;10.1&lt;/span&gt; %&lt;/div&gt;
+            &lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
 
                 </div>
             </div><!-- /#progressBar -->
@@ -1512,115 +1602,6 @@
                 </div>
             </div><!-- /#date -->
 
-            <div id="alert">
-                <h2 class="title">警告框</h2>
-                <p class="explain"></p>
-                <div class="box">
-                    <div class="box-demo">
-                        <p class="instance">实例 :</p>
-                        <div class="demo-main">
-                            <div class="alert-success">
-                                <span>Well done! You successfully read this important alert message</span>
-                            </div>
-                            <br>
-                            <div class="alert-error">
-                                <span>Oh snap! Change a few things up and try submitting again.</span>
-                            </div>
-                            <br>
-                            <div class="alert-warn">
-                                <span>Warning! Better check yourself, you're not looking too good</span>
-                            </div>
-                            <br>
-                            <div class="alert-info">
-                                <span>Heads up! This alert needs your attention, but it's not super important</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box-code">
-                        <pre>
-                            <code class="xml">
-            &lt;div class="alert-success"&gt;
-                    &lt;span&gt;Well done! You successfully read this important alert message&lt;/span&gt;
-            &lt;/div&gt;
-
-            &lt;div class="alert-error"&gt;
-                    &lt;span&gt;Oh snap! Change a few things up and try submitting again.&lt;/span&gt;
-            &lt;/div&gt;
-
-            &lt;div class="alert-warn"&gt;
-                    &lt;span&gt;Warning! Better check yourself, you're not looking too good&lt;/span&gt;
-            &lt;/div&gt;
-
-            &lt;div class="alert-info"&gt;
-                    &lt;span&gt;Heads up! This alert needs your attention, but it's not super important&lt;/span&gt;
-            &lt;/div&gt;
-                                        </code>
-                        </pre>
-                    </div>
-                </div>
-            </div><!-- /#alert -->
-
-            <div id="badge">
-                <h2 class="title">标签徽章</h2>
-                <p class="explain"></p>
-                <div class="box">
-                    <div class="box-demo">
-                        <p class="instance">实例 :</p>
-                        <div class="demo-main clearfix">
-                            <div class="pull-left" style="margin-right: 300px;">
-                                <p style="padding: 5px;">标签</p>
-                                <div class="i-label-info">1</div>
-                                <div class="i-label-success">1</div>
-                                <div class="i-label-warn">1</div>
-                                <div class="i-label-error">1</div>
-                                <div class="i-label-default">1</div>
-                            </div>
-                            <div class="pull-left">
-                                <p style="padding: 5px;">徽章</p>
-                                <div class="i-badge-info">3</div>
-                                <div class="i-badge-success">3</div>
-                                <div class="i-badge-warn">3</div>
-                                <div class="i-badge-error">3</div>
-                                <div class="i-badge-default">3</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box-code">
-                        <pre>
-                            <code class="xml">
-            &lt;div class="i-label-info"&gt;1&lt;/div&gt;
-            &lt;div class="i-label-success"&gt;1&lt;/div&gt;
-            &lt;div class="i-label-warn"&gt;1&lt;/div&gt;
-            &lt;div class="i-label-error"&gt;1&lt;/div&gt;
-            &lt;div class="i-label-default"&gt;1&lt;/div&gt;
-
-            &lt;div class="i-badge-info"&gt;3&lt;/div&gt;
-            &lt;div class="i-badge-success"&gt;3&lt;/div&gt;
-            &lt;div class="i-badge-warn"&gt;3&lt;/div&gt;
-            &lt;div class="i-badge-error"&gt;3&lt;/div&gt;
-            &lt;div class="i-badge-default"&gt;3&lt;/div&gt;
-                            </code>
-                        </pre>
-                    </div>
-                </div>
-            </div><!-- /#badge -->
-
-            <div id="link">
-                <h2 class="title">链接</h2>
-                <p class="explain"></p>
-                <div class="box">
-                    <div class="box-demo">
-                        <p class="instance">实例 :</p>
-                        <div class="demo-main">
-
-                        </div>
-                    </div>
-                    <div class="box-code">
-
-                    </div>
-                </div>
-            </div><!-- /#link -->
-
 
 
 
@@ -1828,25 +1809,23 @@
             </div><!-- /#navigate -->
 
             <div id="scroll">
-                <h2 class="title">滚动条</h2>
+                <h2 class="title">滚动条 <span>Scroll</span></h2>
                 <p class="explain"></p>
                 <div class="box">
                     <div class="box-demo">
                         <p class="instance">实例 :</p>
                         <div class="demo-main">
-                            <!--<div class="img-square">-->
-                                <!--<img src="static/images/scroll.png" style="width: 100%;" alt="scroll">-->
-                            <!--</div>-->
+                            <h5> <i class="fa fa-arrow-circle-left"></i> ······ 左边滚动条样式</h5>
                         </div>
                     </div>
                     <div class="box-code">
                         <pre>
                             <code class="jQuery">
-            $("#iconPic").slimScroll({
+            $(".info-sidle").slimScroll({
                 height: "350px",
                 width: "100%",
                 size: '10px'
-            });
+        });
                             </code>
                         </pre>
                     </div>
@@ -1868,6 +1847,67 @@
                     </div>
                 </div>
             </div><!-- /#chart -->
+
+            <div id="badge">
+                <h2 class="title">标签徽章</h2>
+                <p class="explain"></p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main clearfix">
+                            <div class="pull-left" style="margin-right: 300px;">
+                                <p style="padding: 5px;">标签</p>
+                                <div class="i-label-info">1</div>
+                                <div class="i-label-success">1</div>
+                                <div class="i-label-warn">1</div>
+                                <div class="i-label-error">1</div>
+                                <div class="i-label-default">1</div>
+                            </div>
+                            <div class="pull-left">
+                                <p style="padding: 5px;">徽章</p>
+                                <div class="i-badge-info">3</div>
+                                <div class="i-badge-success">3</div>
+                                <div class="i-badge-warn">3</div>
+                                <div class="i-badge-error">3</div>
+                                <div class="i-badge-default">3</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+            &lt;div class="i-label-info"&gt;1&lt;/div&gt;
+            &lt;div class="i-label-success"&gt;1&lt;/div&gt;
+            &lt;div class="i-label-warn"&gt;1&lt;/div&gt;
+            &lt;div class="i-label-error"&gt;1&lt;/div&gt;
+            &lt;div class="i-label-default"&gt;1&lt;/div&gt;
+
+            &lt;div class="i-badge-info"&gt;3&lt;/div&gt;
+            &lt;div class="i-badge-success"&gt;3&lt;/div&gt;
+            &lt;div class="i-badge-warn"&gt;3&lt;/div&gt;
+            &lt;div class="i-badge-error"&gt;3&lt;/div&gt;
+            &lt;div class="i-badge-default"&gt;3&lt;/div&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div><!-- /#badge -->
+
+            <div id="link">
+                <h2 class="title">链接</h2>
+                <p class="explain"></p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+
+                        </div>
+                    </div>
+                    <div class="box-code">
+
+                    </div>
+                </div>
+            </div><!-- /#link -->
         </div><!-- /.info-content -->
     </div><!-- /.info -->
 

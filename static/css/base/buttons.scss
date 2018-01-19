@@ -23,7 +23,7 @@ button,
 }
 
 .btn-md{
-  @include button-size($padding-ver-md, $padding-hor-md, $font-size-large, $line-height-base, $border-radius-base);
+  @include button-size($padding-ver-md, $padding-hor-md, 16px, $line-height-base, $border-radius-base);
 }
 .btn-sm{
   // 默认的
