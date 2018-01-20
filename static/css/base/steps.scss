@@ -79,7 +79,7 @@ $height       : 32px;
 
         &:after{
           content: '';
-          height: 2px;
+          height: 1px;
           width: 999px;
           //background: #e8e8e8;
           border-radius: 2px;
@@ -110,11 +110,11 @@ $height       : 32px;
 
 
   .step-finished{
-    @include step-color(#fff, $title, $description, $theme-normal, $theme-normal, 500, $theme-normal);
+    @include step-color($theme-normal, $title, $description, #fff, $theme-normal, 500, $theme-normal);
   }
 
   .step-progress{
-    @include step-color($theme-normal, $title, $description, #fff, $theme-normal, 600);
+    @include step-color(#fff, $title, $description, $theme-normal, $theme-normal, 600);
   }
 
 }// .wrap

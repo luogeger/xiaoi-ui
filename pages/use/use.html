@@ -1119,69 +1119,88 @@
                 <h2 class="title">步骤条 <span>Steps</span></h2>
                 <p class="explain"></p>
                 <div class="box">
-
                     <div class="box-demo">
                         <p class="instance">实例 :</p>
                         <div class="demo-main">
-                            <div class="progress-step">
-                                <div class="step-group bgc-theme">
-                                    <div class="step">1</div>
+                            <div class="i-steps-wrap">
+                                <div class="i-steps-item step-finished">
+                                    <div class="i-steps-item-icon">1
+                                        <!--<i class="fa fa-check"></i>-->
+                                    </div>
+                                    <div class="i-steps-item-content">
+                                        <div class="i-steps-item-title">注册</div>
+                                        <div class="i-steps-item-description">请填写注册信息</div>
+                                    </div>
                                 </div>
 
-                                <div class="step-group bgc-theme ">
-                                    <div class="interval"></div>
-                                    <div class="step">2</div>
+                                <div class="i-steps-item step-progress">
+                                    <div class="i-steps-item-icon">2
+                                        <!--<i class="fa fa-check"></i>-->
+                                    </div>
+                                    <div class="i-steps-item-content">
+                                        <div class="i-steps-item-title">密码设置</div>
+                                        <div class="i-steps-item-description">请输入密码</div>
+                                    </div>
                                 </div>
 
-                                <div class="step-group ">
-                                    <div class="interval"></div>
-                                    <div class="step">3</div>
+                                <div class="i-steps-item">
+                                    <div class="i-steps-item-icon">3
+                                        <!--<i class="fa fa-check"></i>-->
+                                    </div>
+                                    <div class="i-steps-item-content">
+                                        <div class="i-steps-item-title">验证码</div>
+                                        <div class="i-steps-item-description">请输入手机验证码</div>
+                                    </div>
                                 </div>
 
-                                <div class="step-group">
-                                    <div class="interval"></div>
-                                    <div class="step">4</div>
+                                <div class="i-steps-item">
+                                    <div class="i-steps-item-icon">
+                                        <i class="fa fa-check"></i>
+                                    </div>
                                 </div>
 
-                                <div class="step-group">
-                                    <div class="interval"></div>
-                                    <div class="step">5</div>
-                                </div>
                             </div>
-                        </div>
+                    </div>
                     </div>
                     <div class="box-code">
                         <pre>
                             <code class="xml">
-            &lt;div class="progress-step"&gt;
-                    &lt;div class="step-group bgc-theme"&gt;
-                            &lt;div class="step"&gt;1&lt;/div&gt;
+            &lt;div class="i-steps-wrap"&gt;
+                    &lt;!-- .step-finished --&gt;
+                    &lt;div class="i-steps-item step-finished"&gt;
+                            &lt;div class="i-steps-item-icon"&gt;1&lt;/div&gt;
+                            &lt;div class="i-steps-item-content"&gt;
+                                    &lt;div class="i-steps-item-title"&gt;注册&lt;/div&gt;
+                                    &lt;div class="i-steps-item-description"&gt;请填写注册信息&lt;/div&gt;
+                            &lt;/div&gt;
                     &lt;/div&gt;
 
-                    &lt;div class="step-group bgc-theme "&gt;
-                            &lt;div class="interval"&gt;&lt;/div&gt;
-                            &lt;div class="step"&gt;2&lt;/div&gt;
+                    &lt;!-- .step-progress --&gt;
+                    &lt;div class="i-steps-item step-progress"&gt;
+                            &lt;div class="i-steps-item-icon"&gt;2&lt;/div&gt;
+                            &lt;div class="i-steps-item-content"&gt;
+                                    &lt;div class="i-steps-item-title"&gt;密码设置&lt;/div&gt;
+                                    &lt;div class="i-steps-item-description"&gt;请输入密码&lt;/div&gt;
+                            &lt;/div&gt;
                     &lt;/div&gt;
 
-                    &lt;div class="step-group "&gt;
-                            &lt;div class="interval"&gt;&lt;/div&gt;
-                            &lt;div class="step"&gt;3&lt;/div&gt;
+                    &lt;div class="i-steps-item"&gt;
+                            &lt;div class="i-steps-item-icon"&gt;3&lt;/div&gt;
+                            &lt;div class="i-steps-item-content"&gt;
+                                    &lt;div class="i-steps-item-title"&gt;验证码&lt;/div&gt;
+                                    &lt;div class="i-steps-item-description"&gt;请输入手机验证码&lt;/div&gt;
+                            &lt;/div&gt;
                     &lt;/div&gt;
 
-                    &lt;div class="step-group"&gt;
-                            &lt;div class="interval"&gt;&lt;/div&gt;
-                            &lt;div class="step"&gt;4&lt;/div&gt;
-                    &lt;/div&gt;
-
-                    &lt;div class="step-group"&gt;
-                            &lt;div class="interval"&gt;&lt;/div&gt;
-                            &lt;div class="step"&gt;5&lt;/div&gt;
+                    &lt;div class="i-steps-item"&gt;
+                            &lt;div class="i-steps-item-icon"&gt;
+                                    &lt;i class="fa fa-check"&gt;&lt;/i&gt;
+                            &lt;/div&gt;
                     &lt;/div&gt;
             &lt;/div&gt;
                             </code>
                         </pre>
                     </div>
-
                 </div>
             </div><!-- /#steps -->
 
@@ -1819,7 +1838,8 @@
         </div><!-- /.info-content -->
     </div><!-- /.info -->
 
-    <div class="footer">版权所有 © 上海智臻智能网络科技股份有限公司 | 2017 沪ICP备 11021460</div>
+        <div class="footer">版权所有 © 上海智臻智能网络科技股份有限公司 | 2017 沪ICP备 11021460</div>
+    </div>
 </body>
 </html>
 <script>
