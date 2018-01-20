@@ -1,5 +1,5 @@
 .content-item {
-  padding: 0 !important;
+  padding: 0 0 40px 0 !important;
   position: relative; }
   .content-item .introduce {
     padding: 30px 40px 0 40px;
@@ -11,9 +11,9 @@
       width: 60%;
       line-height: 1.8; }
   .content-item .info {
-    padding: 20px 40px; }
+    padding: 20px; }
     .content-item .info img {
-      width: 100%; }
+      width: 49.5%; }
   .content-item .footer {
     background-color: #EAEAEA;
     color: #222222;

@@ -1,0 +1,120 @@
+@charset "utf-8";
+$description  : rgba(0, 0, 0, 0.55);
+$title        : rgba(0, 0, 0, 0.85);
+$icon         : rgba(0, 0, 0, 0.35);
+$height       : 32px;
+
+// icon border-color, color, .fa .icon
+// title font-weight
+// description
+// :after color
+
+@mixin step-color ($icon, $title, $description, $icon-bgc: #fff, $icon-border: $icon, $title-weight: 400, $after-color: #e8e8e8) {
+    .i-steps-item-icon{
+      background-color: $icon-bgc;
+      border: 1px solid $icon-border;
+      color: $icon;
+      .icon, .fa{
+        color: $icon;
+      }
+    }// .icon
+
+    .i-steps-item-content{
+
+      .i-steps-item-title{
+        font-weight: $title-weight;
+        color: $title;
+        &:after{
+          background: $after-color;
+        }
+      }
+
+      .i-steps-item-description{
+        color: $description;
+      }
+    }// .content
+
+}// @step-color
+
+
+
+.i-steps-wrap{
+  display: flex;
+  @include step-color($icon, $icon, $icon);
+
+  .i-steps-item{
+    flex: 1;
+    overflow: hidden;
+    margin-left: 10px;
+
+
+    .i-steps-item-icon,
+    .i-steps-item-content{
+      display: inline-block;
+      vertical-align: top;
+      line-height: $height;
+
+    }
+
+    .i-steps-item-icon{
+      width: $height;
+      height: $height;
+      text-align: center;
+      //border: 1px solid $icon;
+      border-radius: 50%;
+
+      //color: $icon;
+      //.icon, .fa{
+      //  color: $icon;
+      //}
+    }// .icon
+
+    .i-steps-item-content{
+
+      .i-steps-item-title{
+        position: relative;
+        display: inline-block;
+        padding: 0 10px 0 5px;
+        //color: $title;
+
+        &:after{
+          content: '';
+          height: 2px;
+          width: 999px;
+          //background: #e8e8e8;
+          border-radius: 2px;
+          display: block;
+          position: absolute;
+          top: 15px;
+          left: 100%;
+        }
+      }
+
+      .i-steps-item-description{
+        //color: $description;
+        font-size: 12px;
+        line-height: 1.4;
+        padding-left: 5px;
+      }
+
+    }// .content
+  }// .item
+
+  .i-steps-item:first-child{
+    margin-left: 0;
+  }
+
+  .i-steps-item:last-child{
+    flex-grow: 0.12;
+  }
+
+
+  .step-finished{
+    @include step-color(#fff, $title, $description, $theme-normal, $theme-normal, 500, $theme-normal);
+  }
+
+  .step-progress{
+    @include step-color($theme-normal, $title, $description, #fff, $theme-normal, 600);
+  }
+
+}// .wrap

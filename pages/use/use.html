@@ -43,14 +43,11 @@
                 <li class="button"><a href="javascript:;">按钮 <span>Button</span></a></li>
                 <li class="modal"><a href="javascript:;">模态窗口 <span>Modal</span></a></li>
                 <li class="sidle"><a href="javascript:;">侧滑 <span>Sidle</span></a></li>
-
                 <li class="radio"><a href="javascript:;">单选框 <span>Radio</span></a></li>
                 <li class="checkbox"><a href="javascript:;">多选框 <span>Checkbox</span></a></li>
                 <li class="input"><a href="javascript:;">输入框 <span>Input</span></a></li>
                 <li class="dropdown"><a href="javascript:;">下拉框 <span>Dropdown</span></a></li>
-
                 <li class="tabControl"><a href="javascript:;">选项卡 <span>Tabs</span></a></li>
-                <li class="crumb"><a href="javascript:;">面包屑导航 <span>BreadCrumb</span></a></li>
                 <li class="tableInfo"><a href="javascript:;">表格 <span>Table</span></a></li>
                 <li class="paging"><a href="javascript:;">分页 <span>Pagination</span></a></li>
                 <li class="alert"><a href="javascript:;">警告框 <span>Alert</span></a></li>
@@ -65,6 +62,7 @@
                 <li class="navigate"><a href="javascript:;">导航 <span>Navigate</span></a></li>
                 <li class="scroll"><a href="javascript:;">滚动条 <span>ScrollBar</span></a></li>
                 <li class="chart"><a href="javascript:;">图表 <span>Chart</span></a></li>
+                <li class="crumb"><a href="javascript:;">面包屑导航 <span>BreadCrumb</span></a></li>
                 <li class="badge"><a href="javascript:;">标签徽章 <span>Badge</span></a></li>
                 <li class="link"><a href="javascript:;">链接 <span>Link</span></a></li>
             </ul>
@@ -834,31 +832,6 @@
                 </div>
             </div><!-- /#tabControl -->
 
-            <div id="crumb">
-                <h2 class="title">面包屑导航</h2>
-                <p class="explain"></p>
-                <div class="box">
-                    <div class="box-demo">
-                        <p class="instance">实例 :</p>
-                        <div class="demo-main">
-                            <div class="tab-crumb">
-                                <div class="tab-item contra-crumb"><i class="icon-edit"></i>首页</div>
-                                <div class="tab-item contra-crumb">通讯录</div>
-                                <div class="tab-item">文字超过一定宽度就是用....代替</div>
-                                <div class="tab-item">好多好多报表</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box-code">
-                        <pre>
-                            <code class="xml">
-
-                            </code>
-                        </pre>
-                    </div>
-                </div>
-            </div><!-- /#crumb -->
-
             <div id="tableInfo">
                 <h2 class="title">表格 <span>Table</span></h2>
                 <p class="explain">
@@ -1143,44 +1116,9 @@
             </div><!-- /#alert -->
 
             <div id="steps">
-                <h2 class="title">步骤条</h2>
+                <h2 class="title">步骤条 <span>Steps</span></h2>
                 <p class="explain"></p>
                 <div class="box">
-                    <div class="box-demo">
-                        <p class="instance">实例 :</p>
-                        <div class="demo-main">
-                        </div>
-                    </div>
-                    <div class="box-code">
-                        <pre>
-                            <code class="xml">
-                            </code>
-                        </pre>
-                    </div>
-
-
-
-                    <div class="box-demo">
-                        <p class="instance">实例 :</p>
-                        <div class="demo-main">
-                            <div class="progress-upload">
-                                <div class="bar">
-                                    <span class="percent"> 37% </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box-code">
-                        <pre>
-                            <code class="xml">
-            &lt;div class="progress-upload"&gt;
-                    &lt;div class="bar"&gt;
-                            &lt;span class="percent"&gt; 37% &lt;/span&gt;
-                    &lt;/div&gt;
-            &lt;/div&gt;
-                            </code>
-                        </pre>
-                    </div>
 
                     <div class="box-demo">
                         <p class="instance">实例 :</p>
@@ -1243,11 +1181,12 @@
                             </code>
                         </pre>
                     </div>
+
                 </div>
             </div><!-- /#steps -->
 
             <div id="progressBar">
-                <h2 class="title">进度条</h2>
+                <h2 class="title">进度条 <span>Progress</span></h2>
                 <p class="explain"></p>
                 <div class="box">
 
@@ -1255,8 +1194,8 @@
                         <p class="instance">实例 :</p>
                         <div class="demo-main">
                             <div class="i-progress">
-                                <div class="i-pro-wrap"><div id="iProBar" style="width: 10.1%;"></div></div>
-                                <div class="i-pro-text"><span id="iProNum">10.1</span> %</div>
+                                <div class="i-pro-wrap"><div id="iProBar" style="width: 0%;"></div></div>
+                                <div class="i-pro-text"><span id="iProNum">0</span> %</div>
                             </div>
                         </div>
                     </div>
@@ -1264,8 +1203,8 @@
                         <pre>
                             <code class="xml">
             &lt;div class="i-progress"&gt;
-                    &lt;div class="i-pro-wrap"&gt;&lt;div id="iProBar" style="width: 10.1%;"&gt;&lt;/div&gt;&lt;/div&gt;
-                    &lt;div class="i-pro-text"&gt;&lt;span id="iProNum"&gt;10.1&lt;/span&gt; %&lt;/div&gt;
+                    &lt;div class="i-pro-wrap"&gt;&lt;div id="iProBar" style="width: 0%;"&gt;&lt;/div&gt;&lt;/div&gt;
+                    &lt;div class="i-pro-text"&gt;&lt;span id="iProNum"&gt;0&lt;/span&gt; %&lt;/div&gt;
             &lt;/div&gt;
                             </code>
                         </pre>
@@ -1275,111 +1214,111 @@
             </div><!-- /#progressBar -->
 
             <div id="treeView">
-                <h2 class="title">树形菜单</h2>
+                <h2 class="title">树形菜单 <span>TreeView</span></h2>
                 <p class="explain"></p>
                 <div class="box">
                     <div class="box-demo">
                         <p class="instance">实例 :</p>
                         <div class="demo-main">
-                            <div class="tree-view">
+                            <div class="i-tree-view">
                                 <ul class="first">
                                     <li>
-                                        <span>艾欧尼亚123123123</span>
+                                        <span>上海市</span>
                                         <ul class="second">
                                             <li>
-                                                <span>上单</span>
+                                                <span>徐汇区</span>
                                             </li>
                                             <li>
-                                                <span>打野</span>
+                                                <span>嘉定区</span>
                                                 <ul class="third">
                                                     <li>
-                                                        <span>德邦总管</span>
+                                                        <span>江桥镇</span>
                                                     </li>
                                                     <li>
-                                                        <span>狂战士</span>
+                                                        <span>南翔镇</span>
                                                     </li>
                                                     <li>
-                                                        <span>泰达米尔</span>
+                                                        <span>金运路</span>
                                                         <ul class="fourth">
                                                             <li>
-                                                                <span>fourth</span>
+                                                                <span>金沙江西路</span>
                                                             </li>
                                                             <li>
-                                                                <span>fourth</span>
+                                                                <span>祁连山南路</span>
                                                             </li>
                                                             <li>
-                                                                <span>fourth</span>
+                                                                <span>大渡河路</span>
                                                             </li>
                                                         </ul>
                                                     </li>
                                                 </ul>
                                             </li>
                                             <li>
-                                                <span>辅助</span>
+                                                <span>闵行区</span>
                                                 <ul class="third">
                                                     <li>
-                                                        <span>风暴之怒</span>
+                                                        <span>东方体育中心</span>
                                                     </li>
                                                     <li>
-                                                        <span>魂锁典狱长</span>
+                                                        <span>凌兆新村</span>
                                                     </li>
                                                     <li>
-                                                        <span>众星之子</span>
+                                                        <span>浦江镇</span>
                                                     </li>
                                                 </ul>
                                             </li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <span>卡拉曼达</span>
+                                        <span>北京市</span>
                                     </li>
                                     <li>
-                                        <span>征服之海</span>
+                                        <span>浙江省</span>
                                         <ul class="second">
                                             <li>
-                                                <span>上单</span>
+                                                <span>杭州市</span>
                                             </li>
                                             <li>
-                                                <span>打野</span>
+                                                <span>宁波市</span>
                                             </li>
                                             <li>
-                                                <span>辅助</span>
+                                                <span>温州市</span>
                                             </li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <span>皮城警备</span>
+                                        <span>重庆市</span>
                                     </li>
                                     <li>
-                                        <span>裁决之地</span>
+                                        <span>天津市</span>
                                     </li>
                                     <li>
-                                        <span>雷瑟守备</span>
+                                        <span>江苏省</span>
                                         <ul class="second">
                                             <li>
-                                                <span>上单</span>
+                                                <span>苏州市</span>
                                                 <ul class="third">
                                                     <li>
-                                                        <span>德玛西亚皇子</span>
+                                                        <span>姑苏区</span>
                                                     </li>
                                                     <li>
-                                                        <span>齐天大圣</span>
+                                                        <span>吴中区</span>
                                                     </li>
                                                     <li>
-                                                        <span>迅捷斥候</span>
+                                                        <span>园区</span>
                                                     </li>
                                                 </ul>
                                             </li>
                                             <li>
-                                                <span>打野</span>
+                                                <span>南京市</span>
                                             </li>
                                             <li>
-                                                <span>辅助</span>
+                                                <span>镇江市</span>
                                             </li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <span>诺克萨斯</span>
+                                        <span>湖北省</span>
                                     </li>
 
                                 </ul>
@@ -1389,33 +1328,6 @@
                     <div class="box-code">
                         <pre>
                             <code class="xml">
-            &lt;!-- ul的class名依次为 first, second, third, fourth, fifth --&gt;
-            &lt;div class="tree-view"&gt;
-                    &lt;ul class="first"&gt;
-                            &lt;li&gt;
-                                    &lt;span&gt;艾欧尼亚123123123&lt;/span&gt;
-                                    &lt;ul class="second"&gt; ...... &lt;/ul&gt;
-                            &lt;/li&gt;
-                            &lt;li&gt;
-                                    &lt;span&gt;卡拉曼达&lt;/span&gt;
-                            &lt;/li&gt;
-                            &lt;li&gt;
-                                    &lt;span&gt;征服之海&lt;/span&gt;
-                                    &lt;ul class="second"&gt; ...... &lt;/ul&gt;
-                            &lt;/li&gt;
-                            &lt;li&gt;
-                                    &lt;span&gt;皮城警备&lt;/span&gt;
-                            &lt;/li&gt;
-                            &lt;li&gt;
-                                    &lt;span&gt;裁决之地&lt;/span&gt;
-                            &lt;/li&gt;
-                            &lt;li&gt;
-                                    &lt;span&gt;雷瑟守备&lt;/span&gt;
-                                    &lt;ul class="second"&gt; ...... &lt;/ul&gt;
-                            &lt;/li&gt;
-                            &lt;li&gt;&lt;span&gt;诺克萨斯&lt;/span&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
-            &lt;/div&gt;
                             </code>
                         </pre>
                     </div>
@@ -1423,47 +1335,47 @@
                     <div class="box-demo">
                         <p class="instance">实例 :</p>
                         <div class="demo-main">
-                            <div class="tree-view-slim">
+                            <div class="i-tree-view-slim">
                                 <ul class="first">
                                     <li>
                                         <a href="javascript:;">
-                                            <span>艾欧尼亚</span>
+                                            <span>上海市</span>
                                         </a>
                                         <ul class="second">
                                             <li>
                                                 <a href="javascript:;">
                                                     <!--<i class="icon-arrow-right"></i>-->
-                                                    <span>中单</span>
+                                                    <span>嘉定区</span>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="javascript:;">
                                                     <!--<i class="icon-arrow-right"></i>-->
-                                                    <span>打野</span>
+                                                    <span>闵行区</span>
                                                 </a>
                                                 <ul class="third">
                                                     <li>
                                                         <a href="javascript:;">
                                                             <!--<i class="icon-circle"></i>-->
-                                                            <span>德邦总管</span>
+                                                            <span>东方体育中</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;">
                                                             <!--<i class="icon-circle"></i>-->
-                                                            <span>狂战士</span>
+                                                            <span>浦江镇</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;">
                                                             <!--<i class="icon-circle"></i>-->
-                                                            <span>无极剑圣</span>
+                                                            <span>西藏南路</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;">
                                                             <!--<i class="icon-circle"></i>-->
-                                                            <span>雷霆咆哮</span>
+                                                            <span>联航路</span>
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -1471,61 +1383,61 @@
                                             <li>
                                                 <a href="javascript:;">
                                                     <!--<i class="icon-arrow-right"></i>-->
-                                                    <span>辅助</span>
+                                                    <span>徐汇区</span>
                                                 </a>
                                             </li>
                                         </ul>
                                     </li>
                                     <li>
                                         <a href="javascript:;">
-                                            <span>卡拉曼达</span>
+                                            <span>北京市</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="javascript:;">
-                                            <span>征服之海</span>
+                                            <span>江苏省</span>
                                         </a>
                                         <ul class="second">
                                             <li>
                                                 <a href="javascript:;">
-                                                    <span>中单</span>
+                                                    <span>苏州市</span>
                                                 </a>
                                                 <ul class="third">
                                                     <li>
                                                         <a href="javascript:;">
-                                                            <span>潮汐海灵</span>
+                                                            <span>沧浪区</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;">
-                                                            <span>光辉女郎</span>
+                                                            <span>相城区</span>
                                                         </a>
                                                     </li>
                                                 </ul>
                                             </li>
                                             <li>
                                                 <a href="javascript:;">
-                                                    <span>打野</span>
+                                                    <span>镇江市</span>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="javascript:;">
-                                                    <span>辅助</span>
+                                                    <span>南京市</span>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a href="javascript:;">
-                                                    <span>ADC</span>
+                                                    <span>无锡市</span>
                                                 </a>
                                                 <ul class="third">
                                                     <li>
                                                         <a href="javascript:;">
-                                                            <span>寒冰射手</span>
+                                                            <span>南通市</span>
                                                         </a>
                                                     </li>
                                                     <li>
                                                         <a href="javascript:;">
-                                                            <span>暗夜猎手</span>
+                                                            <span>常州市</span>
                                                         </a>
                                                     </li>
                                                 </ul>
@@ -1534,12 +1446,7 @@
                                     </li>
                                     <li>
                                         <a href="javascript:;">
-                                            <span>皮城警备</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <span>诺克萨斯</span>
+                                            <span>湖北省</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -1551,27 +1458,6 @@
                             <code class="xml">
             &lt;!-- ul的class名依次为 first, second, third, fourth, fifth;
             另外这里的 span 标签需要嵌套在 a 标签里 --&gt;
-            &lt;div class="tree-view-slim"&gt;
-                    &lt;ul class="first"&gt;
-                            &lt;li&gt;
-                                    &lt;a href="javascript:;"&gt;&lt;span&gt;艾欧尼亚&lt;/span&gt;&lt;/a&gt;
-                                    &lt;ul class="second"&gt; ...... &lt;/ul&gt;
-                            &lt;/li&gt;
-                            &lt;li&gt;
-                                    &lt;a href="javascript:;"&gt;&lt;span&gt;卡拉曼达&lt;/span&gt;&lt;/a&gt;
-                            &lt;/li&gt;
-                            &lt;li&gt;
-                                    &lt;a href="javascript:;"&gt;&lt;span&gt;征服之海&lt;/span&gt;&lt;/a&gt;
-                                    &lt;ul class="second"&gt; ...... &lt;/ul&gt;
-                            &lt;/li&gt;
-                            &lt;li&gt;
-                                    &lt;a href="javascript:;"&gt;&lt;span&gt;皮城警备&lt;/span&gt;&lt;/a&gt;
-                            &lt;/li&gt;
-                            &lt;li&gt;
-                                    &lt;a href="javascript:;"&gt;&lt;span&gt;诺克萨斯&lt;/span&gt;&lt;/a&gt;
-                            &lt;/li&gt;
-                    &lt;/ul&gt;
-            &lt;/div&gt;
                             </code>
                         </pre>
                     </div>
@@ -1579,7 +1465,7 @@
             </div><!-- /#treeView -->
 
             <div id="date">
-                <h2 class="title">日期组件</h2>
+                <h2 class="title">日期组件 <span>DatePicker</span></h2>
                 <p class="explain"></p>
                 <div class="box">
                     <div class="box-demo">
@@ -1602,11 +1488,8 @@
                 </div>
             </div><!-- /#date -->
 
-
-
-
             <div id="slider">
-                <h2 class="title">图片轮播</h2>
+                <h2 class="title">图片轮播 <span>Slider</span></h2>
                 <p class="explain"></p>
                 <div class="box">
                     <div class="box-demo">
@@ -1847,6 +1730,31 @@
                     </div>
                 </div>
             </div><!-- /#chart -->
+
+            <div id="crumb">
+                <h2 class="title">面包屑导航</h2>
+                <p class="explain"></p>
+                <div class="box">
+                    <div class="box-demo">
+                        <p class="instance">实例 :</p>
+                        <div class="demo-main">
+                            <div class="tab-crumb">
+                                <div class="tab-item contra-crumb"><i class="icon-edit"></i>首页</div>
+                                <div class="tab-item contra-crumb">通讯录</div>
+                                <div class="tab-item">文字超过一定宽度就是用....代替</div>
+                                <div class="tab-item">好多好多报表</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-code">
+                        <pre>
+                            <code class="xml">
+
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div><!-- /#crumb -->
 
             <div id="badge">
                 <h2 class="title">标签徽章</h2>

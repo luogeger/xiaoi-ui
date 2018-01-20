@@ -570,23 +570,22 @@ function loadMainPage(ele, url, data, callback) {
 //  进度条
 //  ==================================================
 +function () {
-    console.log('progress')
-    var step = 0.1;
+    // fa fa-check-circle
+    var step = 0.2;
     var timer = setInterval(function () {
         var width;
         step += 0.1;
-        width = step +'%';
-        $('#pro-bar').css('width', width)
-        $('#pro-text-num').text(step.toFixed(1))
-        if (step >= 2) {
-            clearInterval(timer)
-            $('#pro-bar').css('width', '100%')
-            $('#pro-text-num').text(100)
-        }
-        if (step >= 93) {
+        progress(step)
+
+        if (step >= 13.6) {
             clearInterval(timer)
         }
-    }, 200);
+
+        function progress (step) {
+            $('#iProBar').css('width', step +'%')
+            $('#iProNum').text(step.toFixed(1))
+        }
+    }, 100);
 }();
 
 
@@ -664,6 +663,217 @@ function loadMainPage(ele, url, data, callback) {
         //contentItemHeight()
     });
     return  window.xiaoi.toggleCollapse = toggleCollapse;
+}();
+
+
+
+//  树形菜单 - tree-view
+//  ==================================================
++function () {
+    $('.i-tree-view li').each(function (index, item){
+        var _item = $(item);// 这个是 li 标签
+
+        _item.prepend('<i class="icon-fold-close-fill"></i>');
+        if(_item.has('ul').length){
+            _item.prepend('<i class="icon-plus-square"></i>');
+            collapse(_item);// 展开目录
+        }else{
+            _item.prepend('<i class="icon-min-square"></i>');
+        }
+
+        _item.children('span').dblclick(function (){
+            // 双击的时候，让其他的 未保存/取消 的状态消失, -- 必须放在 rename() 的前面
+            $('.i-tree-view li .change .cancel').each(function (i, v){ $(v).trigger('click'); });
+
+            rename(this);// 改名
+        });
+    });
+
+    // 展开目录
+    function collapse (_item){
+        _item.children('ul').css({'display': 'none'});
+        _item.children('.icon-min-square').addClass('icon-plus').removeClass('icon-min-square');
+        _item.children('.icon-plus-square').click(function (){
+            if($(this).hasClass('flag-open')){
+                $(this).removeClass('flag-open');
+                $(this).addClass('icon-plus-square').removeClass('icon-min-square');
+                $(this).siblings('ul').slideToggle(100);
+                return;
+            }
+            $(this).addClass('icon-min-square').removeClass('icon-plus-square');
+            $(this).siblings('ul').slideToggle(100);
+            $(this).addClass('flag-open');
+        })
+    };
+
+    // 改名
+    function rename (self){
+        var _this = $(self);// 这个是 span 标签
+        var width = _this.width() + 15 + 'px';
+        var html = '<div class="change">' +
+            '<input type="text">' +
+            '<i class="cancel icon-close-square"></i>' +
+            '<i class="save icon-check-square"></i>' +
+            '</div>';
+        _this.after(html);
+        addPrefix();// 添加前缀
+        _this.siblings('.change').children('input').css('width', width);
+        _this.siblings('.change').children('input').val(_this.text());
+        _this.css({'display': 'none'});
+
+        var changeDiv = _this.siblings('.change');// input、cancel、save 的父元素div
+
+        changeDiv.children('input')[0].select();// input 里面的文字被选中
+        changeDiv.children('input').click(function (e){
+            e.stopPropagation();
+        });
+
+        changeDiv.children('.cancel').click(function (e){
+            e.stopPropagation();
+            cancelRename(_this, changeDiv);// 取消改名
+        });
+
+        changeDiv.children('.save').click(function (e){
+            saveRename(_this, changeDiv);// 保存改名
+            e.stopPropagation();
+        });
+    };
+
+    // 取消改名
+    function cancelRename (span, div){
+        div.remove();
+        span.css({'display': 'inline-block'});
+    };
+
+    // 保存改名
+    function saveRename (span, div){
+        var text = div.children('input').val();
+        span.text(text);
+        div.remove();
+        span.css({'display': 'inline-block'});
+    };
+
+}();
+
+
+
+//  目录结构 - tree-view-slim
+//  ==================================================
++function () {
+    $('.i-tree-view-slim li').each(function (index, item){
+        var _item = $(item);// 这是 li 标签
+        // hover -- 效果
+        _item.children('a').hover(function (){
+            var _this = $(this);
+            if(_this.hasClass('flag-open')){
+                return;
+            }
+            _this.toggleClass('a-hover');
+        },function (){
+            var _this = $(this);
+            _this.removeClass('a-hover');
+        })
+
+        // 点击 -- 展开目录
+        if(_item.has('ul').length){
+            collapse(_item, 'if');// 展开目录 -- 如果有 子级菜单
+        }else{
+            collapse(_item);// 展开目录 -- 没有 子级菜单
+        };
+    });
+
+    // 展开目录
+    function collapse (_item, flag){
+        if(flag == 'if'){
+            _item.children('a').prepend('<i class="icon-contract"></i>');
+            _item.children('ul').css({'display': 'none'});
+            _item.children('a').click(function (){
+                var _this = $(this);
+                clearClick();// 遍历所有 a 标签，清除 点击样式
+                if(_this.hasClass('flag-open')){
+                    _this.siblings('ul').slideToggle(100);
+                    _this.children('i').css({'transform':'rotate(0deg)'});
+                    _this.removeClass('flag-open');
+                    _this.addClass('a-hasChild');
+                    return;
+                }
+                _this.siblings('ul').slideToggle(100);
+                _this.children('i').css({'transform':'rotate(90deg)'});
+                _this.addClass('flag-open a-hasChild');
+            });
+        }
+        else{
+            _item.children('a').prepend('<i class="icon-circle"></i>');
+            _item.children('a').click(function (){
+                clearClick();// 遍历所有 a 标签，清除 点击样式
+                $(this).addClass('a-noChild');
+            });
+        };
+
+        // 遍历所有 a 标签，清除 点击样式
+        function clearClick (){
+            $('.i-tree-view-slim li').each(function (i, v){
+                $(v).children('a').removeClass('a-noChild a-hasChild');
+            })
+        };
+    };
+
+}();
+
+
+
+//
+//  ==================================================
++function () {
+
+}();
+
+
+
+//
+//  ==================================================
++function () {
+
+}();
+
+
+
+//
+//  ==================================================
++function () {
+
+}();
+
+
+
+//
+//  ==================================================
++function () {
+
+}();
+
+
+
+//
+//  ==================================================
++function () {
+
+}();
+
+
+
+//
+//  ==================================================
++function () {
+
+}();
+
+
+
+//
+//  ==================================================
++function () {
+
 }();
 
 
