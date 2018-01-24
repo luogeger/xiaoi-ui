@@ -32,8 +32,6 @@
               color: #999999;
               margin-left: 5px;
               line-height: 2.6; }
-        .content-item .info .info-sidle ul .li-border {
-          border-color: #000 !important; }
     .content-item .info .info-content {
       width: calc(100% - 240px);
       float: right;
