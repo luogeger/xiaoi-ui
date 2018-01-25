@@ -21,11 +21,13 @@
       color: $theme-hover;
     }
   }
-}
-.li-border{
-  border-color: $theme-normal !important;
-  a{
-    color: $theme-normal !important;
-    font-weight: 500;
+
+
+  .li-border{
+    border-color: $theme-normal !important;
+    a{
+      color: $theme-normal !important;
+      font-weight: 600;
+    }
   }
 }

@@ -16,7 +16,8 @@
   .i-pro-wrap{
     width: 100%;
     height: $height;
-    background-color: #E1F4FD;
+    //background-color: #E1F4FD;
+    background-color: $theme-opacity;
     border-radius: $height;
     overflow: hidden;
     position: relative;
@@ -25,8 +26,8 @@
   #iProBar{
     height: 100%;
     border-radius: 20px;
-    //background-color: rgb(29, 152, 249);
-    background-color: rgb(24, 144, 255);
+    //background-color: rgb(24, 144, 255);
+    background-color: $theme-rgb;
     position: relative;
     overflow: hidden;
     transition: 1s;
