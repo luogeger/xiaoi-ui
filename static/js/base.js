@@ -583,10 +583,10 @@ function loadMainPage(ele, url, data, callback) {
         this.element = element;
         //传入形参
         this.options = {
-            pageNo: options.pageNo||1,
-            totalPage: options.totalPage,
-            totalSize:options.totalSize,
-            callback:options.callback
+            pageNo: options.pageNo || 1,
+            totalPage: options.totalPage,// 总共多少页
+            totalSize: options.totalSize,//
+            callback: options.callback
         };
         //根据形参初始化分页html和css代码
         this.init();
@@ -599,112 +599,143 @@ function loadMainPage(ele, url, data, callback) {
         init: function() {
             this.creatHtml();
             this.bindEvent();
-        },
+        },// init
 
         creatHtml: function() {
             var me = this;
-            var content = "";
+            var html = "";
             var current = me.options.pageNo;
             var total = me.options.totalPage;
             var totalNum = me.options.totalSize;
-            content += "<a id='firstPage'>首页</a><a id='prePage'>上一页</a>";
-            //总页数大于6时候
-            if(total > 6) {
-                //当前页数小于5时显示省略号
+            var disabled = "";
+
+            //console.log(current, total, totalNum);
+
+            current == 1 ? disabled = "i-line-disabled" : disabled = "";
+            html +=
+                "<div class=\"i-line-first  "+ disabled +"\">首页</div>" +
+                "<div class=\"i-line-prev "+ disabled +"\">上一页</div>" +
+                "<ul class=\"i-line-page\">";
+
+            //== 判断页容量
+            if (total >7) {
+                // 判断当前页
+                // 第五页的时候，出现。。。
+                // 当前页 +2 < total
+                // =========================================
                 if(current < 5) {
                     for(var i = 1; i < 6; i++) {
                         if(current == i) {
-                            content += "<a class='current'>" + i + "</a>";
+                            html += "<li class=\"i-line-num i-line-current\">"+ i +"</li>";
                         } else {
-                            content += "<a>" + i + "</a>";
+                            html += "<li class=\"i-line-num\">"+ i +"</li>";
                         }
                     }
-                    content += ". . .";
-                    content += "<a>"+total+"</a>";
+                    html +=
+                        "<li class=\"i-line-omit\">· · ·</li>" +
+                        "<li class=\"i-line-num\">"+ total +"</li>";
                 }
                 else {
                     //判断页码在末尾的时候
                     if(current < total - 3) {
+                        html +=
+                            "<li class=\"i-line-num\">1</li>" +
+                            "<li class=\"i-line-omit\">· · ·</li>";
                         for(var i = current - 2; i < current + 3; i++) {
                             if(current == i) {
-                                content += "<a class='current'>" + i + "</a>";
+                                html += "<li class=\"i-line-num i-line-current\">"+ i +"</li>";
                             } else {
-                                content += "<a>" + i + "</a>";
+                                html += "<li class=\"i-line-num\">"+ i +"</li>";
                             }
                         }
-                        content += ". . .";
-                        content += "<a>"+total+"</a>";
+                        html +=
+                            "<li class=\"i-line-omit\">· · ·</li>" +
+                            "<li class=\"i-line-num\">"+ total +"</li>";
                         //页码在中间部分时候
-                    }
-                    else {
-                        content += "<a>1</a>";
-                        content += ". . .";
+                    } else {
+                        html +=
+                            "<li class=\"i-line-num\">1</li>" +
+                            "<li class=\"i-line-omit\">· · ·</li>";
                         for(var i = total - 4; i < total + 1; i++) {
                             if(current == i) {
-                                content += "<a class='current'>" + i + "</a>";
+                                html += "<li class=\"i-line-num i-line-current\">"+ i +"</li>";
                             } else {
-                                content += "<a>" + i + "</a>";
+                                html += "<li class=\"i-line-num\">"+ i +"</li>";
                             }
                         }
                     }
                 }
-                //页面总数小于6的时候
             }
             else {
                 for(var i = 1; i < total + 1; i++) {
                     if(current == i) {
-                        content += "<a class='current'>" + i + "</a>";
+                        html += "<li class=\"i-line-num i-line-current\">"+ i +"</li>";
                     } else {
-                        content += "<a>" + i + "</a>";
+                        html += "<li class=\"i-line-num\">"+ i +"</li>";
                     }
                 }
             }
 
-            content += "<a id='nextPage'>下一页</a>";
-            content += "<a id=\"lastPage\">尾页</a>";
-            content += "<span class='totalPages'> 共<span>"+total+"</span>页 </span>";
-            content += "<span class='totalSize'> 共<span>"+totalNum+"</span>条记录 </span>";
-            me.element.html(content);
-        },
+            current == total ? disabled = "i-line-disabled" : disabled = "";
+            html +=
+                "</ul>" +
+                "<div class=\"i-line-next  "+ disabled +"\">下一页</div>" +
+                "<div class=\"i-line-last  "+ disabled +"\">尾页</div>";
 
-        //添加页面操作事件
-        bindEvent: function() {
-            var me = this;
-            me.element.off('click', 'a');
-            me.element.on('click', 'a', function() {
-                var num = $(this).html();
-                var id=$(this).attr("id");
-                if(id == "prePage") {
-                    if(me.options.pageNo == 1) {
-                        me.options.pageNo = 1;
-                    } else {
-                        me.options.pageNo = +me.options.pageNo - 1;
-                    }
-                }
-                else if(id == "nextPage") {
-                    if(me.options.pageNo == me.options.totalPage) {
-                        me.options.pageNo = me.options.totalPage
-                    } else {
-                        me.options.pageNo = +me.options.pageNo + 1;
-                    }
+            html +=
+                "<input type=\"text\" class=\"i-line-input\" value=\"\">" +
+                "<div class=\"i-line-goto\">Go</div>";
+            //html += "<span class='totalPages'> 共<span>"+total+"</span>页 </span>";
+            //html += "<span class='totalSize'> 共<span>"+totalNum+"</span>条记录 </span>";
+            me.element.html(html);
+        },// creatHtml
 
+        bindEvent: function () {
+            // 点击事件都只是为了改变current的值，再渲染一遍， 再把这个值传递出去
+            var _this = this;
+            this.element.on('click', '.i-line-num', function () {
+                _this.options.pageNo = +$(this).text();
+                _this.creatHtml()
+            })// li
+
+
+            this.element.on('click', 'div', function () {
+                var cls = $(this).attr('class').trim();
+                switch(cls) {
+                    case 'i-line-first':
+                        _this.options.pageNo = 1;
+                        break;
+
+                    case 'i-line-prev':
+                        _this.options.pageNo = _this.options.pageNo++;
+                        break;
+
+                    case 'i-line-next':
+                        _this.options.pageNo = _this.options.pageNo--;
+                        break;
+
+                    case 'i-line-last':
+                        _this.options.pageNo = _this.options.totalPage;
+                        break;
+
+                    case 'i-line-goto':
+                        _this.options.pageNo = +$(this).siblings('input').val();
+                        break;
+
+                    default:
+                        console.log('return')
+                        return;
                 }
-                else if(id =="firstPage") {
-                    me.options.pageNo = 1;
-                }
-                else if(id =="lastPage") {
-                    me.options.pageNo = me.options.totalPage;
-                }
-                else{
-                    me.options.pageNo = +num;
-                }
-                me.creatHtml();
-                if(me.options.callback) {
-                    me.options.callback(me.options.pageNo);
-                }
-            });
-        }
-    };
+                 _this.creatHtml()
+            })// div
+
+            if (this.options.callback) {
+                this.options.callback(this.options.pageNo)
+            }
+
+        },// bindEvent
+
+    };// Paging
 
     //通过jQuery对象初始化分页对象
     $.fn.paging = function(options) {

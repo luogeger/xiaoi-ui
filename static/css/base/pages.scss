@@ -18,7 +18,13 @@
     margin-right: 5px;
   }
 
-  div, li, input{
+  li.i-line-omit{
+    border: none;
+    font-weight: 600;
+  }
+
+
+  div, li:not(.i-line-omit), input{
     cursor: pointer;
     border: 1px solid $border-col;
     border-radius: $border-radius-base;

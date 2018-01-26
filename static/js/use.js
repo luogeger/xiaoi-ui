@@ -277,11 +277,13 @@ $('#sidleBtn').click(function () {
 })
 
 // -- #page
-	$("#page").paging({
-		pageNo:7,
-		totalPage: 19,
-		totalSize: 300,
-		callback: function(num) {
-			//alert(num)
-		}
-	})
+	$(".pageing").each(function (index, item) {
+        $(item).paging({
+            pageNo: 4,
+            totalPage: 13,
+            totalSize: 300,
+            callback: function(num) {
+                console.log(num)
+            }
+        });
+    })

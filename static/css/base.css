@@ -760,12 +760,15 @@ input.disabled {
   border: 1px solid #DDDEE1;
   border-radius: 4px;
   margin-right: 5px; }
-.i-page-line div, .i-page-line li, .i-page-line input {
+.i-page-line li.i-line-omit {
+  border: none;
+  font-weight: 600; }
+.i-page-line div, .i-page-line li:not(.i-line-omit), .i-page-line input {
   cursor: pointer;
   border: 1px solid #DDDEE1;
   border-radius: 4px;
   transition: all 0.2s ease-in-out; }
-  .i-page-line div:hover, .i-page-line li:hover, .i-page-line input:hover {
+  .i-page-line div:hover, .i-page-line li:not(.i-line-omit):hover, .i-page-line input:hover {
     border-color: #ED5565;
     color: #ED5565; }
 .i-page-line li {
