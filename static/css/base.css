@@ -1219,14 +1219,15 @@ input.disabled {
 .i-slide {
   display: inline-block;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  border: 1px dashed; }
   .i-slide .slide-images {
     position: relative; }
     .i-slide .slide-images .slide-img {
       position: absolute;
       top: 0;
       left: 0;
-      background-color: rgba(255, 255, 255, 0); }
+      display: none; }
   .i-slide .slide-direction > div {
     position: absolute;
     top: 50%;
@@ -1270,7 +1271,8 @@ input.disabled {
       color: #ffffff;
       border-radius: 50%;
       transition: .2s;
-      cursor: pointer; }
+      cursor: pointer;
+      text-align: center; }
       .i-slide .slide-circle li i {
         color: #ED5565;
         transition: .2s;

@@ -1017,12 +1017,23 @@ function loadMainPage(ele, url, data, callback) {
             this.data = options.data;
             this.length = this.data.length;
             this.step = options.step;
-            this.timerId = 0;
+
+            // 初始化变量
+            this.timerID = '';
+            this.index = 0;
 
             // 初始化DOM元素，设置html内容
             var $container = $("#" + this.containerID);
             $container.html( this.parseHTML(options));
+            this.$slide     = $container.find(".i-slide");                  // 最外面div
+            this.$img       = $container.find(".slide-img");                // 图片的 li标签
+            this.$circle    = $container.find(".slide-circle-item");        // 圆圈的 li标签
+            this.$prev      = $container.find(".slide-direction-left");     // 上一个
+            this.$next      = $container.find(".slide-direction-right");    // 下一个
 
+            // 初始化
+            this.slide()// 显示第一张图片 和 第一个圆圈的样式
+            this.bindEvent()
         },// init
 
         parseHTML: function(options) {
@@ -1049,7 +1060,7 @@ function loadMainPage(ele, url, data, callback) {
                 '</div>';
             // 圆圈索引键
             html += '<ul class="slide-circle">';
-            this.data.forEach(function (p1, p2, p3) {
+            this.data.forEach(function (item, index) {
                 html += '<li class="slide-circle-item"><i class="fa fa-circle"></i></li>'
             })
             html += '</ul>';// .slide-circle
@@ -1062,16 +1073,16 @@ function loadMainPage(ele, url, data, callback) {
         },// parseHTML
 
         slide: function(index) {
+            index = index || 0;
             // 播放下一张
-            this.$panel
-                .eq(index).fadeTo(this.showTime, 1).css("z-index", 1)
-                .siblings().fadeTo(this.showTime, 0).css("z-index", 0);
-            // 改变 index 的值，控制播放的索引
-            this.setIndex(index, this.length);
+            this.$img
+                .eq(index).fadeIn(this.showTime)
+                .siblings().fadeOut(this.showTime);
             // 修改 数字导航 样式
-            this.$navItem.eq(index).addClass("slider-selected")
-                .siblings().removeClass("slider-selected")
-        },// slide
+            this.$circle.eq(index).addClass("circle-hover")
+                .siblings().removeClass("circle-hover")
+
+        },// slide -- 根据索引进行切换
 
         setIndex: function(index, length) {
             // 设置索引号
@@ -1083,54 +1094,39 @@ function loadMainPage(ele, url, data, callback) {
                 this.index = index;
             }
 
-            this.$slider.data("index", this.index);
-        },// setIndex
+            this.$slide.data("index", this.index);
+        },// setIndex -- 重置索引
 
         bindEvent: function() {
-            // 保存 this
-            var self = this;
+            var _this = this;
             // 向左滑动
-            self.$prev.on("click", function() {
-                self.index -= 1;
-                self.setIndex(self.index, self.length);
-                self.slide(self.index);
+            this.$prev.on("click", function() {
+                _this.index -= 1;
+                _this.setIndex(_this.index, _this.length);
+                _this.slide(_this.index);
             });
+
             // 向右滑动
-            self.$next.on("click", function() {
-                self.index += 1;
-                self.setIndex(self.index, self.length);
-                self.slide(self.index);
+            this.$next.on("click", function() {
+                _this.index += 1;
+                _this.setIndex(_this.index, _this.length);
+                _this.slide(_this.index);
             });
-            // 数字导航
-            self.$navItem.on("click", function() {
-                var index = parseInt($(this).html()) - 1;
-                self.setIndex(self.index, self.length);
-                self.slide(index);
-            });
-            // 取消定时器
-            self.$slider.on("mouseenter", function() {
-                self.$sliderPage.show();
-                clearInterval(self.timerId);
-            });
-            // 开启定时器
-            self.$slider.on("mouseleave", function() {
-                self.$sliderPage.hide();
-                self.isAuto && self.autoPlay();
-            });
-            // 自动播放
-            this.isAuto && this.autoPlay();
-        },// bindEvent
+
+            this.isAuto && this.autoPlay()
+        },// bindEvent -- 只是为了控制索引
 
         autoPlay: function() {
-            var self = this;
             var autoPlay = function() {
-                self.index += 1;
-                self.setIndex(self.index, self.length);
-                self.slide(self.index);
+                this.index += 1;
+                console.log(this)
+                this.setIndex(this.index, this.length);
+                this.slide(this.index);
             };
 
-            self.timerId = setInterval(autoPlay, self.step);
-        },// autoPlay
+            this.timerID = setInterval(autoPlay, this.step);
+        }
+
 
     }// prototype
 
@@ -1139,7 +1135,7 @@ function loadMainPage(ele, url, data, callback) {
             showTime: 1000,
             step: 2000,
             id: this[0].id,
-            isAuto: true,
+            isAuto: false,
             data: [],
         };
 

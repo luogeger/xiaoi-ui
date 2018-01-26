@@ -297,8 +297,11 @@ $('#sidleBtn').click(function () {
         {title: "title-5", src: "static/images/b5.jpg", href: "navigate.html"},
         {title: "title-6", src: "static/images/b6.jpg", href: "navigate.html"}
     ];
-    $('#focus').Slide({
-        data: slideData,
-        width: '730px',
-        height: '454px',
+    $('#focus, #app').each(function (index, item) {
+        $(item).Slide({
+            data: slideData,
+            width: '730px',
+            height: '454px',
+            // isAuto: true,
+        })
     })
