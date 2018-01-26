@@ -118,8 +118,6 @@
                     </div><!-- /.info-sidle -->
 
                     <div class="info-content">
-                        <div class="pageing i-page-line"></div>
-                        <div class="pageing i-page-line"></div>
 
                         <div id="down">
                             <h2 class="title">下载 <span>Download</span></h2>
@@ -1039,43 +1037,24 @@
                                 <div class="box-demo">
                                     <p class="instance">实例 :</p>
                                     <div class="demo-main">
-                                        <div class="i-page-line">
-                                            <div class="i-line-first i-line-disabled">首页</div>
-                                            <div class="i-line-prev i-line-disabled">上一页</div>
-                                            <ul class="i-line-page">
-                                                <li class="i-line-num i-line-current">1</li>
-                                                <li class="i-line-num">2</li>
-                                                <li class="i-line-num">3</li>
-                                                <li class="i-line-num">4</li>
-                                                <li class="i-line-num">5</li>
-                                                <li class="i-line-num">6</li>
-                                                <li class="i-line-num">7</li>
-                                            </ul>
-                                            <div class="i-line-next">下一页</div>
-                                            <div class="i-line-last">尾页</div>
-                                            <input type="text" class="i-line-input" value="9">
-                                            <div class="i-line-goto">Go</div>
-                                        </div>
+                                        <div class="i-page-line"></div>
+                                        <br>
+                                        <div class="i-page-line"></div>
                                     </div>
                                 </div>
                                 <div class="box-code">
                                     <pre>
-                                        <code class="xml">
-            &lt;div class="i-page-line"&gt;
-                   &lt;!-- .i-line-disabled 点击无效 --&gt;
-                    &lt;div class="i-line-first i-line-disabled"&gt;首页&lt;/div&gt;
-                    &lt;div class="i-line-prev i-line-disabled"&gt;上一页&lt;/div&gt;
-                    &lt;ul class="i-line-page"&gt;
-                            &lt;!-- .i-line-current 当前页 --&gt;
-                            &lt;li class="i-line-num i-line-current"&gt;1&lt;/li&gt;
-                            &lt;li class="i-line-num"&gt;2&lt;/li&gt;
-                                    ......
-                    &lt;/ul&gt;
-                    &lt;div class="i-line-next"&gt;下一页&lt;/div&gt;
-                    &lt;div class="i-line-last"&gt;尾页&lt;/div&gt;
-                    &lt;input type="text" class="i-line-input" value="9"&gt;
-                    &lt;div class="i-line-goto"&gt;Go&lt;/div&gt;
-            &lt;/div&gt;
+                                        <code class="jquery">
+    $(".i-page-line").each(function (index, item) {
+        $(item).paging({
+            pageNo: 4,
+            totalPage: 13,
+            totalSize: 300,
+            callback: function(num) {
+                console.log(num)// 点击事件发生之后，返回当前页码
+            }
+        });
+    })
                                         </code>
                                     </pre>
                                 </div>
@@ -1796,12 +1775,12 @@
                                 </div>
                                 <div class="box-code">
                             <pre>
-                                <code class="jQuery">
-                $(".info-sidle").slimScroll({
-                    height: "350px",
-                    width: "100%",
-                    size: '10px'
-            });
+                                <code class="jquery">
+    $(".info-sidle").slimScroll({
+        height: "350px",
+        width: "100%",
+        size: '10px'// 默认是 5px
+    });
                                 </code>
                             </pre>
                                 </div>

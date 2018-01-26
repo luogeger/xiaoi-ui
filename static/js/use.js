@@ -277,7 +277,7 @@ $('#sidleBtn').click(function () {
 })
 
 // -- #page
-	$(".pageing").each(function (index, item) {
+	$(".i-page-line").each(function (index, item) {
         $(item).paging({
             pageNo: 4,
             totalPage: 13,

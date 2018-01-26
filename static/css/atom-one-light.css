@@ -137,3 +137,10 @@ pre code span{
 .hljs-value{
     font-style: italic !important;
 }
+
+
+
+/* ========================================= */
+code.jquery{
+    font-family: Consolas;
+}

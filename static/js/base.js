@@ -696,8 +696,10 @@ function loadMainPage(ele, url, data, callback) {
             this.element.on('click', '.i-line-num', function () {
                 _this.options.pageNo = +$(this).text();
                 _this.creatHtml()
+                if (_this.options.callback) {
+                    _this.options.callback(_this.options.pageNo)
+                }
             })// li
-
 
             this.element.on('click', 'div', function () {
                 var cls = $(this).attr('class').trim();
@@ -707,11 +709,11 @@ function loadMainPage(ele, url, data, callback) {
                         break;
 
                     case 'i-line-prev':
-                        _this.options.pageNo = _this.options.pageNo++;
+                        _this.options.pageNo = _this.options.pageNo -1;
                         break;
 
                     case 'i-line-next':
-                        _this.options.pageNo = _this.options.pageNo--;
+                        _this.options.pageNo = _this.options.pageNo +1;
                         break;
 
                     case 'i-line-last':
@@ -726,15 +728,13 @@ function loadMainPage(ele, url, data, callback) {
                         console.log('return')
                         return;
                 }
-                 _this.creatHtml()
+                _this.creatHtml()
+                if (_this.options.callback) {
+                    _this.options.callback(_this.options.pageNo)
+                }
             })// div
 
-            if (this.options.callback) {
-                this.options.callback(this.options.pageNo)
-            }
-
         },// bindEvent
-
     };// Paging
 
     //通过jQuery对象初始化分页对象
