@@ -12,7 +12,7 @@ textarea{
   &:focus{
     outline: 0;
     border-color: $theme-hover;
-    box-shadow: $theme-opacity 0px 0px 0px 2px;
+    box-shadow: $theme-rgb1 0px 0px 0px 2px;
     //box-shadow: inset 0 1px 2px $theme-opacity, 0 0 0 2px $theme-opacity;
     //box-shadow: rgba(45, 140, 240, 0.2) 0px 0px 0px 2px;
   }

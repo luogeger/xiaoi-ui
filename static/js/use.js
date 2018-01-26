@@ -276,9 +276,9 @@ $('#sidleBtn').click(function () {
     xiaoi.side.right(obj)// 侧滑
 })
 
-// -- #page
+// == Paging
 	$(".i-page-line").each(function (index, item) {
-        $(item).paging({
+        $(item).Paging({
             pageNo: 4,
             totalPage: 13,
             totalSize: 300,
@@ -286,4 +286,19 @@ $('#sidleBtn').click(function () {
                 console.log(num)
             }
         });
+    })
+
+// == slide
+    var slideData = [
+        {title: "title-1", src: "static/images/b1.jpg", href: "navigate.html"},
+        {title: "title-2", src: "static/images/b2.jpg", href: "navigate.html"},
+        {title: "title-3", src: "static/images/b3.jpg", href: "navigate.html"},
+        {title: "title-4", src: "static/images/b4.jpg", href: "navigate.html"},
+        {title: "title-5", src: "static/images/b5.jpg", href: "navigate.html"},
+        {title: "title-6", src: "static/images/b6.jpg", href: "navigate.html"}
+    ];
+    $('#focus').Slide({
+        data: slideData,
+        width: '730px',
+        height: '454px',
     })

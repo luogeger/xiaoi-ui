@@ -577,7 +577,7 @@ function loadMainPage(ele, url, data, callback) {
     // })
 }();
 
-+function ($, window, document, undefined) {
++function ($, window) {
     //定义分页类
     function Paging(element, options) {
         this.element = element;
@@ -738,10 +738,10 @@ function loadMainPage(ele, url, data, callback) {
     };// Paging
 
     //通过jQuery对象初始化分页对象
-    $.fn.paging = function(options) {
+    $.fn.Paging = function(options) {
         return new Paging($(this), options);
     }
-}(jQuery, window, document);
+}($, window);
 
 
 
@@ -1000,11 +1000,155 @@ function loadMainPage(ele, url, data, callback) {
 
 
 
-//
+//  轮播图
 //  ==================================================
-+function () {
++function ($, window) {
+    var Slide = function (options) {
+        this.init(options)
+    }// Slider
 
-}();
+    Slide.prototype = {
+        constructor: Slide,
+
+        init: function (options) {
+            this.containerID = options.id;
+            this.showTime = options.showTime;
+            this.isAuto = options.isAuto;
+            this.data = options.data;
+            this.length = this.data.length;
+            this.step = options.step;
+            this.timerId = 0;
+
+            // 初始化DOM元素，设置html内容
+            var $container = $("#" + this.containerID);
+            $container.html( this.parseHTML(options));
+
+        },// init
+
+        parseHTML: function(options) {
+            var html = '';
+
+            html += '<div class="i-slide">';
+            html += '<ul class="slide-images" style=\"width:'+ options.width +';height:'+ options.height +';\">';
+            this.data.forEach(function(item) {
+                html +=
+                    '<li class="slide-img">' +
+                    '<a href=\"'+ item.href +'\">' +
+                    '<img src="' + item.src + '" title="' +item.title+ '"/>' +
+                    '</a>' +
+                    '</li>';
+            });
+            html += '</ul>';// ul
+
+            //html += '<div class="slide-opera">';
+            // 左右方向键
+            html +=
+                '<div class="slide-direction">' +
+                '<div class="slide-direction-left">&lt;</div>' +
+                '<div class="slide-direction-right">&gt;</div>' +
+                '</div>';
+            // 圆圈索引键
+            html += '<ul class="slide-circle">';
+            this.data.forEach(function (p1, p2, p3) {
+                html += '<li class="slide-circle-item"><i class="fa fa-circle"></i></li>'
+            })
+            html += '</ul>';// .slide-circle
+            //html += '</div>';// .slide-opera
+
+
+            html += '</div>';// .i-slide
+
+            return html;
+        },// parseHTML
+
+        slide: function(index) {
+            // 播放下一张
+            this.$panel
+                .eq(index).fadeTo(this.showTime, 1).css("z-index", 1)
+                .siblings().fadeTo(this.showTime, 0).css("z-index", 0);
+            // 改变 index 的值，控制播放的索引
+            this.setIndex(index, this.length);
+            // 修改 数字导航 样式
+            this.$navItem.eq(index).addClass("slider-selected")
+                .siblings().removeClass("slider-selected")
+        },// slide
+
+        setIndex: function(index, length) {
+            // 设置索引号
+            if(index > length - 1) {
+                this.index = 0;
+            } else if(index < 0) {
+                this.index = length - 1;
+            } else {
+                this.index = index;
+            }
+
+            this.$slider.data("index", this.index);
+        },// setIndex
+
+        bindEvent: function() {
+            // 保存 this
+            var self = this;
+            // 向左滑动
+            self.$prev.on("click", function() {
+                self.index -= 1;
+                self.setIndex(self.index, self.length);
+                self.slide(self.index);
+            });
+            // 向右滑动
+            self.$next.on("click", function() {
+                self.index += 1;
+                self.setIndex(self.index, self.length);
+                self.slide(self.index);
+            });
+            // 数字导航
+            self.$navItem.on("click", function() {
+                var index = parseInt($(this).html()) - 1;
+                self.setIndex(self.index, self.length);
+                self.slide(index);
+            });
+            // 取消定时器
+            self.$slider.on("mouseenter", function() {
+                self.$sliderPage.show();
+                clearInterval(self.timerId);
+            });
+            // 开启定时器
+            self.$slider.on("mouseleave", function() {
+                self.$sliderPage.hide();
+                self.isAuto && self.autoPlay();
+            });
+            // 自动播放
+            this.isAuto && this.autoPlay();
+        },// bindEvent
+
+        autoPlay: function() {
+            var self = this;
+            var autoPlay = function() {
+                self.index += 1;
+                self.setIndex(self.index, self.length);
+                self.slide(self.index);
+            };
+
+            self.timerId = setInterval(autoPlay, self.step);
+        },// autoPlay
+
+    }// prototype
+
+    $.fn.Slide = function (options) {
+        var defaults = {
+            showTime: 1000,
+            step: 2000,
+            id: this[0].id,
+            isAuto: true,
+            data: [],
+        };
+
+        var settings = $.extend({}, defaults, options);
+
+
+        return new Slide(settings)
+    }// $.fn
+}($, window);
 
 
 
