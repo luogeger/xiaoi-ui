@@ -1219,8 +1219,7 @@ input.disabled {
 .i-slide {
   display: inline-block;
   position: relative;
-  overflow: hidden;
-  border: 1px dashed; }
+  overflow: hidden; }
   .i-slide .slide-images {
     position: relative; }
     .i-slide .slide-images .slide-img {
@@ -1228,6 +1227,10 @@ input.disabled {
       top: 0;
       left: 0;
       display: none; }
+      .i-slide .slide-images .slide-img a {
+        width: 100%; }
+        .i-slide .slide-images .slide-img a img {
+          width: 100%; }
   .i-slide .slide-direction > div {
     position: absolute;
     top: 50%;

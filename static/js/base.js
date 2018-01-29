@@ -755,7 +755,7 @@ function loadMainPage(ele, url, data, callback) {
         step += 0.1;
         progress(step)
 
-        if (step >= 13.6) {
+        if (step >= 59.6) {
             clearInterval(timer)
         }
 
@@ -1061,7 +1061,7 @@ function loadMainPage(ele, url, data, callback) {
             // 圆圈索引键
             html += '<ul class="slide-circle">';
             this.data.forEach(function (item, index) {
-                html += '<li class="slide-circle-item"><i class="fa fa-circle"></i></li>'
+                html += '<li class="slide-circle-item" data-index="' +index+ '"><i class="fa fa-circle"></i></li>'
             })
             html += '</ul>';// .slide-circle
             //html += '</div>';// .slide-opera
@@ -1094,7 +1094,6 @@ function loadMainPage(ele, url, data, callback) {
                 this.index = index;
             }
 
-            this.$slide.data("index", this.index);
         },// setIndex -- 重置索引
 
         bindEvent: function() {
@@ -1113,15 +1112,33 @@ function loadMainPage(ele, url, data, callback) {
                 _this.slide(_this.index);
             });
 
+            // 圆圈导航
+            this.$circle.on("click", function () {
+                var index = $(this).attr("data-index");
+                _this.slide(index);// 先跳转到这里
+                _this.index = +index;// 再重新设置索引，让定时器在此刻的顺序继续轮播，注意数据类型
+            })
+
+            // 取消定时器
+            this.$slide.on("mouseenter", function() {
+                clearInterval(_this.timerID);
+            });
+
+            // 开启定时器
+            this.$slide.on("mouseleave", function() {
+                _this.isAuto && _this.autoPlay();
+            });
+
+            // 自动播放
             this.isAuto && this.autoPlay()
         },// bindEvent -- 只是为了控制索引
 
         autoPlay: function() {
+            var _this = this;
             var autoPlay = function() {
-                this.index += 1;
-                console.log(this)
-                this.setIndex(this.index, this.length);
-                this.slide(this.index);
+                _this.index += 1;
+                _this.setIndex(_this.index, _this.length);
+                _this.slide(_this.index);
             };
 
             this.timerID = setInterval(autoPlay, this.step);
@@ -1135,7 +1152,7 @@ function loadMainPage(ele, url, data, callback) {
             showTime: 1000,
             step: 2000,
             id: this[0].id,
-            isAuto: false,
+            isAuto: true,
             data: [],
         };
 

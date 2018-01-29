@@ -1,6 +1,7 @@
 .content-item {
   padding: 0 0 40px 0 !important;
-  position: relative; }
+  position: relative;
+  min-width: 1200px; }
   .content-item .introduce {
     padding: 30px 40px 0 40px;
     background-color: #EAEAEA; }
@@ -11,8 +12,7 @@
       width: 520px;
       line-height: 1.8; }
   .content-item .info {
-    padding: 20px 40px 0 40px;
-    min-width: 1200px; }
+    padding: 20px 40px 0 40px; }
     .content-item .info .slimScrollDiv {
       display: inline-block; }
     .content-item .info .info-sidle {

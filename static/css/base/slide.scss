@@ -2,7 +2,6 @@
   display: inline-block;
   position: relative;
   overflow: hidden;
-  border: 1px dashed;
 
   .slide-images {
     position: relative;
@@ -13,8 +12,12 @@
       top: 0;
       left: 0;
       display: none;
-      img{
 
+      a{
+        width: 100%;
+        img{
+          width: 100%;
+        }
       }
 
     }

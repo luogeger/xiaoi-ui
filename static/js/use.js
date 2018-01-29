@@ -247,7 +247,7 @@ $('#iconPic ul').html('').html(iconArr.join(''))
 addPrefix();// -- icon 添加前缀
 
 
-// -- modelDomBtn
+// == 模态窗口
 $('#modelDomBtn').click(function () {
     function confirm() {
         toastr.success('confirm')
@@ -267,7 +267,7 @@ $('#modelDomBtn').click(function () {
 })
 
 
-// -- 侧滑
+// == 侧滑
 $('#sidleBtn').click(function () {
     var obj = {
         title: '文档对比',
