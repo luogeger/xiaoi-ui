@@ -1,3 +1,12 @@
+$info-col     : $toast-info;
+$success-col  : $toast-success;
+$warning-col  : $toast-warning;
+$error-col    : $toast-error;
+
+
+
+
+
 .toast-title {
   font-weight: bold;
 }
@@ -150,20 +159,20 @@ button.toast-close-button {
 .toast {
   background-color: #030303;
 }
+.toast-info {
+  //background-color: #2f96b4;
+  background-color: $info-col;
+}
 .toast-success {
- // background-color: #51a351;
-  background-color: #52C41A;
+  // background-color: #51a351;
+  background-color: $success-col;
+}
+.toast-warning {
+  background-color: $warning-col;
 }
 .toast-error {
   //background-color: #bd362f;
-  background-color: #dd4b39;
-}
-.toast-info {
-  //background-color: #2f96b4;
-  background-color: #1890FF;
-}
-.toast-warning {
-  background-color: #f89406;
+  background-color: $error-col;
 }
 .toast-progress {
   position: absolute;
@@ -205,12 +214,31 @@ button.toast-close-button {
 
 
 
-// alert
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  alert
+//  ============================
 .i-alert-success,
 .i-alert-error,
 .i-alert-warning,
 .i-alert-info{
-  border: 1px solid $hybrid;
+  border: 1px solid $border-col;
   border-radius: 4px;
   padding: 10px;
   width: 80%;

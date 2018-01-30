@@ -1,0 +1,37 @@
+@mixin label-size ($height: 18px,$font-size: 10px, $bor-radius: 3px, $padding-hor: 5px) {
+  height:             $height;
+  line-height:        $height;
+  font-size:          $font-size;
+  padding: 0          $padding-hor;
+  border-radius:      $bor-radius;
+}
+
+@mixin label-effect($bg-col, $color: #fff) {
+  color:              $color;
+  background-color:   $bg-col;
+}
+
+
+
+
+
+.i-label{
+  display: inline-block;
+  font-weight: 600;
+
+  @include label-size();
+  @include label-effect($default-bg-col);
+}
+
+.label-info{
+  @include label-effect($toast-info);
+}
+.label-success{
+  @include label-effect($toast-success);
+}
+.label-warning{
+  @include label-effect($toast-warning);
+}
+.label-error{
+  @include label-effect($toast-error);
+}

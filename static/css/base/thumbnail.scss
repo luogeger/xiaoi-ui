@@ -1,0 +1,28 @@
+a.i-thumbnail-l,
+a.i-thumbnail-o,
+div.i-thumbnail{
+  display: inline-block;
+  padding: 5px;
+  border: 2px solid $border-col;
+  overflow: hidden;
+  transition: .3s;
+  &:hover{
+    border-color: $theme-normal;
+  }
+}
+
+a.i-thumbnail-l{
+  border-radius: 4px;
+}
+
+a.i-thumbnail-o{
+  border-radius: 50%;
+}
+
+div.i-thumbnail{
+  border-radius: 4px;
+  h3,p{
+    margin: 10px 0;
+    padding-left: 10px;
+  }
+}

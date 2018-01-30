@@ -290,18 +290,17 @@ $('#sidleBtn').click(function () {
 
 // == slide
     var slideData = [
-        {title: "title-1", src: "static/images/b1.jpg", href: "navigate.html"},
-        {title: "title-2", src: "static/images/b2.jpg", href: "navigate.html"},
-        {title: "title-3", src: "static/images/b3.jpg", href: "navigate.html"},
-        {title: "title-4", src: "static/images/b4.jpg", href: "navigate.html"},
-        {title: "title-5", src: "static/images/b5.jpg", href: "navigate.html"},
-        {title: "title-6", src: "static/images/b6.jpg", href: "navigate.html"}
+        {title: "title-1", src: "static/images/b1.png", href: "navigate.html"},
+        {title: "title-2", src: "static/images/b2.png", href: "navigate.html"},
+        {title: "title-3", src: "static/images/b3.png", href: "navigate.html"},
+        // {title: "title-4", src: "static/images/b4.png", href: "navigate.html"},
+        // {title: "title-5", src: "static/images/b5.png", href: "navigate.html"},
+        // {title: "title-6", src: "static/images/b6.png", href: "navigate.html"}
     ];
     $('#focus, #app').each(function (index, item) {
         $(item).Slide({
             data: slideData,
-            width: '730px',
-            height: '454px',
-            // isAuto: true,
+            width: '700px',
+            height: '300px',
         })
     })

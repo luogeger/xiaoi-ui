@@ -1,0 +1,346 @@
+@charset "utf-8";
+.datePicker {
+  display: inline-block;
+  vertical-align: top;
+  .container {
+    position: relative;
+
+    .inputBox {
+      position: relative;
+      display: inline-block;
+      > input {
+        height: $height-sm;
+        width: 200px;
+        border: 1px solid $sixC;
+        border-radius: 4px;
+        padding: 0 25px 0 5px;
+        font-family: "microsoft yahei";
+        &:focus {
+          border-color: $theme-normal;
+        }
+        &:focus + i{
+          color: $theme-normal;
+        }
+      }
+
+      > i {
+        color: $sixC;
+        position: absolute;
+        top: 6px;
+        right: 6px;
+        cursor: pointer;
+      }
+    }
+
+    .dateBox {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 40px;
+      border: 1px solid $sixC;
+      border-radius: 4px;
+      background-color: #fff;
+      width: 240px;
+      //height: 263px;
+      z-index: 1;
+      /*  全部table 公用样式,
+      */
+      table{
+        width: 100%;
+        text-align: center;
+        thead{
+          font-size: 12px;
+        }
+        tbody{
+          td{
+            span{
+              cursor: pointer;
+              display: block;
+              font-size: 12px;
+              border: 1px solid transparent;
+            }
+          }
+        }
+      }
+
+
+      .today{
+        span{
+          border-color: $theme-normal !important;
+        }
+      }
+      .active {
+        span {
+          background-color: $theme-normal !important;
+          color: $sixF !important;
+        }
+      }
+      .inactive {
+        span {
+          color: $sixC;
+        }
+      }
+
+      /* 初始化 */
+      .init-box {
+        .date-head {
+          position: relative;
+          padding: 5px;
+          text-align: center;
+          i {
+            position: absolute;
+            top: 7px;
+            font-weight: 600;
+            cursor: pointer;
+            color: $sixC;
+            &:hover {
+              color: $theme-normal;
+            }
+          }
+          .prev-year {
+            left: 10px;
+          }
+          .prev-month {
+            left: 30px;
+          }
+          .next-month {
+            right: 30px;
+          }
+          .next-year {
+            right: 10px;
+          }
+
+          .select-time {
+            .select-year,
+            .select-month {
+              font-size: 12px;
+              font-weight: 600;
+              cursor: pointer;
+              &:hover {
+                color: $theme-normal;
+              }
+            }
+            .select-month {
+              margin-left: 25px;
+            }
+          }
+        }
+
+        .date-body {
+          padding: 5px;
+          border-top: 1px solid $sixC;
+          border-bottom: 1px solid $sixC;
+          table {
+            tbody {
+              td {
+                padding: 2px 3px;
+
+                span {
+                  padding: 3px 0px;
+                  border-radius: 4px;
+                  &:hover {
+                    background-color: $content-bg;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .date-foot {
+          padding: 5px;
+          .foot-time {
+            display: inline-block;
+            input {
+              width: 30px;
+              padding: 2px 5px;
+              border: 1px solid $sixC;
+              border-radius: 4px;
+              font-family: "microsoft yahei";
+              &:hover, &:focus {
+                border-color: $theme-normal !important;
+              }
+            }
+            input{
+              margin: 0px 3px;
+            }
+            input:first-child{
+              margin-left: 0px;
+            }
+          }
+
+          .foot-btn {
+            display: inline-block;
+            float: right;
+            span {
+              display: inline-block;
+              padding: 2px 4px;
+              cursor: pointer;
+              font-size: 12px;
+              &:hover {
+                color: $theme-normal;
+              }
+            }
+
+          }
+        }
+      }
+
+
+      /* 年份、月份 公用样式 */
+      .year-box,
+      .month-box {
+        display: none;
+        .date-head{
+          position: relative;
+          padding: 5px;
+          text-align: center;
+          border-bottom: 1px solid $sixC;
+          i {
+            position: absolute;
+            top: 7px;
+            font-weight: 600;
+            cursor: pointer;
+            color: $sixC;
+            &:hover {
+              color: $theme-normal;
+            }
+          }
+          i:first-child {
+            left: 15px;
+          }
+          i:last-child {
+            right: 15px;
+          }
+          .select-month,
+          .select-year{
+            font-size: 12px;
+            font-weight: 600;
+          }
+        }
+      }
+
+      /* 年份 */
+      .year-box {
+        .date-body {
+          table {
+            tbody {
+              td {
+                padding: 9px 14px;
+                span {
+                  padding: 10px 10px;
+                  border-radius: 4px;
+                  &:hover {
+                    background-color: $content-bg;
+                    i {
+                      //color: $sixF;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      /* 月份 */
+      .month-box {
+        .date-body {
+          table {
+            tbody {
+              td {
+                padding: 9px 15px;
+                span {
+                  padding: 10px 5px;
+                  border-radius: 4px;
+                  width: 48px;// 保证宽度一致
+                  &:hover {
+                    background-color: $content-bg;
+                    i {
+                      color: $sixF;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+
+      /* 小时、分钟、秒数 公用样式 */
+      .hour-box,
+      .minute-box,
+      .second-box{
+        display: none;
+        .date-head {
+          padding: 5px;
+          text-align: center;
+          border-bottom: 1px solid $sixC;
+          span {
+            font-size: 12px;
+            font-weight: 600;
+          }
+        }
+      }
+
+      /* 小时 */
+      .hour-box {
+        .date-body {
+          table {
+            td {
+              padding: 4px 10px 0 10px;
+              span {
+                padding: 7px 5px;
+                border-radius: 4px;
+                &:hover {
+                  background-color: $content-bg;
+                }
+              }
+            }
+            /**/
+            tbody tr:last-child{
+              td{
+                padding-bottom: 4px;
+              }
+            }
+          }
+        }
+      }
+
+      /* 分钟 + 秒数 */
+      .minute-box, .second-box {
+        .date-body {
+          table {
+            td {
+              padding: 8px 1px;
+              span {
+                line-height: 20px;
+                border-radius: 2px;
+                &:hover {
+                  background-color: $content-bg;
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }// end -- dateBox
+
+    .dateBox:before {
+      content: '';
+      width: 7px;
+      height: 7px;
+
+      position: absolute;
+      top: -5px;
+      left: 13px;
+      transform: rotate(45deg);
+
+      border-left: 1px solid $sixC;
+      border-top: 1px solid $sixC;
+      background-color: $sixF;
+    }// end -- .dateBox:before
+  }// end -- .container
+}// end -- .datePicker

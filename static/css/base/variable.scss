@@ -5,17 +5,6 @@ $height-sm:               30px;// default
 $height-md:               34px;
 $height-lg:               40px;
 
-/* text */
-$text-normal:             #222222;
-$six9:                    #999999;
-$content-bg:              #F6F8F9;
-
-/* border + background */
-$sixF:                    #ffffff;
-$sixC:                    #CCCCCC;
-$back:                    $content-bg;
-$hybrid:                  #E2E4E5;
-
 /* other */
 $paddingH-20:             20px;
 $paddingH-10:             10px;
@@ -41,14 +30,25 @@ $prompt-col:              #999999;
 $dis-col:                 #cccccc;
 
 //  重写颜色
+//  ==========================
 //$text-default:            #222222;//rgba(0, 0, 0, 0.65);// 默认字体颜色
 $text-default:            #495060;//rgb(73， 80， 96);// 默认字体颜色
 $hover-bg:                #f3f3f3;// hover之后背景颜色
-
 $white:                   #ffffff;
-//$border-col:              #E2E4E5;// 边框颜色
 $border-col:              #DDDEE1;// 边框颜色
 $text-col:                #595959;// input textarea 里面字体颜色
+
+/* text */
+$text-normal:             #222222;
+$six9:                    #999999;
+$content-bg:              #F6F8F9;
+
+/* border + background */
+$sixF:                    #ffffff;
+$sixC:                    #CCCCCC;
+$back:                    $content-bg;
+$hybrid:                  #E2E4E5;
+$default-bg-col:             $sixC;
 
 
 /* 字体-样式 */
@@ -114,7 +114,18 @@ $btn-text-font-col:     $theme-normal;
 $btn-text-bg-col:       rgba(0, 0, 0, 0);
 $btn-text-border-col:   rgba(0, 0, 0, 0);
 
-//  input
+
+
+//  toast颜色
+//  ============================
+$toast-info     : #1890FF;
+$toast-success  : #52C41A;
+$toast-warning  : #f89406;
+$toast-error    : #dd4b39;
+
+
+
+//  标签颜色
 //  ============================
 
 

@@ -100,19 +100,19 @@
                             <li class="tableInfo"><a href="#tableInfo">表格 <span>Table</span></a></li>
                             <li class="paging"><a href="#paging">分页 <span>Pagination</span></a></li>
                             <li class="alert"><a href="#alert">警告框 <span>Alert</span></a></li>
+                            <li class="badge"><a href="#badge">标签徽章 <span>Badge</span></a></li>
                             <li class="steps"><a href="#steps">步骤条 <span>Steps</span></a></li>
                             <li class="progressBar"><a href="#progressBar">进度条 <span>Progress</span></a></li>
                             <li class="treeView"><a href="#treeView">树形菜单 <span>TreeView</span></a></li>
                             <li class="date"><a href="#date">日期组件 <span>DatePicker</span></a></li>
 
                             <li class="slider"><a href="#slider">图片轮播 <span>Slider</span></a></li>
-                            <li class="gallery"><a href="#gallery">图片画廊 <span>Gallery</span></a></li>
                             <li class="image"><a href="#image">图片 <span>Image</span></a></li>
+                            <li class="thumbnail"><a href="#thumbnail">缩略图 <span>Thumbnail</span></a></li>
                             <li class="navigate"><a href="#navigate">导航 <span>Navigate</span></a></li>
                             <li class="scroll"><a href="#scroll">滚动条 <span>ScrollBar</span></a></li>
                             <li class="chart"><a href="#chart">图表 <span>Chart</span></a></li>
                             <li class="crumb"><a href="#crumb">面包屑导航 <span>BreadCrumb</span></a></li>
-                            <li class="badge"><a href="#badge">标签徽章 <span>Badge</span></a></li>
                             <li class="link"><a href="#link">链接 <span>Link</span></a></li>
                         </ul>
                     </div><!-- /.info-sidle -->
@@ -1168,6 +1168,35 @@
                             </div>
                         </div><!-- /#alert -->
 
+                        <div id="badge">
+                            <h2 class="title">标签徽章</h2>
+                            <p class="explain"></p>
+                            <div class="box">
+                                <div class="box-demo">
+                                    <p class="instance">实例 :</p>
+                                    <div class="demo-main clearfix">
+                                        <div class="pull-left">
+                                            <h4>标签</h4>
+                                            <span class="i-label">Default</span>
+                                            <span class="i-label label-info">Info</span>
+                                            <span class="i-label label-success">Success</span>
+                                            <span class="i-label label-warning">Warning</span>
+                                            <span class="i-label label-error">Danger</span>
+                                        </div>
+                                        <div class="pull-right">
+                                            <h4>徽章</h4>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-code">
+                                    <pre>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div><!-- /#badge -->
+
                         <div id="steps">
                             <h2 class="title">步骤条 <span>Steps</span></h2>
                             <p class="explain"></p>
@@ -1597,109 +1626,78 @@
                             </div>
                         </div><!-- /#slider -->
 
-                        <div id="gallery">
-                            <h2 class="title">图片画廊</h2>
-                            <p class="explain"></p>
-                            <div class="box">
-                                <div class="box-demo">
-                                    <p class="instance">实例 :</p>
-                                    <div class="demo-main">
-                                        <div class="i-gallery-img">
-                                            <div class="img-square">
-                                                <img src="static/images/motp.jpg" title="img-square" alt="这是图片">
-                                            </div>
-                                            <div class="text">
-                                                <p class="title">图片边框</p>
-                                                <p class="explain">小i工程中心内部使用规范</p>
-                                                <p class="time">2017-10-24</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="i-gallery-all">
-                                            <div class="img-square">
-                                                <img src="static/images/motp.jpg" title="img-square" alt="这是图片">
-                                                <div class="text">
-                                                    <p class="title">容器边框</p>
-                                                    <p class="explain">小i工程中心内部使用规范</p>
-                                                    <p class="time">2017-10-24</p>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="i-gallery-all">
-                                            <div class="img-square">
-                                                <img src="static/images/motp.jpg" title="img-square" alt="这是图片">
-                                                <div class="text">
-                                                    <p class="title">容器边框</p>
-                                                    <p class="explain">小i工程中心内部使用规范</p>
-                                                    <p class="time">2017-10-24</p>
-                                                    <div class="btn btn-md btn-theme">按钮</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="box-code">
-                            <pre>
-                                <code class="xml">
-                &lt;div class="i-gallery-img"&gt;
-                        &lt;div class="img-square"&gt;
-                                &lt;img src="../asset/images/motp.jpg" title="img-square" alt="这是图片"&gt;
-                        &lt;/div&gt;
-                        &lt;div class="text"&gt;
-                                &lt;p class="title"&gt;图片边框&lt;/p&gt;
-                                &lt;p class="explain"&gt;小i工程中心内部使用规范&lt;/p&gt;
-                                &lt;p class="time"&gt;2017-10-24&lt;/p&gt;
-                        &lt;/div&gt;
-                &lt;/div&gt;
-
-                &lt;div class="i-gallery-all"&gt;
-                        &lt;div class="img-square"&gt;
-                                &lt;img src="../asset/images/motp.jpg" title="img-square" alt="这是图片"&gt;
-                                &lt;div class="text"&gt;
-                                        &lt;p class="title"&gt;容器边框&lt;/p&gt;
-                                        &lt;p class="explain"&gt;小i工程中心内部使用规范&lt;/p&gt;
-                                        &lt;p class="time"&gt;2017-10-24&lt;/p&gt;
-                                &lt;/div&gt;
-                        &lt;/div&gt;
-                &lt;/div&gt;
-                                            </code>
-                            </pre>
-                                </div>
-                            </div>
-                        </div><!-- /#gallery -->
-
                         <div id="image">
-                            <h2 class="title">图片</h2>
+                            <h2 class="title">图片 <span>Image</span></h2>
                             <p class="explain"></p>
                             <div class="box">
                                 <div class="box-demo">
                                     <p class="instance">实例 :</p>
                                     <div class="demo-main">
-                                        <div class="img-square" style="margin: 0 0 0 10px;">
-                                            <img style="width: 140px; height: 140px;" src="static/images/motp.jpg" title="img-square" alt="这是图片">
-                                        </div>
-
-                                        <div class="img-round" style="margin: 0 0 0 10px;">
-                                            <img style="width: 140px; height: 140px;" src="static/images/motp.jpg" alt="这是图片">
-                                        </div>
+                                        <a href="javascript:;" class="i-thumbnail-l">
+                                            <img src="static/images/xiaoi-logo.jpg">
+                                        </a>
+                                        <!--<a href="javascript:;" class="i-thumbnail-o pull-right">-->
+                                            <!--<img src="static/images/xiaoi-logo.jpg">-->
+                                        <!--</a>-->
                                     </div>
                                 </div>
                                 <div class="box-code">
-                            <pre>
-                                <code class="xml">
-                &lt;div class="img-square"&gt;
-                        &lt;img style="width: 140px; height: 140px;" src="../asset/images/motp.jpg"&gt;
-                &lt;/div&gt;
-
-                &lt;div class="img-round"&gt;
-                        &lt;img style="width: 140px; height: 140px;" src="../asset/images/motp.jpg"&gt;
-                &lt;/div&gt;
-                                </code>
-                            </pre>
+                                    <pre>
+                                        <code class="xml">
+            &lt;a href="javascript:;" class="i-thumbnail-l"&gt;
+                    &lt;img src="static/images/xiaoi-logo.jpg"&gt;
+            &lt;/a&gt;
+            <!--&lt;a href="javascript:;" class="i-thumbnail-o"&gt;-->
+                    <!--&lt;img src="static/images/xiaoi-logo.jpg"&gt;-->
+            <!--&lt;/a&gt;-->
+                                        </code>
+                                    </pre>
                                 </div>
                             </div>
                         </div><!-- /#image -->
+
+                        <div id="thumbnail">
+                            <h2 class="title">缩略图 <span>Thumbnail</span></h2>
+                            <p class="explain"></p>
+                            <div class="box">
+                                <div class="box-demo">
+                                    <p class="instance">实例 :</p>
+                                    <div class="demo-main">
+                                        <div class="i-thumbnail">
+                                            <img src="static/images/xiaoi-logo.jpg" title="小i机器人">
+                                            <div class="caption">
+                                                <h3>详细介绍</h3>
+                                                <p>小i研究院内部使用规范</p>
+                                                <p>缩略图使用介绍</p>
+                                                <p>
+                                                    <a href="javascript:;" class="btn btn-theme">Button</a>
+                                                    <a href="javascript:;" class="btn btn-border">Button</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-code">
+                                    <pre>
+                                        <code class="xml">
+            &lt;div class="i-thumbnail"&gt;
+                    &lt;img src="static/images/xiaoi-logo.jpg" title="小i机器人"&gt;
+                    &lt;div class="caption"&gt;
+                            &lt;h3&gt;详细介绍&lt;/h3&gt;
+                            &lt;p&gt;小i研究院内部使用规范&lt;/p&gt;
+                            &lt;p&gt;缩略图使用介绍&lt;/p&gt;
+                            &lt;p&gt;
+                                    &lt;a href="javascript:;" class="btn btn-theme"&gt;Button&lt;/a&gt;
+                                    &lt;a href="javascript:;" class="btn btn-border"&gt;Button&lt;/a&gt;
+                            &lt;/p&gt;
+                    &lt;/div&gt;
+            &lt;/div&gt;
+                                        </code>
+
+                                    </pre>
+                                </div>
+                            </div>
+                        </div><!-- /#thumbnail -->
 
                         <div id="navigate">
                             <h2 class="title">导航 <span>Navigate</span></h2>
@@ -1849,51 +1847,6 @@
                             </div>
                         </div><!-- /#crumb -->
 
-                        <div id="badge">
-                            <h2 class="title">标签徽章</h2>
-                            <p class="explain"></p>
-                            <div class="box">
-                                <div class="box-demo">
-                                    <p class="instance">实例 :</p>
-                                    <div class="demo-main clearfix">
-                                        <div class="pull-left" style="margin-right: 300px;">
-                                            <p style="padding: 5px;">标签</p>
-                                            <div class="i-label-info">1</div>
-                                            <div class="i-label-success">1</div>
-                                            <div class="i-label-warn">1</div>
-                                            <div class="i-label-error">1</div>
-                                            <div class="i-label-default">1</div>
-                                        </div>
-                                        <div class="pull-left">
-                                            <p style="padding: 5px;">徽章</p>
-                                            <div class="i-badge-info">3</div>
-                                            <div class="i-badge-success">3</div>
-                                            <div class="i-badge-warn">3</div>
-                                            <div class="i-badge-error">3</div>
-                                            <div class="i-badge-default">3</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="box-code">
-                            <pre>
-                                <code class="xml">
-                &lt;div class="i-label-info"&gt;1&lt;/div&gt;
-                &lt;div class="i-label-success"&gt;1&lt;/div&gt;
-                &lt;div class="i-label-warn"&gt;1&lt;/div&gt;
-                &lt;div class="i-label-error"&gt;1&lt;/div&gt;
-                &lt;div class="i-label-default"&gt;1&lt;/div&gt;
-
-                &lt;div class="i-badge-info"&gt;3&lt;/div&gt;
-                &lt;div class="i-badge-success"&gt;3&lt;/div&gt;
-                &lt;div class="i-badge-warn"&gt;3&lt;/div&gt;
-                &lt;div class="i-badge-error"&gt;3&lt;/div&gt;
-                &lt;div class="i-badge-default"&gt;3&lt;/div&gt;
-                                </code>
-                            </pre>
-                                </div>
-                            </div>
-                        </div><!-- /#badge -->
-
                         <div id="link">
                             <h2 class="title">链接</h2>
                             <p class="explain"></p>
@@ -1902,6 +1855,7 @@
                                     <p class="instance">实例 :</p>
                                     <div class="demo-main">
 
+                                        <a href="#">下载</a>
                                     </div>
                                 </div>
                                 <div class="box-code">

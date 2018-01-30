@@ -56,10 +56,10 @@ $height: 60px;
       }
 
       &:hover{
-        background-color: $hover-bg;
-        color: $default-col;
+        //background-color: $hover-bg;
+        color: $theme-normal;
         i{
-          color: $default-col;
+          color: $theme-normal;
         }
       }
     }// a
@@ -109,6 +109,7 @@ $height: 60px;
       .active{
         color: $theme-normal !important;// 防止 hover
         border-color: $theme-normal;
+        background-color: $theme-rgb1;
         i{
           color: $theme-normal;
         }

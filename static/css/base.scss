@@ -27,10 +27,13 @@
 @import "base/progress";
 @import "base/tree-view";
 @import "base/slide";
+@import "base/datePicker";
+@import "base/thumbnail";
+@import "base/label-badge";
 
 
 
 //  插件 - sidebar
 @import "base/sidebar";
 @import "base/toastr";
-@import "base/global";
+@import "base/global";// 用于全局的样式，特别是与主题色有关联的
