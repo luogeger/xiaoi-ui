@@ -1,7 +1,7 @@
 // -- 如果有锚链接， 侧边导航的位置
-if (location.hash !== '') {
-    $('.slimScrollDiv').css({'position': 'fixed', 'top': top})
-    $('.info-sidle').css('top', '20px')
+if (location.hash !== '#top') {
+    //$('.slimScrollDiv').css({'position': 'fixed', 'top': top})
+    //$('.info-sidle').css('top', '20px')
 }
 
 
@@ -93,13 +93,17 @@ $(document).scroll(function () {
             $('.' +p1.id).addClass('li-border');
         }
     })
+
+    if (scrollDistance == 0) {
+        $sidle_lis.each(function (i, v){ $(v).removeClass('li-border') });// 排他
+    }
 })// document
 
 
 // -- 返回顶部，取消左边导航选中样式
 $('#backtop').click(function () {
     $sidle_lis.each(function (i, v){ $(v).removeClass('li-border') })// 排他
-    $(document).scrollTop(0)
+    //$(document).scrollTop(0)
 })
 
 

@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="static/styles/header.css">
     <link rel="stylesheet" href="static/styles/use.css">
 </head>
-<body>
+<body id="top">
     <div id="wrapper">
-        <div id="backtop"><i class="fa fa-arrow-circle-up"></i></div>
+        <div id="backtop"><a href="#top"><i class="fa fa-arrow-circle-up"></i></a></div>
         <div id="navHead">
             <a href="index.html" class="logo pull-left">
                 <i></i>
@@ -113,7 +113,6 @@
                             <li class="scroll"><a href="#scroll">滚动条 <span>ScrollBar</span></a></li>
                             <li class="chart"><a href="#chart">图表 <span>Chart</span></a></li>
                             <li class="crumb"><a href="#crumb">面包屑导航 <span>BreadCrumb</span></a></li>
-                            <li class="link"><a href="#link">链接 <span>Link</span></a></li>
                         </ul>
                     </div><!-- /.info-sidle -->
 
@@ -1177,6 +1176,7 @@
                                     <div class="demo-main clearfix">
                                         <div class="pull-left">
                                             <h4>标签</h4>
+                                            <br>
                                             <span class="i-label">Default</span>
                                             <span class="i-label label-info">Info</span>
                                             <span class="i-label label-success">Success</span>
@@ -1185,13 +1185,18 @@
                                         </div>
                                         <div class="pull-right">
                                             <h4>徽章</h4>
-
-
                                         </div>
                                     </div>
                                 </div>
                                 <div class="box-code">
                                     <pre>
+                                        <code class="xml">
+            &lt;span class="i-label"&gt;Default&lt;/span&gt;
+            &lt;span class="i-label label-info"&gt;Info&lt;/span&gt;
+            &lt;span class="i-label label-success"&gt;Success&lt;/span&gt;
+            &lt;span class="i-label label-warning"&gt;Warning&lt;/span&gt;
+            &lt;span class="i-label label-error"&gt;Danger&lt;/span&gt;
+                                        </code>
                                     </pre>
                                 </div>
                             </div>
@@ -1706,7 +1711,7 @@
                                 <div class="box-demo">
                                     <p class="instance">实例 :</p>
                                     <div class="demo-main">
-                                        <h3><a target="_blank" href="navigate.html">导航</a></h3>
+                                        <a class="i-link" target="_blank" href="navigate.html" style="font-size: 20px;">查看导航</a>
                                     </div>
                                 </div>
                                 <div class="box-code">
@@ -1847,22 +1852,7 @@
                             </div>
                         </div><!-- /#crumb -->
 
-                        <div id="link">
-                            <h2 class="title">链接</h2>
-                            <p class="explain"></p>
-                            <div class="box">
-                                <div class="box-demo">
-                                    <p class="instance">实例 :</p>
-                                    <div class="demo-main">
-
-                                        <a href="#">下载</a>
-                                    </div>
-                                </div>
-                                <div class="box-code">
-
-                                </div>
-                            </div>
-                        </div><!-- /#link -->
+                        <!-- /#link -->
                     </div><!-- /.info-content -->
                 </div><!-- /.info -->
 

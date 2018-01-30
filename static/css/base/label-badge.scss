@@ -14,7 +14,6 @@
 
 
 
-
 .i-label{
   display: inline-block;
   font-weight: 600;
@@ -35,3 +34,5 @@
 .label-error{
   @include label-effect($toast-error);
 }
+
+

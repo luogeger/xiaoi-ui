@@ -24,7 +24,7 @@
         border-right: 2px solid #EAEAEA; }
         .content-item .info .info-sidle ul li {
           color: #222222;
-          border-left: 4px solid transparent;
+          border-left: 2px solid transparent;
           padding-left: 20px; }
           .content-item .info .info-sidle ul li a {
             display: block; }
@@ -215,7 +215,7 @@
 
 #backtop {
   position: fixed;
-  bottom: 20px;
+  bottom: 35px;
   right: 10px;
   color: #C1C1C1;
   z-index: 1;

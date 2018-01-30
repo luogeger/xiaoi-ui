@@ -795,7 +795,7 @@ function loadMainPage(ele, url, data, callback) {
     $('#accordionNav a').each(function (index, item){
         var _item = $(item);
         _item.click(function (){
-            // 这里是一级菜单的 a 标签
+            // 二级菜单，开启关闭的判断
             if(_item.parent().hasClass('panel')){
                 if(_item.hasClass('flag-open')){
                     _item.siblings('ul').slideToggle(200);
@@ -808,11 +808,15 @@ function loadMainPage(ele, url, data, callback) {
                 }
             }
 
-            $('#accordionNav a').each(function (i, v){
-                $(v).removeClass('active');
-            });
+            // 是否有二级菜单的判断，如果没有二级菜单，就不添加 .active
+            if (_item.siblings('ul').length === 0) {
+                $('#accordionNav a').each(function (i, v){
+                    $(v).removeClass('active');
+                });
 
-            $(this).addClass('active');
+                $(this).addClass('active');
+            }
+
         });
 
         // 默认展开父级菜单

@@ -35,7 +35,7 @@
         li{
           color: #222222;
           //background-color: #fff;
-          border-left: 4px solid transparent;
+          border-left: 2px solid transparent;
           padding-left: 20px;
           a{
             display: block;
@@ -47,10 +47,6 @@
           }
 
         }
-
-        //.li-border{
-        //  border-color: #000 !important;
-        //}
 
       }
     }// .info-sidle
@@ -406,7 +402,7 @@
 
 #backtop{
   position: fixed;
-  bottom: 20px;
+  bottom: 35px;
   right: 10px;
   color: #C1C1C1;
   z-index: 1;
