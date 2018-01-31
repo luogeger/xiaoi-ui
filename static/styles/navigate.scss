@@ -1,12 +1,10 @@
-#logo{
-  width: 180px;
-  text-align: center;
-  background-color: #FF8A41;
-  line-height: 60px;
-}
+#navHead{
+  .pull-left,
+  .pull-right{
+    line-height: 60px;
+  }
+  .pull-right{
+    padding-right: 20px;
+  }
+}// #navHead
 
-.i-tabs-group{
-  padding: 15px;
-  border: 1px solid #DDDEE1;
-  border-radius: 4px;
-}

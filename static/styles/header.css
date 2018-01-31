@@ -1,6 +1,8 @@
 #navHead {
   padding: 0 30px;
-  position: absolute; }
+  position: absolute;
+  width: 100%;
+  left: 0; }
   #navHead > div, #navHead a {
     display: block;
     height: 100%;

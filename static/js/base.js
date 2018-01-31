@@ -768,31 +768,47 @@ function loadMainPage(ele, url, data, callback) {
 //  导航 - navigate
 //  ==================================================
 +function () {
-//  #navSidle  #collapseBtn  左右滑动
-    function toggleCollapse(){
-        var open = $("#collapseBtn").hasClass("to-close");
-        if(open){
-            $('#navContent').css({'padding-left': '0px'});
-            $('#navSidle').css('left', '-180px');
-            $("#collapseBtn").removeClass("to-close").addClass("to-open");// 改变箭头方向，以及位置
-        }else{
-            $('#navContent').css({'padding-left': '180px'});
-            $('#navSidle').css('left', '0px');
-            $("#collapseBtn").removeClass("to-open").addClass("to-close");// 改变箭头方向，以及位置
+    // #navSidleSlim
+    var sidleHTML = $('#navSidle').html();
+    var slimHTML = '<div id="navSidleSlim">'+ sidleHTML +'</div>';
+    //$('#navSidle').after(slimHTML)
+    var $slimA = $('#navSidleSlim .sidle-accordion .panel a');
+    $slimA.each(function (index, item) {
+        var _item = $(item);
+        if (_item.siblings('ul').length) {
+            _item.parent('.panel').hover(show, hide)
+            function show () {
+                $(this).children('ul').fadeIn()
+            };
+            function hide () {
+                $(this).children('ul').fadeOut()
+            };
         }
-    };
 
-    //  右边小箭头
+        _item.click(function () {
+            var _this = $(this);
+            if (_this.siblings('ul').length) {
+
+            }
+            else {
+                _this.addClass('active')
+            }
+        })
+    });
+
+
+
+
+
+    // 收缩按钮
     var collapseBtn =
-        '<div id="collapseBtn" class="to-close" onclick="xiaoi.toggleCollapse()">'+
-        '<div class="collapse-btn-nav">'+
-        '<i class="fa fa-angle-left"></i>'+
-        '</div>'+
+        '<div id="collapseBtn" onclick="xiaoi.toggleCollapse()">' +
+        '<i class="fa fa-bars"></i> ' +
         '</div>';
     $('#navSidle').prepend(collapseBtn);
 
-    //  #navSidle  #accordion  上下收展
-    $('#accordionNav a').each(function (index, item){
+    //  .sidle-accordion  上下收展
+    $('#navSidle .sidle-accordion a').each(function (index, item){
         var _item = $(item);
         _item.click(function (){
             // 二级菜单，开启关闭的判断
@@ -810,7 +826,7 @@ function loadMainPage(ele, url, data, callback) {
 
             // 是否有二级菜单的判断，如果没有二级菜单，就不添加 .active
             if (_item.siblings('ul').length === 0) {
-                $('#accordionNav a').each(function (i, v){
+                $('#navSidle a').each(function (i, v){
                     $(v).removeClass('active');
                 });
 
@@ -825,8 +841,12 @@ function loadMainPage(ele, url, data, callback) {
         }
     });
 
+
+
+
+
     // #navSidle  accordion的滚动条
-    $("#accordionNav").slimScroll({
+    $("#navSidle .sidle-accordion").slimScroll({
         height: "100%",
         width: "180px",
     });
@@ -840,6 +860,27 @@ function loadMainPage(ele, url, data, callback) {
     $(window).resize(function () {
         //contentItemHeight()
     });
+
+
+
+
+    //  收缩按钮功能
+    function toggleCollapse(){
+        var open = !$("#collapseBtn").hasClass("to-open");
+        if(open){
+            $('#navContent').css({'padding-left': '60px'});
+            $('#navSidle').css('left', '-180px');
+            $('#navHead').addClass('to-open')
+            $('#collapseBtn').addClass('to-open')
+            //$("#collapseBtn").removeClass("to-close").addClass("to-open");// 改变箭头方向，以及位置
+        }else{
+            $('#navContent').css({'padding-left': '180px'});
+            $('#navSidle').css('left', '0px');
+            $('#navHead').removeClass('to-open')
+            $('#collapseBtn').removeClass('to-open')
+            //$("#collapseBtn").removeClass("to-open").addClass("to-close");// 改变箭头方向，以及位置
+        }
+    };
     return  window.xiaoi.toggleCollapse = toggleCollapse;
 }();
 
