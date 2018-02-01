@@ -768,84 +768,66 @@ function loadMainPage(ele, url, data, callback) {
 //  导航 - navigate
 //  ==================================================
 +function () {
-    // #navSidleSlim
-    var sidleHTML = $('#navSidle').html();
-    var slimHTML = '<div id="navSidleSlim">'+ sidleHTML +'</div>';
-    //$('#navSidle').after(slimHTML)
-    var $slimA = $('#navSidleSlim .sidle-accordion .panel a');
-    $slimA.each(function (index, item) {
-        var _item = $(item);
-        if (_item.siblings('ul').length) {
-            _item.parent('.panel').hover(show, hide)
-            function show () {
-                $(this).children('ul').fadeIn()
-            };
-            function hide () {
-                $(this).children('ul').fadeOut()
-            };
-        }
-
-        _item.click(function () {
-            var _this = $(this);
-            if (_this.siblings('ul').length) {
-
-            }
-            else {
-                _this.addClass('active')
-            }
-        })
-    });
-
-
-
-
-
-    // 收缩按钮
+    // 三明治按钮
     var collapseBtn =
         '<div id="collapseBtn" onclick="xiaoi.toggleCollapse()">' +
         '<i class="fa fa-bars"></i> ' +
         '</div>';
     $('#navSidle').prepend(collapseBtn);
 
-    //  .sidle-accordion  上下收展
+
+    // .sidle-accordion  手风琴
     $('#navSidle .sidle-accordion a').each(function (index, item){
-        var _item = $(item);
-        _item.click(function (){
-            // 二级菜单，开启关闭的判断
-            if(_item.parent().hasClass('panel')){
-                if(_item.hasClass('flag-open')){
-                    _item.siblings('ul').slideToggle(200);
-                    _item.children('i:last-child').css('transform', 'rotate(0deg)');
-                    _item.removeClass('flag-open');
-                }else{
-                    _item.siblings('ul').slideToggle(200);
-                    _item.children('i:last-child').css('transform', 'rotate(90deg)');
-                    _item.addClass('flag-open');
+        var _a = $(item);
+        _a.click(function (){
+            // 是否有二级菜单的判断，
+            if (_a.siblings('ul').length === 0) {// 没有二级菜单 => 添加.active 和 .active-parent, 排他
+                $('#navSidle a').each(function (i, v){ $(v).removeClass('active'); });// .active 排他
+                _a.addClass('active')// 添加.active
+
+                // 在另外的.panel
+                if (!_a.parents('ul').siblings('a').hasClass('active-parent')) {
+                    $('#navSidle .panel>a').each(function (i, v){ $(v).removeClass('active-parent') });// .active-parent排他
+                    _a.parents('ul').siblings('a').addClass('active-parent')
                 }
+
+                // 本身是一级菜单，且没有二级菜单
+                if (!_a.parents('.panel').children('ul').length) {
+                    $('#navSidle .panel').each(function (index, item) {
+                        $(item).children('a').removeClass('flag-open')// flag-open 去除
+                        $(item).children('a').children('i:last-child').css('transform', 'rotate(0deg)')// icon 旋转
+                        $(item).children('ul').slideUp(200)// ul 收起
+                    })// 排他
+                }
+
             }
+            else {// 有二级菜单 => 判断是否已经开启或关闭状态，判断是一级还是二级
+                if (_a.hasClass('flag-open')) {// 开启状态，直接关闭
+                    _a.removeClass('flag-open').siblings('ul').slideUp(200)
+                    _a.children('i:last-child').css('transform', 'rotate(0deg)')
+                }
+                else {// 关闭状态，打开自己并且排他
+                    $('#navSidle .panel').each(function (index, item) {
+                        $(item).children('a').removeClass('flag-open')// flag-open 去除
+                        $(item).children('a').children('i:last-child').css('transform', 'rotate(0deg)')// icon 旋转
+                        $(item).children('ul').slideUp(200)// ul 收起
+                    })// 排他
 
-            // 是否有二级菜单的判断，如果没有二级菜单，就不添加 .active
-            if (_item.siblings('ul').length === 0) {
-                $('#navSidle a').each(function (i, v){
-                    $(v).removeClass('active');
-                });
+                    _a.addClass('flag-open').siblings('ul').slideDown(200)
+                    _a.children('i:last-child').css('transform', 'rotate(180deg)')
+                }
 
-                $(this).addClass('active');
             }
-
-        });
+        });// click
 
         // 默认展开父级菜单
-        if(_item.hasClass('active')){
-            _item.parents('ul').slideDown(200).siblings('a').addClass('flag-open').children('i:last-child').css('transform', 'rotate(90deg)');
+        if(_a.hasClass('active')){
+            _a.parents('ul').slideDown(200).siblings('a').addClass('flag-open active-parent').children('i:last-child').css('transform', 'rotate(180deg)');
         }
     });
 
 
-
-
-
-    // #navSidle  accordion的滚动条
+    // .sidle-accordion   滚动条
     $("#navSidle .sidle-accordion").slimScroll({
         height: "100%",
         width: "180px",
@@ -862,20 +844,18 @@ function loadMainPage(ele, url, data, callback) {
     });
 
 
-
-
-    //  收缩按钮功能
+    //  三明治功能
     function toggleCollapse(){
         var open = !$("#collapseBtn").hasClass("to-open");
         if(open){
             $('#navContent').css({'padding-left': '60px'});
-            $('#navSidle').css('left', '-180px');
+            $('#navSidle').css('left', '0px').addClass('i-sidle-slim');
             $('#navHead').addClass('to-open')
             $('#collapseBtn').addClass('to-open')
             //$("#collapseBtn").removeClass("to-close").addClass("to-open");// 改变箭头方向，以及位置
         }else{
             $('#navContent').css({'padding-left': '180px'});
-            $('#navSidle').css('left', '0px');
+            $('#navSidle').css('left', '0px').removeClass('i-sidle-slim')
             $('#navHead').removeClass('to-open')
             $('#collapseBtn').removeClass('to-open')
             //$("#collapseBtn").removeClass("to-open").addClass("to-close");// 改变箭头方向，以及位置

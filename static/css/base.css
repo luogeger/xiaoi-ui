@@ -1625,9 +1625,9 @@ div.i-thumbnail {
   color: #fff;
   background-color: #dd4b39; }
 
-#nav-head,
-#nav-sidle,
-#nav-content {
+#navHead,
+#navSidle,
+#navContent {
   transition: all 0.2s ease-in-out; }
 
 #navHead {
@@ -1639,8 +1639,7 @@ div.i-thumbnail {
   margin: 0;
   position: fixed;
   top: 0;
-  z-index: 2;
-  transition: all 0.2s ease-in-out; }
+  z-index: 2; }
 
 #navHead.to-open {
   width: calc(100% - 60px);
@@ -1655,24 +1654,11 @@ div.i-thumbnail {
   left: 0;
   bottom: 0;
   z-index: 2;
-  transition: all 0.2s ease-in-out;
-  /* #logo */
-  /* 导航主体 */
-  /* 右边小箭头 */ }
-  #navSidle .i-logo {
-    height: 60px;
-    line-height: 60px;
-    width: 60px;
-    text-align: center; }
-    #navSidle .i-logo img {
-      vertical-align: top; }
-    #navSidle .i-logo .i-logo-lg {
-      width: 180px;
-      height: 60px; }
-    #navSidle .i-logo .i-logo-sm {
-      display: none; }
+  /* 导航主体 */ }
   #navSidle .sidle-accordion {
     padding: 10px 0; }
+    #navSidle .sidle-accordion .panel, #navSidle .sidle-accordion a, #navSidle .sidle-accordion ul, #navSidle .sidle-accordion li {
+      width: 100%; }
     #navSidle .sidle-accordion a {
       display: block;
       height: 40px;
@@ -1690,8 +1676,6 @@ div.i-thumbnail {
         color: #1D98F9; }
         #navSidle .sidle-accordion a:hover i {
           color: #1D98F9; }
-    #navSidle .sidle-accordion .panel, #navSidle .sidle-accordion a, #navSidle .sidle-accordion ul, #navSidle .sidle-accordion li {
-      width: 100%; }
     #navSidle .sidle-accordion .panel > a {
       display: table; }
       #navSidle .sidle-accordion .panel > a span, #navSidle .sidle-accordion .panel > a i {
@@ -1715,6 +1699,8 @@ div.i-thumbnail {
       background-color: rgba(29, 152, 248, 0.1); }
       #navSidle .sidle-accordion .panel .active i {
         color: #1D98F9; }
+    #navSidle .sidle-accordion .panel .active-parent i, #navSidle .sidle-accordion .panel .active-parent span {
+      color: #1D98F9 !important; }
   #navSidle #collapseBtn {
     width: 60px;
     line-height: 60px;
@@ -1728,80 +1714,88 @@ div.i-thumbnail {
       transition: .3s; }
       #navSidle #collapseBtn i:hover {
         color: #1D98F9; }
-  #navSidle #collapseBtn.to-open {
-    right: -120px; }
-    #navSidle #collapseBtn.to-open i {
-      transform: rotate(90deg); }
+  #navSidle .i-logo {
+    height: 60px;
+    line-height: 60px;
+    width: 60px;
+    text-align: right; }
+    #navSidle .i-logo img {
+      vertical-align: top; }
+    #navSidle .i-logo .i-logo-lg {
+      width: 180px;
+      height: 60px; }
+    #navSidle .i-logo .i-logo-sm {
+      display: none; }
+  #navSidle .sidle-accordion, #navSidle .slimScrollDiv {
+    transition: all 0.2s ease-in-out; }
 
-#navSidleSlim {
+#navSidle.i-sidle-slim {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   width: 60px; }
-  #navSidleSlim .sidle-accordion .panel {
-    text-align: center;
-    position: relative; }
-    #navSidleSlim .sidle-accordion .panel a {
-      display: block; }
-    #navSidleSlim .sidle-accordion .panel > a {
-      line-height: 40px;
-      font-size: 20px; }
-      #navSidleSlim .sidle-accordion .panel > a .icon-arrow-right, #navSidleSlim .sidle-accordion .panel > a span {
-        display: none; }
-      #navSidleSlim .sidle-accordion .panel > a i {
-        transition: all 0.2s ease-in-out; }
-      #navSidleSlim .sidle-accordion .panel > a:hover i {
-        color: #1D98F9; }
-    #navSidleSlim .sidle-accordion .panel > ul {
-      display: none;
-      position: absolute;
-      top: 0;
-      left: 60px;
-      padding: 10px 0;
-      border-radius: 4px;
-      box-shadow: 2px 2px 6px #ccc;
-      background-color: #fff;
-      min-width: 180px; }
-      #navSidleSlim .sidle-accordion .panel > ul li {
-        line-height: 30px; }
-        #navSidleSlim .sidle-accordion .panel > ul li a {
-          padding: 0 10px;
-          text-align: left;
-          transition: all 0.2s ease-in-out; }
-          #navSidleSlim .sidle-accordion .panel > ul li a:hover {
-            color: #1D98F9; }
-  #navSidleSlim #collapseBtn {
+  #navSidle.i-sidle-slim .sidle-accordion {
+    width: 60px !important; }
+    #navSidle.i-sidle-slim .sidle-accordion .panel {
+      position: relative; }
+      #navSidle.i-sidle-slim .sidle-accordion .panel > a {
+        padding: 0;
+        text-align: center; }
+        #navSidle.i-sidle-slim .sidle-accordion .panel > a .icon-arrow-right, #navSidle.i-sidle-slim .sidle-accordion .panel > a span {
+          display: none; }
+        #navSidle.i-sidle-slim .sidle-accordion .panel > a i {
+          font-size: 20px; }
+          #navSidle.i-sidle-slim .sidle-accordion .panel > a i:first-child {
+            display: inline-block !important; }
+          #navSidle.i-sidle-slim .sidle-accordion .panel > a i:last-child {
+            display: none; }
+      #navSidle.i-sidle-slim .sidle-accordion .panel > ul {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 60px;
+        padding: 10px 0;
+        border-radius: 4px;
+        box-shadow: 2px 2px 6px #ccc;
+        background-color: #fff;
+        min-width: 180px; }
+        #navSidle.i-sidle-slim .sidle-accordion .panel > ul li {
+          line-height: 30px; }
+          #navSidle.i-sidle-slim .sidle-accordion .panel > ul li a {
+            padding: 0 10px;
+            text-align: left;
+            transition: all 0.2s ease-in-out; }
+            #navSidle.i-sidle-slim .sidle-accordion .panel > ul li a:hover {
+              color: #1D98F9; }
+      #navSidle.i-sidle-slim .sidle-accordion .panel a {
+        border: none; }
+      #navSidle.i-sidle-slim .sidle-accordion .panel a.active {
+        color: #1D98F9 !important;
+        background-color: rgba(29, 152, 248, 0.1); }
+        #navSidle.i-sidle-slim .sidle-accordion .panel a.active i {
+          color: #1D98F9; }
+  #navSidle.i-sidle-slim #collapseBtn {
     width: 60px;
     line-height: 60px;
     text-align: center;
     font-size: 24px;
-    position: absolute;
-    top: 0;
     right: -60px; }
-    #navSidleSlim #collapseBtn i {
-      cursor: pointer;
-      transition: .3s; }
-      #navSidleSlim #collapseBtn i:hover {
-        color: #1D98F9; }
-  #navSidleSlim .i-logo {
-    height: 60px;
-    line-height: 60px;
-    width: 60px;
-    text-align: center; }
-    #navSidleSlim .i-logo img {
-      vertical-align: top; }
-    #navSidleSlim .i-logo .i-logo-lg {
-      display: none; }
-    #navSidleSlim .i-logo .i-logo-sm {
-      width: 40px;
-      height: 40px;
-      margin-top: 10px; }
+    #navSidle.i-sidle-slim #collapseBtn i {
+      transform: rotate(90deg); }
+  #navSidle.i-sidle-slim .i-logo .i-logo-lg {
+    display: none; }
+  #navSidle.i-sidle-slim .i-logo .i-logo-sm {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-top: 5px; }
+  #navSidle.i-sidle-slim .slimScrollDiv {
+    width: 60px !important; }
 
 #navContent {
   padding-top: 60px;
-  padding-left: 180px;
-  transition: all 0.2s ease-in-out; }
+  padding-left: 180px; }
   #navContent .content-item {
     background-color: #F0F0F0;
     box-shadow: 2px 2px 6px #ccc inset;
