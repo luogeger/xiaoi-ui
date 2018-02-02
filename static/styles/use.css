@@ -12,7 +12,8 @@
       width: 520px;
       line-height: 1.8; }
   .content-item .info {
-    padding: 20px 40px 0 40px; }
+    padding: 20px 40px 0 40px;
+    background-color: #fff; }
     .content-item .info .slimScrollDiv {
       display: inline-block; }
     .content-item .info .info-sidle {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>xiaoi-ui-navigate</title>
+    <title>navigate</title>
     <link rel="stylesheet" href="static/css/base.css">
     <link rel="stylesheet" href="static/css/fontawesome/font-awesome.css">
     <link rel="stylesheet" href="static/css/iconfont/iconfont.css">
@@ -16,7 +16,7 @@
                 <div class="btn btn-md btn-border">用户</div>
             </div>
             <div class="pull-right">
-                <div class="btn btn-md btn-theme">通知</div>
+                <div class="btn btn-md btn-border">通知</div>
             </div>
         </div><!-- /#navHead -->
 
@@ -31,6 +31,20 @@
                     <a href="javascript:;">
                         <i class="fa fa-home"></i>
                         <span>首页</span>
+                    </a>
+                </div>
+
+                <div class="panel">
+                    <a href="javascript:;">
+                        <i class="fa fa-pie-chart"></i>
+                        <span>标签统计</span>
+                    </a>
+                </div>
+
+                <div class="panel">
+                    <a href="javascript:;">
+                        <i class="fa fa-stumbleupon"></i>
+                        <span>OCR</span>
                     </a>
                 </div>
 
@@ -67,7 +81,7 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="javascript:;"  class="active">
+                            <a href="javascript:;">
                                 <span>报修事物指南</span>
                             </a>
                         </li>
@@ -98,7 +112,7 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="javascript:;">
+                            <a href="javascript:;" class="active">
                                 <span>金融行业用户</span>
                             </a>
                         </li>
@@ -140,25 +154,12 @@
                     </ul>
                 </div>
 
-                <div class="panel">
-                    <a href="javascript:;">
-                        <i class="fa fa-pie-chart"></i>
-                        <span>标签统计</span>
-                    </a>
-                </div>
 
-                <div class="panel">
-                    <a href="javascript:;">
-                        <i class="fa fa-stumbleupon"></i>
-                        <span>OCR</span>
-                    </a>
-                </div>
             </div><!-- /#accordionNav -->
         </div><!-- /#navSidle -->
 
         <div id="navContent">
             <div class="content-item" style="padding-bottom: 200px;">
-
             </div><!-- /.content-item -->
         </div><!-- /#navContent -->
     </div><!-- /#wrapper -->
@@ -167,5 +168,7 @@
 <script src="static/js/jquery-1.12.4.min.js"></script>
 <script src="static/js/base.js"></script>
 <script>
-
+    $('.i-logo').click(function () {
+        location.pathname = '/xiaoi-ui/index.html';
+    })
 </script>

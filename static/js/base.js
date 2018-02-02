@@ -779,9 +779,14 @@ function loadMainPage(ele, url, data, callback) {
     // .sidle-accordion  手风琴
     $('#navSidle .sidle-accordion a').each(function (index, item){
         var _a = $(item);
+
         _a.click(function (){
+            var slim_b      = _a.parents('.i-sidle-slim').length;// 在slim模式下
+            var first_b     = _a.parent().hasClass('panel');// 是一级菜单
+            var only_b      = _a.siblings('ul').length === 0;// 没有二级菜单
+            if (slim_b && first_b && !only_b) { console.log(123); return }// 在slim模式下点击有二级菜单的一次菜单， 不需要反应
             // 是否有二级菜单的判断，
-            if (_a.siblings('ul').length === 0) {// 没有二级菜单 => 添加.active 和 .active-parent, 排他
+            if (only_b) {// 没有 => 添加.active 和 .active-parent, 排他
                 $('#navSidle a').each(function (i, v){ $(v).removeClass('active'); });// .active 排他
                 _a.addClass('active')// 添加.active
 
@@ -792,7 +797,7 @@ function loadMainPage(ele, url, data, callback) {
                 }
 
                 // 本身是一级菜单，且没有二级菜单
-                if (!_a.parents('.panel').children('ul').length) {
+                if (first_b && only_b) {
                     $('#navSidle .panel').each(function (index, item) {
                         $(item).children('a').removeClass('flag-open')// flag-open 去除
                         $(item).children('a').children('i:last-child').css('transform', 'rotate(0deg)')// icon 旋转
@@ -801,12 +806,12 @@ function loadMainPage(ele, url, data, callback) {
                 }
 
             }
-            else {// 有二级菜单 => 判断是否已经开启或关闭状态，判断是一级还是二级
-                if (_a.hasClass('flag-open')) {// 开启状态，直接关闭
+            else {// 有 => 判断是否已经开启或关闭状态，判断是一级还是二级
+                if (_a.hasClass('flag-open')) {// 处于开启状态 => 直接关闭
                     _a.removeClass('flag-open').siblings('ul').slideUp(200)
                     _a.children('i:last-child').css('transform', 'rotate(0deg)')
                 }
-                else {// 关闭状态，打开自己并且排他
+                else {// 处于关闭状态，打开自己并且排他
                     $('#navSidle .panel').each(function (index, item) {
                         $(item).children('a').removeClass('flag-open')// flag-open 去除
                         $(item).children('a').children('i:last-child').css('transform', 'rotate(0deg)')// icon 旋转
@@ -815,10 +820,33 @@ function loadMainPage(ele, url, data, callback) {
 
                     _a.addClass('flag-open').siblings('ul').slideDown(200)
                     _a.children('i:last-child').css('transform', 'rotate(180deg)')
+
                 }
 
             }
         });// click
+
+        _a.mouseenter(function () {
+            var slim_b      = _a.parents('.i-sidle-slim').length;// 在slim模式下
+            var first_b     = _a.parent().hasClass('panel');// 是一级菜单
+            var only_b      = _a.siblings('ul').length === 0;// 没有二级菜单
+            if (slim_b && first_b && !only_b) {
+                $('#navSidle .sidle-accordion ul').each(function (index, item) {
+                    $(item).fadeOut(200)
+                })
+                _a.siblings('ul').fadeIn(200)
+            }
+        })// mouseenter
+        _a.parent('.panel').mouseleave(function () {
+            var slim_b      = _a.parents('.i-sidle-slim').length;// 在slim模式下
+            var first_b     = _a.parent().hasClass('panel');// 是一级菜单
+            var only_b      = _a.siblings('ul').length === 0;// 没有二级菜单
+            if (slim_b && first_b && !only_b) {
+                    $('#navSidle .sidle-accordion ul').each(function (index, item) {
+                        $(item).fadeOut(200)
+                    })
+            }
+        })// mouseleave
 
         // 默认展开父级菜单
         if(_a.hasClass('active')){
@@ -828,10 +856,12 @@ function loadMainPage(ele, url, data, callback) {
 
 
     // .sidle-accordion   滚动条
+    var _height = $("#navSidle .sidle-accordion").outerHeight();
     $("#navSidle .sidle-accordion").slimScroll({
         height: "100%",
         width: "180px",
     });
+
 
     // .content-item 的大小、 高度自适应
     contentItemHeight()
@@ -846,19 +876,28 @@ function loadMainPage(ele, url, data, callback) {
 
     //  三明治功能
     function toggleCollapse(){
-        var open = !$("#collapseBtn").hasClass("to-open");
+        var open = !$("#collapseBtn").hasClass("to-open");// true出去打开状态
         if(open){
             $('#navContent').css({'padding-left': '60px'});
             $('#navSidle').css('left', '0px').addClass('i-sidle-slim');
             $('#navHead').addClass('to-open')
             $('#collapseBtn').addClass('to-open')
-            //$("#collapseBtn").removeClass("to-close").addClass("to-open");// 改变箭头方向，以及位置
+            $('#navSidle .panel').each(function (index, item) {
+                if ($(item).children('a').hasClass('flag-open')) {
+                    $(item).children('ul').css('display', 'none')
+                }
+            })
         }else{
             $('#navContent').css({'padding-left': '180px'});
             $('#navSidle').css('left', '0px').removeClass('i-sidle-slim')
             $('#navHead').removeClass('to-open')
             $('#collapseBtn').removeClass('to-open')
-            //$("#collapseBtn").removeClass("to-open").addClass("to-close");// 改变箭头方向，以及位置
+            $('#navSidle .panel').each(function (index, item) {
+                if ($(item).children('a').hasClass('active-parent')) {
+                    $(item).children('a').addClass('flag-open')
+                    $(item).children('ul').css('display', 'block')
+                }
+            })
         }
     };
     return  window.xiaoi.toggleCollapse = toggleCollapse;

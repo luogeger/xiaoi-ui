@@ -17,11 +17,13 @@ hue-6:   #986801
 hue-6-2: #c18401
 
 */
+pre{
+    /*background-color: #FAFAFA;*/
+}
 pre code{
-    color: #464646 !important;
+    color: #ffffff;
     font-family: "Microsoft YaHei";
     padding: 0 !important;
-    background-color: #F8F8F8 !important;
 }
 pre code span{
     font: normal 10pt Consolas, Monaco, monospace !important;
@@ -38,7 +40,7 @@ pre code span{
   overflow-x: auto;
   padding: 0.5em;
   color: #383a42;
-  background: #fafafa;
+  /*background: #fafafa;*/
 }
 
 .hljs-comment,

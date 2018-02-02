@@ -1,4 +1,4 @@
-@mixin transition($property: all, $duration: .2s, $timing: ease-in-out){
+@mixin transition( $duration: .2s, $property: all,$timing: ease-in-out){
   transition: $property $duration $timing;
 }
 //  $timing: linear
