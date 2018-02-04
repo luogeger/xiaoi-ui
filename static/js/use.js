@@ -292,8 +292,8 @@ $('#sidleBtn').click(function () {
         });
     })
 
-// == slide
-    var slideData = [
+// == Carousel
+    var CarouselData = [
         {title: "title-1", src: "static/images/b1.png", href: "navigate.html"},
         {title: "title-2", src: "static/images/b2.png", href: "navigate.html"},
         {title: "title-3", src: "static/images/b3.png", href: "navigate.html"},
@@ -302,8 +302,8 @@ $('#sidleBtn').click(function () {
         // {title: "title-6", src: "static/images/b6.png", href: "navigate.html"}
     ];
     $('#focus, #app').each(function (index, item) {
-        $(item).Slide({
-            data: slideData,
+        $(item).Carousel({
+            data: CarouselData,
             width: '700px',
             height: '300px',
         })

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>nav</title>
+    <link rel="stylesheet" href="static/css/base.css">
+    <link rel="stylesheet" href="static/css/fontawesome/font-awesome.css">
+    <link rel="stylesheet" href="static/css/iconfont/iconfont.css">
+    <link rel="stylesheet" href="static/styles/navigate.css">
+</head>
+<body>
+<div id="wrapper">
+    <div id="navHead">
+        <div class="pull-left">
+        </div>
+        <div class="pull-right">
+            <div class="btn btn-md btn-border">通知</div>
+            <div class="btn btn-md btn-border">用户</div>
+        </div>
+    </div><!-- /#navHead -->
+
+    <div id="navSidle">
+
+    </div><!-- /#navSidle -->
+
+    <div id="navContent">
+        <div class="content-item" style="padding-bottom: 200px;">
+        </div><!-- /.content-item -->
+    </div><!-- /#navContent -->
+</div><!-- /#wrapper -->
+</body>
+</html>
+<script src="static/js/jquery-1.12.4.min.js"></script>
+<script src="static/js/base.js"></script>
+<script>
+
+    $('.i-logo').click(function () {
+        location.pathname = '/xiaoi-ui/index.html';
+    })
+
+    var navObj = {
+        logo: {
+            large: 'static/images/iLogo-lg.png',
+            small: 'static/images/iLogo-sm.png'
+        },
+        menu: [
+            {
+                icon: 'fa fa-home',
+                title: '首页',
+            },
+            {
+                icon: 'fa fa-pie-chart',
+                title: '标签统计',
+            },
+            {
+                icon: 'fa fa-stumbleupon',
+                title: 'ocr',
+            },
+            {
+                icon: 'icon iconfont icon-customer',
+                title: '人工客服',
+                child: [
+                    { title: 'jerry', active: 'active'},
+                    { title: 'nicky' },
+                    { title: 'lucy' },
+                    { title: 'tom' },
+                ]
+            },
+            {
+                icon: 'icon iconfont icon-book',
+                title: '行政云服务',
+                child: [
+                    { title: '报修事物指南' },
+                    { title: '人员地区联系' },
+                    { title: '制度信息' },
+                    { title: '资源申请与占用' },
+                ]
+            },
+            {
+                icon: 'icon iconfont icon-people',
+                title: '用户管理',
+                child: [
+                    { title: '金融行业用户' },
+                    { title: '智能语音客服用户' },
+                    { title: '交通用户' },
+                    { title: '医疗业务用户' },
+                ]
+            },
+            {
+                icon: 'icon iconfont icon-setting',
+                title: '系统管理',
+                child: [
+                    { title: '工程中心' },
+                    { title: '技术委员会' },
+                    { title: '资源申请与占用' },
+                ]
+            },
+
+
+        ]
+    }
+
+    $('#navSidle').Slide(navObj);
+
+</script>

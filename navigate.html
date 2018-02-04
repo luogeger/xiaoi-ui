@@ -13,10 +13,10 @@
     <div id="wrapper">
         <div id="navHead">
             <div class="pull-left">
-                <div class="btn btn-md btn-border">用户</div>
             </div>
             <div class="pull-right">
                 <div class="btn btn-md btn-border">通知</div>
+                <div class="btn btn-md btn-border">用户</div>
             </div>
         </div><!-- /#navHead -->
 
@@ -157,6 +157,7 @@
 
             </div><!-- /#accordionNav -->
         </div><!-- /#navSidle -->
+        <div id="appSidle"></div>
 
         <div id="navContent">
             <div class="content-item" style="padding-bottom: 200px;">
@@ -171,4 +172,60 @@
     $('.i-logo').click(function () {
         location.pathname = '/xiaoi-ui/index.html';
     })
+
+    var navObj = [
+        {
+            icon: 'fa fa-home',
+            title: '首页',
+        },
+        {
+            icon: 'fa fa-pie-chart',
+            title: '标签统计',
+        },
+        {
+            icon: 'fa fa-stumbleupon',
+            title: 'ocr',
+        },
+        {
+            icon: 'icon iconfont icon-customer',
+            title: '人工客服',
+            child: [
+                { title: 'jerry' },
+                { title: 'nicky' },
+                { title: 'lucy' },
+                { title: 'tom' },
+            ]
+        },
+        {
+            icon: 'icon iconfont icon-book',
+            title: '行政云服务',
+            child: [
+                { title: '报修事物指南' },
+                { title: '人员地区联系' },
+                { title: '制度信息' },
+                { title: '资源申请与占用' },
+            ]
+        },
+        {
+            icon: 'icon iconfont icon-people',
+            title: '用户管理',
+            child: [
+                { title: '金融行业用户' },
+                { title: '智能语音客服用户' },
+                { title: '交通用户' },
+                { title: '医疗业务用户' },
+            ]
+        },
+        {
+            icon: 'icon iconfont icon-setting',
+            title: '系统管理',
+            child: [
+                { title: '工程中心' },
+                { title: '技术委员会' },
+                { title: '资源申请与占用' },
+            ]
+        },
+
+
+    ]
 </script>

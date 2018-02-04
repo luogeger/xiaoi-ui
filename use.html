@@ -106,7 +106,7 @@
                             <li class="treeView"><a href="#treeView">树形菜单 <span>TreeView</span></a></li>
                             <li class="date"><a href="#date">日期组件 <span>DatePicker</span></a></li>
 
-                            <li class="slider"><a href="#slider">图片轮播 <span>Slider</span></a></li>
+                            <li class="carousel"><a href="#carousel">图片轮播 <span>Carousel</span></a></li>
                             <li class="image"><a href="#image">图片 <span>Image</span></a></li>
                             <li class="thumbnail"><a href="#thumbnail">缩略图 <span>Thumbnail</span></a></li>
                             <li class="navigate"><a href="#navigate">导航 <span>Navigate</span></a></li>
@@ -1594,8 +1594,8 @@
                             </div>
                         </div><!-- /#date -->
 
-                        <div id="slider">
-                            <h2 class="title">图片轮播 <span>Slider</span></h2>
+                        <div id="carousel">
+                            <h2 class="title">图片轮播 <span>Carousel</span></h2>
                             <p class="explain"></p>
                             <div class="box">
                                 <div class="box-demo">
@@ -1603,13 +1603,13 @@
                                     <div class="demo-main">
                                         <div id="focus"></div>
                                         <br>
-                                        <div id="app" style="text-align: right;"></div>
+                                        <!--<div id="app" style="text-align: right;"></div>-->
                                     </div>
                                 </div>
                                 <div class="box-code">
                                     <pre>
                                         <code class="jquery">
-     var slideData = [
+     var CarouselData = [
         {title: "title-1", src: "static/images/b1.jpg", href: "navigate.html"},
         {title: "title-2", src: "static/images/b2.jpg", href: "navigate.html"},
         {title: "title-3", src: "static/images/b3.jpg", href: "navigate.html"},
@@ -1618,8 +1618,8 @@
         {title: "title-6", src: "static/images/b6.jpg", href: "navigate.html"}
     ];
     $('#focus, #app').each(function (index, item) {
-        $(item).Slide({
-            data: slideData,
+        $(item).Carousel({
+            data: CarouselData,
             width: '730px',
             height: '454px',
             //
@@ -1629,7 +1629,7 @@
                                     </pre>
                                 </div>
                             </div>
-                        </div><!-- /#slider -->
+                        </div><!-- /#Carousel -->
 
                         <div id="image">
                             <h2 class="title">图片 <span>Image</span></h2>
