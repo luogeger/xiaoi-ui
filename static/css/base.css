@@ -1625,8 +1625,12 @@ div.i-thumbnail {
   color: #fff;
   background-color: #dd4b39; }
 
+#navHead,
+#navSidle,
+#navContent {
+  transition: 0.2s all ease-in-out; }
+
 #navHead {
-  transition: 0.2s all ease-in-out;
   width: calc(100% - 180px);
   left: 180px;
   height: 60px;
@@ -1654,42 +1658,38 @@ div.i-thumbnail {
   /* 导航主体 */ }
   #navSidle .sidle-accordion {
     padding: 70px 0 10px 0; }
-    #navSidle .sidle-accordion .panel, #navSidle .sidle-accordion a, #navSidle .sidle-accordion ul, #navSidle .sidle-accordion li {
-      width: 100%; }
-    #navSidle .sidle-accordion a {
-      display: block;
+    #navSidle .sidle-accordion .panel a {
+      display: table;
+      width: 100%;
       height: 40px;
       line-height: 40px;
       overflow: hidden;
       padding: 0 10px;
       position: relative;
       border-right: 2px solid transparent;
+      white-space: normal;
       transition: 0.2s all ease-in-out; }
-      #navSidle .sidle-accordion a span {
-        margin-left: 5px; }
-      #navSidle .sidle-accordion a i {
-        color: #999999; }
-      #navSidle .sidle-accordion a:hover {
-        color: #ED5565; }
-        #navSidle .sidle-accordion a:hover i {
-          color: #ED5565; }
-    #navSidle .sidle-accordion .panel > a {
-      display: table; }
-      #navSidle .sidle-accordion .panel > a span, #navSidle .sidle-accordion .panel > a i {
+      #navSidle .sidle-accordion .panel a span, #navSidle .sidle-accordion .panel a i {
+        transition: 0.2s all ease-in-out;
         display: table-cell; }
-      #navSidle .sidle-accordion .panel > a i {
-        width: 16px; }
-      #navSidle .sidle-accordion .panel > a span {
-        padding-left: 10px; }
-      #navSidle .sidle-accordion .panel > a span + i {
-        text-align: center;
-        transition: 0.2s all ease-in-out; }
-    #navSidle .sidle-accordion .panel > ul {
+      #navSidle .sidle-accordion .panel a span {
+        padding-left: 10px;
+        white-space: normal; }
+      #navSidle .sidle-accordion .panel a i {
+        width: 16px;
+        color: #999999; }
+      #navSidle .sidle-accordion .panel a span + i {
+        text-align: center; }
+      #navSidle .sidle-accordion .panel a:hover {
+        color: #ED5565; }
+        #navSidle .sidle-accordion .panel a:hover i {
+          color: #ED5565; }
+    #navSidle .sidle-accordion .panel ul {
       display: none; }
-      #navSidle .sidle-accordion .panel > ul li a {
-        padding-left: 40px; }
-        #navSidle .sidle-accordion .panel > ul li a span {
-          margin-left: 0; }
+      #navSidle .sidle-accordion .panel ul li {
+        white-space: normal; }
+        #navSidle .sidle-accordion .panel ul li a {
+          padding-left: 36px; }
     #navSidle .sidle-accordion .panel .active {
       color: #ED5565 !important;
       border-color: #ED5565;
@@ -1707,8 +1707,7 @@ div.i-thumbnail {
     top: 0;
     right: -60px; }
     #navSidle #collapseBtn i {
-      cursor: pointer;
-      transition: .3s; }
+      cursor: pointer; }
       #navSidle #collapseBtn i:hover {
         color: #ED5565; }
   #navSidle .i-logo {
@@ -1743,18 +1742,18 @@ div.i-thumbnail {
     width: 60px !important; }
     #navSidle.i-sidle-slim .sidle-accordion .panel {
       position: relative; }
-      #navSidle.i-sidle-slim .sidle-accordion .panel > a {
+      #navSidle.i-sidle-slim .sidle-accordion .panel > a .icon-arrow-right, #navSidle.i-sidle-slim .sidle-accordion .panel > a span {
+        display: none; }
+      #navSidle.i-sidle-slim .sidle-accordion .panel a {
         padding: 0;
         text-align: center; }
-        #navSidle.i-sidle-slim .sidle-accordion .panel > a .icon-arrow-right, #navSidle.i-sidle-slim .sidle-accordion .panel > a span {
-          display: none; }
-        #navSidle.i-sidle-slim .sidle-accordion .panel > a i {
+        #navSidle.i-sidle-slim .sidle-accordion .panel a i {
           font-size: 20px; }
-          #navSidle.i-sidle-slim .sidle-accordion .panel > a i:first-child {
+          #navSidle.i-sidle-slim .sidle-accordion .panel a i:first-child {
             display: inline-block !important; }
-          #navSidle.i-sidle-slim .sidle-accordion .panel > a i:last-child {
+          #navSidle.i-sidle-slim .sidle-accordion .panel a i:last-child {
             display: none; }
-      #navSidle.i-sidle-slim .sidle-accordion .panel > ul {
+      #navSidle.i-sidle-slim .sidle-accordion .panel ul {
         display: none;
         position: absolute;
         top: 0;
@@ -1764,13 +1763,13 @@ div.i-thumbnail {
         background-color: #ffffff;
         border: 1px solid rgba(237, 85, 101, 0.4);
         min-width: 180px; }
-        #navSidle.i-sidle-slim .sidle-accordion .panel > ul li {
+        #navSidle.i-sidle-slim .sidle-accordion .panel ul li {
           line-height: 30px; }
-          #navSidle.i-sidle-slim .sidle-accordion .panel > ul li a {
+          #navSidle.i-sidle-slim .sidle-accordion .panel ul li a {
             padding: 0 10px;
             text-align: left;
             transition: 0.2s all ease-in-out; }
-            #navSidle.i-sidle-slim .sidle-accordion .panel > ul li a:hover {
+            #navSidle.i-sidle-slim .sidle-accordion .panel ul li a:hover {
               color: #ED5565; }
       #navSidle.i-sidle-slim .sidle-accordion .panel a {
         border: none; }

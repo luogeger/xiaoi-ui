@@ -5,13 +5,13 @@ $height: 60px;
 #navHead,
 #navSidle,
 #navContent {
-  //@include transition(.3s);
+  @include transition();
 }
 
 
-
+// #navHead
+// =====================================
 #navHead{
-  @include transition();
   width: calc(100% - 180px);
   left: $width;
   height: $height;
@@ -29,6 +29,10 @@ $height: 60px;
 }
 
 
+
+
+// #navSidle
+// =====================================
 #navSidle{
   width: $width;
   background-color: $white;
@@ -39,79 +43,62 @@ $height: 60px;
   bottom: 0;
   z-index: 2;
 
-
   /* 导航主体 */
   .sidle-accordion{
     padding: 70px 0 10px 0;
 
-    .panel, a, ul, li{
-      width: 100%;
-    }
-
-    a{
-      display: block;
-      height: 40px;
-      line-height: 40px;
-      overflow: hidden;
-      padding: 0 10px;
-      position: relative;
-      border-right: 2px solid transparent;
-      @include transition();
-
-      span{
-        margin-left: 5px;
-      }
-
-      i{
-        color: #999999;
-      }
-
-      &:hover{
-        //background-color: $hover-bg;
-        color: $theme-normal;
-        i{
-          color: $theme-normal;
-        }
-      }
-    }// a
-
     .panel{
-      >a{
-        display: table;
-        span, i{
-          display: table-cell;
-        }
 
-        i{
-          width: 16px;
+      a{
+        display: table;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        overflow: hidden;
+        padding: 0 10px;
+        position: relative;
+        border-right: 2px solid transparent;
+        white-space: normal;
+        @include transition();
+
+        span, i{
+          @include transition();
+          display: table-cell;
         }
 
         span{
           padding-left: 10px;
+          white-space: normal;
+        }
+
+        i{
+          width: 16px;
+          color: #999999;
         }
 
         span + i{
           text-align: center;
-          @include transition();
+          //@include transition();
         }
-      }
 
-      >ul{
+        &:hover{
+          color: $theme-normal;
+          i{
+            color: $theme-normal;
+          }
+        }
+      }// a
+
+      ul{
         display: none;
 
         li{
+          white-space: normal;
           a{
-            padding-left: 40px;
-
-            i{
-
-            }
-            span{
-              margin-left: 0;
-            }
+            padding-left: 36px;
           }
         }
-      }
+      }// ul
 
       .active{
         color: $theme-normal !important;// 防止 hover
@@ -127,7 +114,7 @@ $height: 60px;
         }
       }
     }// .panel
-  }
+  }// .sidle-accordion
 
   #collapseBtn{
     width: 60px;
@@ -137,11 +124,9 @@ $height: 60px;
     position: absolute;
     top: 0;
     right: -60px;
-    //@include transition();
 
     i{
       cursor: pointer;
-      transition: .3s;
       &:hover{
         color: $theme-normal;
       }
@@ -180,8 +165,7 @@ $height: 60px;
     z-index: 0 !important;
   }
 }// #navSidle
-// .i-sidle-slim
-// =====================================
+// ========================================================================
 #navSidle.i-sidle-slim{
   position: fixed;
   top: 0;
@@ -195,12 +179,13 @@ $height: 60px;
       position: relative;
 
       >a{
-        padding: 0;
-        text-align: center;
-
         .icon-arrow-right, span{
           display: none;
         }
+      }
+      a{
+        padding: 0;
+        text-align: center;
 
         i{
           font-size: 20px;;
@@ -215,7 +200,7 @@ $height: 60px;
 
       }// >a
 
-      >ul{
+      ul{
         display: none;
         position: absolute;
         top: 0;
@@ -291,6 +276,10 @@ $height: 60px;
 }// #navSidleSlim
 
 
+
+
+// #navContent
+// =====================================
 #navContent {
   padding-top: $height;
   padding-left: $width;
