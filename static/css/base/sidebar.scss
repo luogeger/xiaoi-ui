@@ -5,11 +5,13 @@ $height: 60px;
 #navHead,
 #navSidle,
 #navContent {
-  @include transition(.3s);
+  //@include transition(.3s);
 }
 
 
+
 #navHead{
+  @include transition();
   width: calc(100% - 180px);
   left: $width;
   height: $height;
@@ -36,6 +38,7 @@ $height: 60px;
   left: 0;
   bottom: 0;
   z-index: 2;
+
 
   /* 导航主体 */
   .sidle-accordion{
@@ -131,10 +134,10 @@ $height: 60px;
     line-height: 60px;
     text-align: center;
     font-size: 24px;
-
     position: absolute;
     top: 0;
     right: -60px;
+    //@include transition();
 
     i{
       cursor: pointer;
@@ -177,6 +180,7 @@ $height: 60px;
     z-index: 0 !important;
   }
 }// #navSidle
+// .i-sidle-slim
 // =====================================
 #navSidle.i-sidle-slim{
   position: fixed;
@@ -212,10 +216,10 @@ $height: 60px;
       }// >a
 
       >ul{
+        display: none;
         position: absolute;
         top: 0;
         left: 60px;
-        //padding: 10px 0;
         border-radius: 4px;
         box-shadow: 2px 2px 6px $theme-rgb1;
         background-color: #ffffff;

@@ -209,7 +209,7 @@ button,
   display: inline-block;
   cursor: pointer;
   border: 1px solid transparent;
-  transition: all 0.2s ease-in-out;
+  transition: 0.2s all ease-in-out;
   padding: 7px 10px;
   font-size: 14px;
   line-height: 1;
@@ -394,7 +394,7 @@ button,
     transform: scale(1); }
 
 input, textarea {
-  transition: all 0.2s ease-in-out; }
+  transition: 0.2s all ease-in-out; }
 
 input:hover,
 textarea:hover {
@@ -472,7 +472,7 @@ input.disabled {
     border-radius: 4px;
     cursor: pointer;
     text-align: right;
-    transition: all 0.2s ease-in-out; }
+    transition: 0.2s all ease-in-out; }
     .dropdown-wrap .dropdown:hover {
       border-color: #DA4453; }
       .dropdown-wrap .dropdown:hover i {
@@ -490,7 +490,7 @@ input.disabled {
       /* 文字不换行*/ }
     .dropdown-wrap .dropdown i {
       padding: 0px 10px;
-      transition: 0.2s all ease-in-out; }
+      transition: all 0.2s ease-in-out; }
     .dropdown-wrap .dropdown > ul {
       display: none;
       min-width: 122px;
@@ -512,7 +512,7 @@ input.disabled {
         /* 文字超出用...*/
         white-space: nowrap;
         /* 文字不换行*/
-        transition: 0.1s all ease-in-out; }
+        transition: all 0.1s ease-in-out; }
         .dropdown-wrap .dropdown > ul li:hover {
           background-color: #f3f3f3; }
       .dropdown-wrap .dropdown > ul .li-checkbox {
@@ -771,7 +771,7 @@ input.disabled {
   cursor: pointer;
   border: 1px solid #DDDEE1;
   border-radius: 4px;
-  transition: all 0.2s ease-in-out; }
+  transition: 0.2s all ease-in-out; }
   .i-page-line div:hover, .i-page-line li:not(.i-line-omit):hover, .i-page-line input:hover {
     border-color: #ED5565;
     color: #ED5565; }
@@ -1625,12 +1625,8 @@ div.i-thumbnail {
   color: #fff;
   background-color: #dd4b39; }
 
-#navHead,
-#navSidle,
-#navContent {
-  transition: all 0.3s ease-in-out; }
-
 #navHead {
+  transition: 0.2s all ease-in-out;
   width: calc(100% - 180px);
   left: 180px;
   height: 60px;
@@ -1668,7 +1664,7 @@ div.i-thumbnail {
       padding: 0 10px;
       position: relative;
       border-right: 2px solid transparent;
-      transition: all 0.2s ease-in-out; }
+      transition: 0.2s all ease-in-out; }
       #navSidle .sidle-accordion a span {
         margin-left: 5px; }
       #navSidle .sidle-accordion a i {
@@ -1687,7 +1683,7 @@ div.i-thumbnail {
         padding-left: 10px; }
       #navSidle .sidle-accordion .panel > a span + i {
         text-align: center;
-        transition: all 0.2s ease-in-out; }
+        transition: 0.2s all ease-in-out; }
     #navSidle .sidle-accordion .panel > ul {
       display: none; }
       #navSidle .sidle-accordion .panel > ul li a {
@@ -1724,7 +1720,7 @@ div.i-thumbnail {
     background: #ffffff;
     position: absolute;
     z-index: 1;
-    transition: all 0.3s ease-in-out; }
+    transition: 0.3s all ease-in-out; }
     #navSidle .i-logo img {
       vertical-align: top; }
     #navSidle .i-logo .i-logo-lg {
@@ -1733,7 +1729,7 @@ div.i-thumbnail {
     #navSidle .i-logo .i-logo-sm {
       display: none; }
   #navSidle .sidle-accordion, #navSidle .slimScrollDiv {
-    transition: all 0.2s ease-in-out; }
+    transition: 0.2s all ease-in-out; }
   #navSidle .slimScrollBar {
     z-index: 0 !important; }
 
@@ -1759,6 +1755,7 @@ div.i-thumbnail {
           #navSidle.i-sidle-slim .sidle-accordion .panel > a i:last-child {
             display: none; }
       #navSidle.i-sidle-slim .sidle-accordion .panel > ul {
+        display: none;
         position: absolute;
         top: 0;
         left: 60px;
@@ -1772,7 +1769,7 @@ div.i-thumbnail {
           #navSidle.i-sidle-slim .sidle-accordion .panel > ul li a {
             padding: 0 10px;
             text-align: left;
-            transition: all 0.2s ease-in-out; }
+            transition: 0.2s all ease-in-out; }
             #navSidle.i-sidle-slim .sidle-accordion .panel > ul li a:hover {
               color: #ED5565; }
       #navSidle.i-sidle-slim .sidle-accordion .panel a {
