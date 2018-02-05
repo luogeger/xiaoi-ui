@@ -735,7 +735,7 @@ function loadMainPage(ele, url, data, callback) {
     };// Paging
 
     //通过jQuery对象初始化分页对象
-    $.fn.Paging = function(options) {
+    $.fn.iPaging = function(options) {
         return new Paging($(this), options);
     }
 }($, window);
@@ -1086,7 +1086,7 @@ var _sidle = function () {
 
     }// prototype
 
-    $.fn.Sidle = function (options) {
+    $.fn.iSidle = function (options) {
         return new Sidle(options)
 
     }// $.fn
@@ -1394,7 +1394,7 @@ var _sidle = function () {
 
     }// prototype
 
-    $.fn.Carousel  = function (options) {
+    $.fn.iCarousel  = function (options) {
         var defaults = {
             showTime: 500,
             step: 2000,

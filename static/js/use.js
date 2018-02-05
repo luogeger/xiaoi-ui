@@ -282,7 +282,7 @@ $('#sidleBtn').click(function () {
 
 // == Paging
 	$(".i-page-line").each(function (index, item) {
-        $(item).Paging({
+        $(item).iPaging({
             pageNo: 4,
             totalPage: 13,
             totalSize: 300,
@@ -302,7 +302,7 @@ $('#sidleBtn').click(function () {
         // {title: "title-6", src: "static/images/b6.png", href: "navigate.html"}
     ];
     $('#focus, #app').each(function (index, item) {
-        $(item).Carousel({
+        $(item).iCarousel({
             data: CarouselData,
             width: '700px',
             height: '300px',
