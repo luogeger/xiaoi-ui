@@ -34,11 +34,6 @@
 <script src="static/js/jquery-1.12.4.min.js"></script>
 <script src="static/js/base.js"></script>
 <script>
-
-    $('.i-logo').click(function () {
-        location.pathname = '/xiaoi-ui/index.html';
-    })
-
     var navObj = {
         logo: {
             large: 'static/images/iLogo-lg.png',
@@ -101,6 +96,10 @@
         ]
     }
 
-    $('#navSidle').Slide(navObj);
+    $('#navSidle').Sidle(navObj);
+
+    $('.i-logo').click(function () {
+        location.pathname = '/xiaoi-ui/index.html';
+    })
 
 </script>

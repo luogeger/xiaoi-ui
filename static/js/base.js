@@ -915,13 +915,11 @@ var _sidle = function () {
 
         init: function (opt) {
             // 初始化dom元素
-            var $content   = $('.content-item')// .content-item
-            var $container = $('#navSidle');
+            var $content    = $('.content-item')// .content-item
+            var $container  = $('#navSidle');
             $container.html(this.render(opt))
-            this.$btn       = $container.find('#collapseBtn');// 三明治按钮
             this.$a         = $container.find('a');// 所有a标签
-
-
+            this.$btn       = $container.find('#collapseBtn');// 三明治按钮
 
             // 初始化事件
             $content.css({"min-height": $(window).height() -60 +"px"});// 设置.content-item的最小高度
@@ -967,7 +965,6 @@ var _sidle = function () {
                 html += '</div>';// .panel
             });// menu.forEach
             html +=  '</div>';
-
             return html;
         },// render
 
@@ -977,7 +974,7 @@ var _sidle = function () {
                 // 显示默认菜单
                 if (_a.hasClass('active')) {
                     _a.parents('.panel')
-                        .children('ul').css('display', 'block')// 二级菜单显示
+                        .children('ul').slideDown(200)// 二级菜单显示
                         .siblings('a').addClass('flag-open active-parent')// a标签字体颜色变主题色
                         .children('i:last-child').css('transform', 'rotate(180deg)')// 箭头朝下
                 }// if
@@ -1062,7 +1059,7 @@ var _sidle = function () {
                 var open = !$("#collapseBtn").hasClass("to-open");// true出去打开状态
                 if(open){
                     $('#navContent').css({'padding-left': '60px'});
-                    $('#navSidle').addClass('i-sidle-slim');
+                    $('#navSidle').css('left', '0px').addClass('i-sidle-slim');
                     $('#navHead').addClass('to-open')
                     $('#collapseBtn').addClass('to-open')
                     $('#navSidle .panel').each(function (index, item) {
@@ -1072,10 +1069,11 @@ var _sidle = function () {
                     })
                 }else{
                     $('#navContent').css({'padding-left': '180px'});
-                    $('#navSidle').removeClass('i-sidle-slim')
+                    $('#navSidle').css('left', '0px').removeClass('i-sidle-slim')
                     $('#navHead').removeClass('to-open')
                     $('#collapseBtn').removeClass('to-open')
                     $('#navSidle .panel').each(function (index, item) {
+                        // $(item).children('ul').css('display', 'none')
                         if ($(item).children('a').hasClass('active-parent')) {
                             $(item).children('a').addClass('flag-open')
                             $(item).children('ul').slideDown(200)
@@ -1084,15 +1082,13 @@ var _sidle = function () {
 
                 }
             })
-
-
         },// bind
 
     }// prototype
 
-
-    $.fn.Slide = function (options) {
+    $.fn.Sidle = function (options) {
         return new Sidle(options)
+
     }// $.fn
 }($, window);// end
 
