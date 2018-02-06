@@ -34,12 +34,24 @@
   background-color: $theme-normal !important;
 }
 
+.i-text-col{
+  color: $theme-normal !important;
+}
+
 .i-border-col{
   border-color: $theme-normal !important;
 }
 
-.i-text-col{
-  color: $theme-normal !important;
+.i-border-shadow{
+  box-shadow: $theme-rgb1 0px 0px 0px 2px;
+}
+
+.i-pseudo-class{
+  &::before,
+  &::after{
+    @include transition();
+    color: $theme-normal !important;
+  }
 }
 
 .ver-mid{

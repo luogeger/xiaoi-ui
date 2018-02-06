@@ -565,24 +565,87 @@
     Calendar.prototype = {
         constructor: Calendar,
 
-        init: function (opt) {
-            this.rende(opt)
+        init: function (ele) {
+            this.render(ele)// 先追加 container, input-box, calendar-box
+            this.$container     = $(ele).parents('.i-date-picker-container');
+            this.$inputBox      = $(ele).parent();
+            this.$calendarBox   = $(ele).parent().siblings('.date-calendar-box');
+
+            //
+            this.eventsObj      = this.events();// 方法变对象
+            this.bind()
         },// init
 
-        rende: function (opt) {
-            var containerHTML = '' +
+        render: function (ele) {
+            var containerHTML =
                 '<div class="i-date-picker-container">' +
                 '<div class="date-input-box icon iconfont icon-cale-a"></div>' +
                 '<div class="date-calendar-box"></div></div>';
-            $(opt).wrap(containerHTML)
-        }
+            $(ele).wrap(containerHTML)
+        },// render
+
+        bind: function () {
+            var _this = this;
+            this.$inputBox.click(this.eventsObj.calendarShow)
+
+            $(document).click(function () {
+                _this.eventsObj.colorHide()
+            })
+        },// bind
+
+        events: function () {
+            var _this = this;
+            return {
+                colorHide: function () {// 所有的边框颜色都清除
+                    $('.i-date-picker-container').each(function (index, item) {
+                        $(item).find('.date-input-box').removeClass('i-pseudo-class')
+                        $(item).find('.i-date-picker').removeClass('i-border-col i-border-shadow')
+                    })
+                },
+                colorShow: function () {
+                    _this.eventsObj.colorHide()
+                    _this.$inputBox.addClass('i-pseudo-class')
+                    _this.$inputBox.children('input').addClass('i-border-col i-border-shadow')
+
+                },
+                calendarShow: function (e) {
+                    e.stopPropagation()
+                    _this.eventsObj.colorShow()
+                },
+            }// return
+        },// events
     };// prototype
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     $.fn.iCalendar = function (options) {
         return new Calendar(options)
     };// $.fn
 
-    var $calendars = $('input[data-iCalendar=true]');
+    // 初始化input.i-date-picker
+    var $calendars = $('input[data-calendar=true]');
     $calendars.each(function (index, item) {
         $(item).iCalendar(item)
     })

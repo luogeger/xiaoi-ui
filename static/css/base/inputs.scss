@@ -7,7 +7,7 @@ textarea:hover{
   border-color: $theme-hover;
 }
 
-input,
+input:not(.i-date-picker),
 textarea{
   &:focus{
     outline: 0;

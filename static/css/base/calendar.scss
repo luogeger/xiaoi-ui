@@ -1,23 +1,22 @@
 @charset "utf-8";
-.i-date-picker-container {
+.i-date-picker-container,
+.i-date-picker-container .date-input-box{
   display: inline-block;
-  vertical-align: top;
   position: relative;
 
+}
+
+
+.i-date-picker-container {
+
   .date-input-box {
-    position: relative;
-    display: inline-block;
+
     >input {
       height: $height-sm;
       width: 200px;
       border: 1px solid $sixC;
       border-radius: 4px;
       padding: 0 25px 0 5px;
-      font-family: "microsoft yahei";
-
-      &:focus {
-        border-color: $theme-normal;
-      }
     }// >input
 
     &::before{
@@ -25,7 +24,16 @@
       position: absolute;
       top: 6px;
       right: 6px;
-      cursor: pointer;
+      @include transition();
+    }
+
+    &:hover{
+      >input{
+        border-color: $theme-normal;
+      }
+      &::before{
+        color: $theme-normal;
+      }
     }
   }// date-input-box
 
@@ -38,7 +46,6 @@
     border-radius: 4px;
     background-color: #fff;
     width: 240px;
-    //height: 263px;
     z-index: 1;
     /*  全部table 公用样式,
     */
