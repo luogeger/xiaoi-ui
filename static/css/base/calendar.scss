@@ -86,8 +86,8 @@
     }
 
     /* 初始化 */
-    .init-box {
-      .date-head {
+    .calendar-box {
+      .calendar-head {
         position: relative;
         padding: 5px;
         text-align: center;
@@ -130,7 +130,7 @@
         }
       }
 
-      .date-body {
+      .calendar-body {
         padding: 5px;
         border-top: 1px solid $sixC;
         border-bottom: 1px solid $sixC;
@@ -151,7 +151,7 @@
         }
       }
 
-      .date-foot {
+      .calendar-foot {
         padding: 5px;
         .foot-time {
           display: inline-block;

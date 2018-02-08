@@ -588,6 +588,7 @@
             var _this = this;
             this.$inputBox.click(this.eventsObj.calendarShow)
 
+            // document
             $(document).click(function () {
                 _this.eventsObj.colorHide()
             })
@@ -598,8 +599,9 @@
             return {
                 colorHide: function () {// 所有的边框颜色都清除
                     $('.i-date-picker-container').each(function (index, item) {
-                        $(item).find('.date-input-box').removeClass('i-pseudo-class')
-                        $(item).find('.i-date-picker').removeClass('i-border-col i-border-shadow')
+                        $(item).find('.date-input-box').removeClass('i-pseudo-class')// 伪元素颜色
+                        $(item).find('.i-date-picker').removeClass('i-border-col i-border-shadow')// 边框和阴影颜色
+                        $(item).find('.date-calendar-box').html('')// 日历消失
                     })
                 },
                 colorShow: function () {
@@ -611,7 +613,20 @@
                 calendarShow: function (e) {
                     e.stopPropagation()
                     _this.eventsObj.colorShow()
+                    _this.eventsObj.calendarBoxHTML()
+
                 },
+
+                calendarBoxHTML: function () {
+                    var html = '' +
+                        '<div class="date-calendar-box"><div class="calendar-box">' +
+                        '<div class="calendar-head"></div>' +
+                        '<div class="calendar-body"></div>' +
+                        '<div class="calendar-foot"></div>' +
+                        '</div></div>';
+
+                    _this.$calendarBox.html(html)
+                }
             }// return
         },// events
     };// prototype

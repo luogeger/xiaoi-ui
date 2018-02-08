@@ -16,6 +16,7 @@ var files = [
     'toastr',
     'tree-view',
     'tree-view-slim',
+    'laydate',
 
 
 
