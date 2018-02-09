@@ -308,3 +308,8 @@ $('#sidleBtn').click(function () {
             height: '300px',
         })
     })
+
+// == laydate
+laydate.render({
+    elem: '#dateTest' //指定元素
+});

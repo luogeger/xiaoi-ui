@@ -1577,17 +1577,21 @@
                                 <div class="box-demo">
                                     <p class="instance">实例 :</p>
                                     <div class="demo-main">
-                                        <div class="datePicker">
-                                            <input type="text" placeholder="选择输入时间">
-                                        </div>
+                                        <!--<div class="datePicker">-->
+                                            <!--<input type="text" placeholder="选择输入时间">-->
+                                        <!--</div>-->
+                                        <input type="text" id="dateTest" class="i-date-picker" data-calendar="true" placeholder="输入时间">
                                     </div>
                                 </div>
                                 <div class="box-code">
                             <pre>
                                 <code class="xml">
-                &lt;div class="datePicker"&gt;
-                        &lt;input type="text" placeholder="选择输入时间"&gt;
-                &lt;/div&gt;
+            &lt;input type="text" id="dateTest" class="i-date-picker" data-calendar="true" placeholder="输入时间"&gt;
+                                </code>
+                                <code class="jquery">
+        laydate.render({
+            elem: '#dateTest' //指定元素
+        });
                                 </code>
                             </pre>
                                 </div>

@@ -1939,9 +1939,9 @@ html #layuicss-laydate {
 
 .layui-laydate-header i {
   position: absolute;
-  top: 15px;
   color: #999;
-  font-size: 18px; }
+  top: 11px;
+  font-size: 24px; }
 
 .layui-laydate-header i.laydate-prev-y {
   left: 15px; }
@@ -1960,7 +1960,8 @@ html #layuicss-laydate {
   text-align: center;
   text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap; }
+  white-space: nowrap;
+  font-weight: 600; }
 
 .laydate-time-text {
   cursor: default !important; }
@@ -2058,7 +2059,8 @@ html #layuicss-laydate {
   line-height: 36px;
   margin: 3px 0;
   text-align: center;
-  cursor: pointer; }
+  cursor: pointer;
+  border-radius: 3px; }
 
 .laydate-month-list > li {
   width: 25%;
@@ -2134,7 +2136,8 @@ html #layuicss-laydate {
   color: #333; }
 
 .layui-laydate-content td {
-  color: #666; }
+  color: #666;
+  border-radius: 3px; }
 
 .layui-laydate-content td.laydate-selected {
   background-color: #00F7DE; }
