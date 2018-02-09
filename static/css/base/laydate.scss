@@ -23,7 +23,7 @@ html #layuicss-laydate {
   position: absolute;
   z-index: 66666666;
   margin: 5px 0;
-  border-radius: 2px;
+  //border-radius: 2px;
   font-size: 14px;
   -webkit-animation-duration: .3s;
   animation-duration: .3s;
@@ -31,14 +31,14 @@ html #layuicss-laydate {
   animation-fill-mode: both;
   -webkit-animation-name: laydate-upbit;
   animation-name: laydate-upbit;
+  // self
+  border-radius: 4px;
 
-  .layui-laydate-main {
-    width: 272px
-  }
+}
 
-}// layui-laydate
-
-
+.layui-laydate-main {
+  width: 272px
+}
 
 .layui-laydate-content td,
 .layui-laydate-header *,
@@ -114,7 +114,7 @@ html #layuicss-laydate {
 
 .layui-laydate-header i {
   position: absolute;
-  top: 10px;
+  top: 15px;// 原来是10
   color: #999;
   font-size: 18px
 }
@@ -209,7 +209,8 @@ html #layuicss-laydate {
 }
 
 .layui-laydate-footer span:hover {
-  color: #5FB878
+  //color: #5FB878;
+  color: $theme-normal;
 }
 
 .laydate-footer-btns {
@@ -319,8 +320,11 @@ html #layuicss-laydate {
 }
 
 .layui-laydate, .layui-laydate-hint {
-  border: 1px solid #d2d2d2;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+  //border: 1px solid #d2d2d2;
+  //box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+
+  border: 1px solid transparent;
+  box-shadow: 0 0 4px 1px $theme-rgb4;
   background-color: #fff;
   color: #666
 }
@@ -331,7 +335,8 @@ html #layuicss-laydate {
 
 .layui-laydate-header i:hover,
 .layui-laydate-header span:hover {
-  color: #5FB878
+  //color: #5FB878;
+  color: $theme-hover;
 }
 
 .layui-laydate-content {
@@ -353,13 +358,19 @@ html #layuicss-laydate {
 }
 
 .laydate-selected:hover {
-  background-color: #00F7DE !important
+  //background-color: #00F7DE !important
+  background-color: $theme-hover !important
 }
 
 .layui-laydate-content td:hover,
 .layui-laydate-list li:hover {
-  background-color: $theme-hover;
+  background-color: $theme-rgb4;
   //color: #333
+}
+
+// self
+.layui-laydate-content td:hover{
+  color: #ffffff;
 }
 
 .laydate-time-list li ol {
@@ -470,7 +481,8 @@ html #layuicss-laydate {
 .laydate-theme-grid .laydate-selected,
 .laydate-theme-grid .laydate-selected:hover {
   background-color: #f2f2f2 !important;
-  color: #009688 !important
+  //color: #009688 !important
+  color: $theme-hover !important
 }
 
 .laydate-theme-grid .laydate-selected.laydate-day-next,

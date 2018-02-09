@@ -1869,16 +1869,17 @@ html #layuicss-laydate {
   position: absolute;
   z-index: 66666666;
   margin: 5px 0;
-  border-radius: 2px;
   font-size: 14px;
   -webkit-animation-duration: .3s;
   animation-duration: .3s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   -webkit-animation-name: laydate-upbit;
-  animation-name: laydate-upbit; }
-  .layui-laydate .layui-laydate-main {
-    width: 272px; }
+  animation-name: laydate-upbit;
+  border-radius: 4px; }
+
+.layui-laydate-main {
+  width: 272px; }
 
 .layui-laydate-content td,
 .layui-laydate-header *,
@@ -1938,7 +1939,7 @@ html #layuicss-laydate {
 
 .layui-laydate-header i {
   position: absolute;
-  top: 10px;
+  top: 15px;
   color: #999;
   font-size: 18px; }
 
@@ -2018,7 +2019,7 @@ html #layuicss-laydate {
   font-size: 12px; }
 
 .layui-laydate-footer span:hover {
-  color: #5FB878; }
+  color: #ED5565; }
 
 .laydate-footer-btns {
   position: absolute;
@@ -2112,8 +2113,8 @@ html #layuicss-laydate {
   border-left: 1px solid #e2e2e2; }
 
 .layui-laydate, .layui-laydate-hint {
-  border: 1px solid #d2d2d2;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  border: 1px solid transparent;
+  box-shadow: 0 0 4px 1px rgba(237, 85, 101, 0.4);
   background-color: #fff;
   color: #666; }
 
@@ -2122,7 +2123,7 @@ html #layuicss-laydate {
 
 .layui-laydate-header i:hover,
 .layui-laydate-header span:hover {
-  color: #5FB878; }
+  color: #DA4453; }
 
 .layui-laydate-content {
   border-top: none 0;
@@ -2139,11 +2140,14 @@ html #layuicss-laydate {
   background-color: #00F7DE; }
 
 .laydate-selected:hover {
-  background-color: #00F7DE !important; }
+  background-color: #DA4453 !important; }
 
 .layui-laydate-content td:hover,
 .layui-laydate-list li:hover {
-  background-color: #DA4453; }
+  background-color: rgba(237, 85, 101, 0.4); }
+
+.layui-laydate-content td:hover {
+  color: #ffffff; }
 
 .laydate-time-list li ol {
   margin: 0;
@@ -2232,7 +2236,7 @@ html #layuicss-laydate {
 .laydate-theme-grid .laydate-selected,
 .laydate-theme-grid .laydate-selected:hover {
   background-color: #f2f2f2 !important;
-  color: #009688 !important; }
+  color: #DA4453 !important; }
 
 .laydate-theme-grid .laydate-selected.laydate-day-next,
 .laydate-theme-grid .laydate-selected.laydate-day-prev {

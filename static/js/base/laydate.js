@@ -620,15 +620,17 @@
                 //左右切换
                 , headerChild = [function () { //上一年
                     var elem = lay.elem('i', {
-                        'class': 'layui-icon laydate-icon laydate-prev-y'
+                        // 'class': 'layui-icon laydate-icon laydate-prev-y'
+                        'class': 'fa fa-angle-double-left layui-icon laydate-prev-y'
                     });
-                    elem.innerHTML = '&#xe65a;';
+                    //elem.innerHTML = '&#xe65a;';
                     return elem;
                 }(), function () { //上一月
                     var elem = lay.elem('i', {
-                        'class': 'layui-icon laydate-icon laydate-prev-m'
+                        // 'class': 'layui-icon laydate-icon laydate-prev-m'
+                        'class': 'fa fa-angle-left layui-icon laydate-prev-m'
                     });
-                    elem.innerHTML = '&#xe603;';
+                    //elem.innerHTML = '&#xe603;';
                     return elem;
                 }(), function () { //年月选择
                     var elem = lay.elem('div', {
@@ -639,15 +641,17 @@
                     return elem;
                 }(), function () { //下一月
                     var elem = lay.elem('i', {
-                        'class': 'layui-icon laydate-icon laydate-next-m'
+                        // 'class': 'layui-icon laydate-icon laydate-next-m'
+                        'class': 'fa fa-angle-right layui-icon laydate-next-m'
                     });
-                    elem.innerHTML = '&#xe602;';
+                    //elem.innerHTML = '&#xe602;';
                     return elem;
                 }(), function () { //下一年
                     var elem = lay.elem('i', {
-                        'class': 'layui-icon laydate-icon laydate-next-y'
+                        // 'class': 'layui-icon laydate-icon laydate-next-y'
+                        'class': 'fa fa-angle-double-right layui-icon laydate-next-y'
                     });
-                    elem.innerHTML = '&#xe65b;';
+                    //elem.innerHTML = '&#xe65b;';
                     return elem;
                 }()]
 
