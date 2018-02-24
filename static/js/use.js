@@ -1,8 +1,8 @@
 // -- 如果有锚链接， 侧边导航的位置
-if (location.hash !== '#top') {
-    //$('.slimScrollDiv').css({'position': 'fixed', 'top': top})
-    //$('.info-sidle').css('top', '20px')
-}
+
+var _hash = location.hash.substring(1);
+if(_hash !== '') $('li[class='+ _hash +']').click();
+
 
 
 // -- 代码语法高亮
@@ -313,3 +313,17 @@ $('#sidleBtn').click(function () {
 laydate.render({
     elem: '#dateTest' //指定元素
 });
+
+// == 换肤
+$('#changeSkin li').each(function (index, item) {
+    $(item).click(function () {
+        var _class = $(this).attr('class')
+        var str = '<link rel="stylesheet" href="static/css/'+ _class +'.css" class="theme-color">';
+        $('head').append(str)
+
+        // 改变 icon 和 文字 的颜色
+        var _color = $(this).children('i').css('backgroundColor')
+        $(this).parent('ul').siblings('i, span').css('color', _color)
+    })
+
+})

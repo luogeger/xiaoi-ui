@@ -395,9 +395,9 @@ button:focus i, button:focus .fa,
     transform-origin: 50% 50%;
     transform: scale(0); }
 .i-checkbox-group .i-checkbox-item:hover .i-checkbox-inner {
-    color: #ffd9c2 !important; }
+    color: #ED6C1C !important; }
 .i-checkbox-group .i-checkbox-checked .i-checkbox-wrap .i-checkbox-check {
-    color: #ffd9c2 !important;
+    color: #ED6C1C !important;
     transform: scale(1); }
 
 input, textarea {
@@ -612,21 +612,21 @@ input.disabled:focus {
 .i-tabs-group .i-tabs-full .i-tabs-tab:last-child {
     margin-right: 5px; }
 .i-tabs-group .line-active {
-    color: #ffd9c2 !important;
-    border-color: #ffd9c2 !important; }
+    color: #ED6C1C !important;
+    border-color: #ED6C1C !important; }
 .i-tabs-group .btn-active {
-    background-color: #ffd9c2 !important;
+    background-color: #ED6C1C !important;
     border-radius: 4px;
     color: #fff !important; }
 .i-tabs-group .thin-active {
-    color: #ffd9c2 !important;
+    color: #ED6C1C !important;
     padding: 0 9px;
     line-height: 27px !important;
-    border: 1px solid #ffd9c2;
+    border: 1px solid #ED6C1C;
     border-bottom: none !important; }
 .i-tabs-group .full-active {
     color: #fff !important;
-    border-color: #ffd9c2 !important;
+    border-color: #ED6C1C !important;
     background-color: #ED6C1C !important; }
 .i-tabs-group .i-tabs-content .i-tabs-item {
     width: 100%;
@@ -817,7 +817,7 @@ input.disabled:focus {
     color: #ffffff;
     cursor: pointer; }
 .i-page-fill li:not(:last-child) {
-    border-right: 1px solid #ffd9c2; }
+    border-right: 1px solid #ED6C1C; }
 .i-page-fill .i-fill-first {
     margin-right: 3px;
     border-bottom-left-radius: 4px;
@@ -827,7 +827,7 @@ input.disabled:focus {
     border-bottom-right-radius: 4px;
     border-top-right-radius: 4px; }
 .i-page-fill .i-fill-current {
-    background-color: #ffd9c2 !important; }
+    background-color: #ED6C1C !important; }
 
 .page_div {
     font-size: 15px;
