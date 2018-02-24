@@ -579,7 +579,7 @@
         render: function (ele) {
             var containerHTML =
                 '<div class="i-date-picker-container">' +
-                '<div class="date-input-box icon iconfont icon-cale-a"></div>' +
+                '<div class="date-input-box  icon iconfont icon-cale-a"></div>' +
                 '<div class="date-calendar-box"></div></div>';
             $(ele).wrap(containerHTML)
         },// render
@@ -607,7 +607,7 @@
                 colorShow: function () {
                     _this.eventsObj.colorHide()
                     _this.$inputBox.addClass('i-pseudo-class')
-                    _this.$inputBox.children('input').addClass('i-border-col i-border-shadow')
+                    _this.$inputBox.children('input').addClass('i-border-col i-border-shadow').focus()
 
                 },
                 calendarShow: function (e) {
@@ -664,4 +664,10 @@
     $calendars.each(function (index, item) {
         $(item).iCalendar(item)
     })
+
+    // 使用laydate, 点击以后清除 .i-date-picker 的样式
+    $('body').on('click', '.laydate-btns-clear', function () {
+        console.log($(this))
+    })
+
 }($, window);

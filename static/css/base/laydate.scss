@@ -98,7 +98,7 @@ html #layuicss-laydate {
 .layui-laydate-header {
   position: relative;
   line-height: 30px;
-  padding: 10px 70px 5px
+  padding-top: 5px;
 }
 
 .laydate-set-ym span,
@@ -117,8 +117,8 @@ html #layuicss-laydate {
   color: #999;
   //top: 10px;
   //font-size: 18px
-  top: 11px;
-  font-size: 24px;
+  top: 10px;
+  font-size: 20px;
 }
 
 .layui-laydate-header i.laydate-prev-y {
@@ -198,41 +198,35 @@ html #layuicss-laydate {
 }
 
 .layui-laydate-footer {
-  position: relative;
-  height: 46px;
-  line-height: 26px;
-  padding: 10px 20px
+  text-align: right;
+  padding: 5px 10px;
 }
 
-.layui-laydate-footer span {
-  margin-right: 15px;
-  display: inline-block;
-  cursor: pointer;
-  font-size: 12px
-}
-
-.layui-laydate-footer span:hover {
-  //color: #5FB878;
-  color: $theme-normal;
-}
 
 .laydate-footer-btns {
-  position: absolute;
-  right: 10px;
-  top: 10px
+  display: inline-block;
+  border: 1px solid #C9C9C9;
+  border-radius: 2px;
+  background-color: #fff;
+  span {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    padding: 0 5px;
+    white-space: nowrap;
+
+    &:hover {
+    color: $theme-normal;
+    }
+
+    &:not(:last-child) {
+      border-right: 1px solid #C9C9C9;
+    }
+  }
 }
 
-.laydate-footer-btns span {
-  height: 26px;
-  line-height: 26px;
-  margin: 0 0 0 -1px;
-  padding: 0 10px;
-  border: 1px solid #C9C9C9;
-  background-color: #fff;
-  white-space: nowrap;
-  vertical-align: top;
-  border-radius: 2px
-}
 
 .layui-laydate-list > li,
 .layui-laydate-range .layui-laydate-main {
@@ -326,9 +320,7 @@ html #layuicss-laydate {
 .layui-laydate, .layui-laydate-hint {
   //border: 1px solid #d2d2d2;
   //box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
-
-  border: 1px solid transparent;
-  box-shadow: 0 0 4px 1px $theme-rgb4;
+  box-shadow: 0 0 2px 1px $theme-rgb4;
   background-color: #fff;
   color: #666
 }

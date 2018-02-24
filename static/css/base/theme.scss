@@ -1,5 +1,18 @@
+@charset "utf-8";
 
+// 灰色
+// ============================================
+//$theme-normal:  #;
+//$theme-hover:   #;
+//$theme-click:   #;
+//$theme-rgb:     rgb();
+//
+//$theme-rgb0:    rgba(, 0);
+//$theme-rgb1:    rgba(, .1);
+//$theme-rgb2:    rgba(, .2);
+//$theme-rgb4:    rgba(, .4);
 
+// 橙色
 // ============================================
 $theme-normal:  #FF8A41;
 $theme-hover:   #ED6C1C;
@@ -12,7 +25,7 @@ $theme-rgb2:    rgba(255,138,65, .2);
 $theme-rgb4:    rgba(255,138,65, .4);
 
 
-
+// 红色
 // ============================================
 $theme-normal:  #ED5565;
 $theme-hover:   #DA4453;
@@ -25,27 +38,27 @@ $theme-rgb2:    rgba(237,85,101, .2);
 $theme-rgb4:    rgba(237,85,101, .4);
 
 
+// 蓝色
+// ============================================
+$theme-normal:  #1D98F9;
+$theme-click:   #0283E8;
+$theme-hover:   #44ABFD;
+$theme-rgb:     rgb(29,152,248);
 
+$theme-rgb0:    rgba(29,152,248, 0);
+$theme-rgb1:    rgba(29,152,248, .1);
+$theme-rgb2:    rgba(29,152,248, .2);
+$theme-rgb4:    rgba(29,152,248, .4);
+
+
+// 绿色
 // ============================================
 //$theme-normal:  #00BFA5;
 //$theme-hover:   #04A28D;
 //$theme-click:   #0BDABE;
-//$theme-rgb:     rgb(237,85,101);
+//$theme-rgb:     rgb(0,191,165);
 //
-//$theme-rgb0:    rgba(237,85,101, 0);
-//$theme-rgb1:    rgba(237,85,101, .1);
-//$theme-rgb2:    rgba(237,85,101, .2);
-//$theme-rgb4:    rgba(237,85,101, .4);
-
-
-
-// ============================================
-//$theme-normal:  #1D98F9;
-//$theme-click:   #0283E8;
-//$theme-hover:   #44ABFD;
-//$theme-rgb:     rgb(29,152,248);
-//
-//$theme-rgb0:    rgba(29,152,248, 0);
-//$theme-rgb1:    rgba(29,152,248, .1);
-//$theme-rgb2:    rgba(29,152,248, .2);
-//$theme-rgb4:    rgba(29,152,248, .4);
+//$theme-rgb0:    rgba(0,191,165, 0);
+//$theme-rgb1:    rgba(0,191,165, .1);
+//$theme-rgb2:    rgba(0,191,165, .2);
+//$theme-rgb4:    rgba(0,191,165, .4);
