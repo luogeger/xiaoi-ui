@@ -113,7 +113,7 @@
                             <li class="thumbnail"><a href="#thumbnail">缩略图 <span>Thumbnail</span></a></li>
                             <li class="navigate"><a href="#navigate">导航 <span>Navigate</span></a></li>
                             <li class="scroll"><a href="#scroll">滚动条 <span>ScrollBar</span></a></li>
-                            <!--<li class="chart"><a href="#chart">图表 <span>Chart</span></a></li>-->
+                            <li class="chart"><a href="#chart">图表 <span>Chart</span></a></li>
                             <!--<li class="crumb"><a href="#crumb">面包屑导航 <span>BreadCrumb</span></a></li>-->
                         </ul>
                     </div><!-- /.info-sidle -->
@@ -1712,7 +1712,7 @@
 
                         <div id="navigate">
                             <h2 class="title">导航 <span>Navigate</span></h2>
-                            <p class="explain"></p>
+                            <p class="explain">有两种方式展现导航模块，一种是来自后台的数据，另一种用html格式</p>
                             <div class="box">
                                 <div class="box-demo">
                                     <p class="instance">实例 :</p>
@@ -1720,6 +1720,76 @@
                                         <a class="i-link" target="_blank" href="nav.html" style="font-size: 20px;">查看导航</a>
                                     </div>
                                 </div>
+                                <div class="box-code">
+                            <pre>
+                                <code class="jquery">
+    var navObj = {
+        logo: {
+            large: 'static/images/iLogo-lg.png',
+            small: 'static/images/iLogo-sm.png'
+        },
+        menu: [
+            {
+                icon: 'fa fa-home',
+                title: '首页',
+            },
+            {
+                icon: 'fa fa-pie-chart',
+                title: '标签统计',
+            },
+            {
+                icon: 'fa fa-stumbleupon',
+                title: 'ocr',
+            },
+            {
+                icon: 'icon iconfont icon-customer',
+                title: '人工客服',
+                child: [
+                    { title: 'jerry', active: 'active'},
+                    { title: 'nicky' },
+                    { title: 'lucy' },
+                    { title: 'tom' },
+                ]
+            },
+            {
+                icon: 'icon iconfont icon-book',
+                title: '行政云服务',
+                child: [
+                    { title: '报修事物指南' },
+                    { title: '人员地区联系' },
+                    { title: '制度信息' },
+                    { title: '资源申请与占用' },
+                ]
+            },
+            {
+                icon: 'icon iconfont icon-people',
+                title: '用户管理',
+                child: [
+                    { title: '金融行业用户' },
+                    { title: '智能语音客服用户' },
+                    { title: '交通用户' },
+                    { title: '医疗业务用户' },
+                ]
+            },
+            {
+                icon: 'icon iconfont icon-setting',
+                title: '系统管理',
+                child: [
+                    { title: '工程中心' },
+                    { title: '技术委员会' },
+                    { title: '资源申请与占用' },
+                ]
+            },
+
+
+        ]
+    }
+
+    $('#navSidle').iSidle(navObj);// 调用扩展方法
+                                </code>
+                            </pre>
+                                </div>
+
                                 <div class="box-code">
                             <pre>
                                 <code class="xml">
@@ -1833,30 +1903,30 @@
                             </div>
                         </div><!-- /#chart -->
 
-                        <div id="crumb">
-                            <h2 class="title">面包屑导航</h2>
-                            <p class="explain"></p>
-                            <div class="box">
-                                <div class="box-demo">
-                                    <p class="instance">实例 :</p>
-                                    <div class="demo-main">
-                                        <div class="tab-crumb">
-                                            <div class="tab-item contra-crumb"><i class="icon-edit"></i>首页</div>
-                                            <div class="tab-item contra-crumb">通讯录</div>
-                                            <div class="tab-item">文字超过一定宽度就是用....代替</div>
-                                            <div class="tab-item">好多好多报表</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="box-code">
-                            <pre>
-                                <code class="xml">
+                        <!--<div id="crumb">-->
+                            <!--<h2 class="title">面包屑导航</h2>-->
+                            <!--<p class="explain"></p>-->
+                            <!--<div class="box">-->
+                                <!--<div class="box-demo">-->
+                                    <!--<p class="instance">实例 :</p>-->
+                                    <!--<div class="demo-main">-->
+                                        <!--<div class="tab-crumb">-->
+                                            <!--<div class="tab-item contra-crumb"><i class="icon-edit"></i>首页</div>-->
+                                            <!--<div class="tab-item contra-crumb">通讯录</div>-->
+                                            <!--<div class="tab-item">文字超过一定宽度就是用....代替</div>-->
+                                            <!--<div class="tab-item">好多好多报表</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div class="box-code">-->
+                            <!--<pre>-->
+                                <!--<code class="xml">-->
 
-                                </code>
-                            </pre>
-                                </div>
-                            </div>
-                        </div><!-- /#crumb -->
+                                <!--</code>-->
+                            <!--</pre>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>&lt;!&ndash; /#crumb &ndash;&gt;-->
 
                         <!-- /#link -->
                     </div><!-- /.info-content -->
@@ -1871,7 +1941,8 @@
 </html>
 <script src="static/js/jquery-1.12.4.min.js"></script>
 <script src="static/js/highlight.js"></script>
+<script src="static/js/highcharts.js"></script>
+<script src="static/js/echarts.min.js"></script>
 <script src="static/js/base.js"></script>
 <script src="static/js/header.js"></script>
 <script src="static/js/use.js"></script>
-<script src=""></script>
