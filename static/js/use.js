@@ -326,4 +326,470 @@ $('#changeSkin li').each(function (index, item) {
         $(this).parent('ul').siblings('i, span').css('color', _color)
     })
 
-})
+});
+
+
+// == charts
+// pie
++function() {
+    var box = echarts.init(document.getElementById('pie-1'));
+    var option = {
+        silent: true,// 所有交互都取消
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)",// 格式，
+            show: false,// 不显示标题
+        },
+        legend: {
+            show: false,
+            orient: 'vertical',
+            x: 'left',
+        },
+        series: [
+            {
+                name:'访问来源',
+                type:'pie',
+                radius: ['90%', '70%'],
+                avoidLabelOverlap: false,
+                hoverAnimation: false,// hover 动画
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'center',
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold',
+                            color: '#222222'
+                        }
+                    },
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#FF8A41'
+                    }
+                },
+                data:[
+                    {
+                        value:67,
+                        name:'67%',
+                    },
+                    {
+                        value:33,
+                        itemStyle: {
+                            normal: {
+                                color: '#D1D2D3',
+                            },
+                            //emphasis: {color: '#D1D2D3'},// 悬浮不显示高亮
+                        },
+                    },
+                ]
+            }
+        ]
+    };
+    box.setOption(option);
+}();
+
++function() {
+    var box = echarts.init(document.getElementById('pie-2'));
+    var option = {
+        silent: true,// 所有交互都取消
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)",// 格式，
+            show: false,// 不显示标题
+        },
+        legend: {
+            show: false,
+            orient: 'vertical',
+            x: 'left',
+        },
+        series: [
+            {
+                name:'访问来源',
+                type:'pie',
+                radius: ['90%', '70%'],
+                avoidLabelOverlap: false,
+                hoverAnimation: false,// hover 动画
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'center',
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold',
+                            color: '#222222'
+                        }
+                    },
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#ED5565'
+                    }
+                },
+                data:[
+                    {
+                        value:42,
+                        name:'42%',
+                    },
+                    {
+                        value:58,
+                        itemStyle: {
+                            normal: {
+                                color: '#D1D2D3',
+                            },
+                            //emphasis: {color: '#D1D2D3'},// 悬浮不显示高亮
+                        },
+                    },
+                ]
+            }
+        ]
+    };
+    box.setOption(option);
+}();
+
++function() {
+    var box = echarts.init(document.getElementById('pie-3'));
+    var option = {
+        silent: true,// 所有交互都取消
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)",// 格式，
+        },
+        legend: {
+            show: false,
+            orient: 'vertical',
+            x: 'left',
+        },
+        series: [
+            {
+                name:'访问来源',
+                type:'pie',
+                radius: ['90%', '70%'],
+                avoidLabelOverlap: false,
+                hoverAnimation: false,// hover 动画
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'center',
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold',
+                            color: '#222222'
+                        }
+                    },
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#1D98F9'
+                    }
+                },
+                data:[
+                    {
+                        value:15,
+                        name:'15%',
+                    },
+                    {
+                        value:85,
+                        itemStyle: {
+                            normal: {
+                                color: '#D1D2D3',
+                            },
+                            //emphasis: {color: '#D1D2D3'},// 悬浮不显示高亮
+                        },
+                    },
+                ]
+            }
+        ]
+    };
+    box.setOption(option);
+}();
+
++function() {
+    var box = echarts.init(document.getElementById('pie-4'));
+    var option = {
+        silent: true,// 所有交互都取消
+        tooltip: {
+            show: false,
+            trigger: 'item',
+            formatter: "{a} <br/>{b}: {c} ({d}%)",// 格式，
+        },
+        legend: {
+            show: false,
+            orient: 'vertical',
+            x: 'left',
+        },
+        series: [
+            {
+                name:'访问来源',
+                type:'pie',
+                radius: ['90%', '70%'],
+                avoidLabelOverlap: false,
+                hoverAnimation: false,// hover 动画
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'center',
+                        textStyle: {
+                            fontSize: '30',
+                            fontWeight: 'bold',
+                            color: '#222222'
+                        }
+                    },
+                },
+                labelLine: {
+                    normal: {
+                        show: false
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#00BFA5'
+                    }
+                },
+                data:[
+                    {
+                        value:83,
+                        name:'83%',
+                    },
+                    {
+                        value:17,
+                        itemStyle: {
+                            normal: {
+                                color: '#D1D2D3',
+                            },
+                            //emphasis: {color: '#D1D2D3'},// 悬浮不显示高亮
+                        },
+                    },
+                ]
+            }
+        ]
+    };
+    box.setOption(option);
+}();
+
+//  curve
++function() {
+    var box2 = echarts.init(document.getElementById('curve-2'));
+    option2 = {
+        //color: ['#ff0000'],
+        legend: {
+            data:['岗位知识','其他知识'],
+            right: '5%',
+        },
+        tooltip : {
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'line'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        grid: {
+            left: '5%',
+            right: '5%',
+            bottom: '1%',
+            containLabel: true
+        },
+        xAxis : [
+            {
+                type : 'category',
+                boundaryGap: false,// 标准坐标轴
+                data : ['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23'],
+                axisTick: {
+                    alignWithLabel: true
+                }
+            }
+        ],
+        yAxis : [
+            {
+                name: '每小时更新一次数据',
+                type : 'value',
+            }
+        ],
+        series : [
+            {
+                data:[55,58,78,76,90,87,88,68,97,88,78,76,90,87,88,68,97,88,78,76,78,76,90,87],
+                name:'岗位知识',
+                type:'line',
+                barWidth: '60%',
+                showSymbol: false,// 取消折线上面的小圈
+                color: 'rgba(237,85,101,1)',
+                encode: {
+                    x: 0,
+                    y: 3
+                },
+                areaStyle: {
+                    normal: {
+                        color: {
+                            type: 'linear',
+                            x: 0,
+                            y: 0,
+                            x2: 0,
+                            y2: 1,
+                            colorStops: [{
+                                offset: 0,
+                                color: 'rgba(237,85,101,1)'
+                            }, {
+                                offset: 0.5,
+                                color: 'rgba(237,85,101,0.7)'
+                            }, {
+                                offset: 1,
+                                color: 'rgba(237,85,101,0)'
+                            }]
+                        }
+                    }
+                },
+            },
+
+            {
+                data:[35,43,21,30,42,33,29,36,29,44,25,42,33,29,36,38,45,33,29,36,36,44,42,33],
+                name:'其他知识',
+                type:'line',
+                barWidth: '60%',
+                showSymbol: false,// 取消折线上面的小圈
+                color: 'rgba(29,152,248,1)',
+                encode: {
+                    x: 0,
+                    y: 3
+                },
+                areaStyle: {
+                    normal: {
+                        color: {
+                            type: 'linear',
+                            x: 0,
+                            y: 0,
+                            x2: 0,
+                            y2: 1,
+                            colorStops: [{
+                                offset: 0, color: 'rgba(29,152,248,1)'
+                            }, {
+                                offset: 0.5, color: 'rgba(29,152,248,0.7)'
+                            }, {
+                                offset: 1, color: 'rgba(29,152,248,0)'
+                            }]
+                        }
+                    }
+                },
+            }
+        ]
+    };
+
+    box2.setOption(option2);
+}();
+
+// bar
++function () {
+    var bar1 = echarts.init(document.getElementById('bar-1'));
+
+    var optionBar = {
+        tooltip : {
+            trigger: 'axis',
+            axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+                type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+            }
+        },
+        legend: {
+            data: ['客服知识', '岗位知识','金融知识','机器人知识','其他知识']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        yAxis:  {
+            name: '每24小时更新一次数据',
+            type: 'value'
+        },
+        xAxis: {
+            type: 'category',
+            data: ['周一','周二','周三','周四','周五','周六','周日']
+        },
+        series: [
+            {
+                name: '客服知识',
+                type: 'bar',
+                color: '#FF8A41',
+                stack: '总量',
+                barMaxWidth: '40%',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'insideTop'
+                    }
+                },
+                data: [320, 302, 301, 334, 390, 330, 320]
+            },
+            {
+                name: '岗位知识',
+                type: 'bar',
+                color: '#1D98F9',
+                stack: '总量',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'insideTop'
+                    }
+                },
+                data: [120, 132, 401, 134, 190, 230, 210]
+            },
+            {
+                name: '金融知识',
+                type: 'bar',
+                color: '#ED5565',
+                stack: '总量',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'insideTop'
+                    }
+                },
+                data: [220, 182, 191, 234, 290, 330, 310]
+            },
+            {
+                name: '机器人知识',
+                type: 'bar',
+                color: '#00BFA5',
+                stack: '总量',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'insideTop'
+                    }
+                },
+                data: [150, 212, 201, 154, 190, 330, 410]
+            },
+            {
+                name: '其他知识',
+                type: 'bar',
+                color: '#637A84',
+                stack: '总量',
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'insideTop'
+                    }
+                },
+                data: [820, 832, 901, 934, 1290, 1330, 1320]
+            }
+        ]
+    };
+
+    bar1.setOption(optionBar);
+}();
+
+
+

@@ -297,6 +297,19 @@
         }
 
       }
+
+      #chart{
+        .demo-main{
+          text-align: center;
+          .pie-o{
+            display: inline-block;
+            width: 24% !important;
+            >div{
+              margin: 0 auto;
+            }
+          }
+        }
+      }
     }// .info-content
   }// .info
 
