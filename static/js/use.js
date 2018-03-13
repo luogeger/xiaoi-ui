@@ -624,6 +624,7 @@ $('#changeSkin li').each(function (index, item) {
                 data:[55,58,78,76,90,87,88,68,97,88,78,76,90,87,88,68,97,88,78,76,78,76,90,87],
                 name:'岗位知识',
                 type:'line',
+                smooth: true,
                 barWidth: '60%',
                 showSymbol: false,// 取消折线上面的小圈
                 color: 'rgba(237,85,101,1)',
@@ -631,7 +632,7 @@ $('#changeSkin li').each(function (index, item) {
                     x: 0,
                     y: 3
                 },
-                areaStyle: {
+                areaStyle: {// 区域样式，曲线
                     normal: {
                         color: {
                             type: 'linear',
@@ -658,6 +659,7 @@ $('#changeSkin li').each(function (index, item) {
                 data:[35,43,21,30,42,33,29,36,29,44,25,42,33,29,36,38,45,33,29,36,36,44,42,33],
                 name:'其他知识',
                 type:'line',
+                smooth: true,
                 barWidth: '60%',
                 showSymbol: false,// 取消折线上面的小圈
                 color: 'rgba(29,152,248,1)',
@@ -775,7 +777,7 @@ $('#changeSkin li').each(function (index, item) {
             {
                 name: '其他知识',
                 type: 'bar',
-                color: '#637A84',
+                color: '#906FE2',// 紫色
                 stack: '总量',
                 label: {
                     normal: {
@@ -790,6 +792,9 @@ $('#changeSkin li').each(function (index, item) {
 
     bar1.setOption(optionBar);
 }();
+
+
+// up--
 
 
 
